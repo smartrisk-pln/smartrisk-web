@@ -82,8 +82,6 @@
     -webkit-mask-image  : url('../icons/location-pin-icon.svg'); 
 }
 .phone-icon {
-    width               : 1.4rem;
-    height              : 1.4rem;
     mask-image          : url('../icons/phone-icon.svg');    
     -webkit-mask-image  : url('../icons/phone-icon.svg');
 }
