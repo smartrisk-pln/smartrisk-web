@@ -1,6 +1,46 @@
 {{ define "main" }}
     <!---------- HERO ---------->
     <section class="hero" aria-labelledby="hero-heading">
+        {{ $heroSlides := slice
+            "hero_01-power_plant"
+            "hero_02-turbine_inspection"
+            "hero_03-marine_cargo"
+        }}
+        {{ $heroSlideURLs := slice }}
+        {{ range $slide := $heroSlides }}
+            {{ $webp := printf "assets/images/home/%s.webp" $slide | relURL }}
+            {{ $jpg  := printf "assets/images/home/%s.jpg"  $slide | relURL }}
+            {{ $heroSlideURLs = $heroSlideURLs | append (dict "webp" $webp "jpg" $jpg) }}
+        {{ end }}
+        <div class="hero-slider" aria-hidden="true">
+            <div class="hero-slider-track">
+                {{ range $heroSlideURLs }}
+                <div class="hero-slide"
+                     style="background-image: url('{{ .jpg }}');
+                     background-image: image-set(url('{{ .webp }}') type('image/webp'), url('{{ .jpg }}') type('image/jpeg'));"></div>
+                {{ end }}
+                {{ with index $heroSlideURLs 0 }}
+                <!-- a duplicate hero-slide to create seamless loop -->
+                <div class="hero-slide"
+                     style="background-image: url('{{ .jpg }}');
+                     background-image: image-set(url('{{ .webp }}') type('image/webp'), url('{{ .jpg }}') type('image/jpeg'));"></div>
+                {{ end }}
+            </div>
+            <div class="hero-slider-overlay"></div>
+        </div>
+        <div class="hero-slider-dots" role="tablist" aria-label="{{ i18n "hero_slider_label" | safeHTML }}">
+            {{ range $i, $slide := $heroSlides }}
+            <button
+                type="button"
+                class="hero-dot{{ if eq $i 0 }} is-active{{ end }}"
+                data-slide-index="{{ $i }}"
+                role="tab"
+                aria-selected="{{ if eq $i 0 }}true{{ else }}false{{ end }}"
+                aria-label="{{ i18n "hero_slider_dot_label" | safeHTML }} {{ add $i 1 }}"
+            ></button>
+            {{ end }}
+        </div>
+        
         <div class="hero-left">
             <span class="hero-eyebrow">{{ i18n "hero_eyebrow" | safeHTML }}</span>
             <h1 id="hero-heading">{{ i18n "hero_h1" | safeHTML }}</h1>
