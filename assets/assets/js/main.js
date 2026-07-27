@@ -327,3 +327,90 @@ window.addEventListener('load', setSidebarHeightVar);
         if (!isDragging) isPaused = false;
     });
 })();
+
+
+/* ---------- HERO BACKGROUND SLIDER ---------- */
+(function () {
+    const slider = document.querySelector('.hero-slider');
+    if (!slider) return;
+
+    const track  = slider.querySelector('.hero-slider-track');
+    const allSlides = track.querySelectorAll('.hero-slide'); // includes the trailing duplicate hero-slide
+    const dots   = document.querySelectorAll('.hero-dot');
+    const realCount = dots.length; // number of actual distinct slides
+    const HOLD_MS = 3000; // how long each slide stays put before advancing
+
+    let current = 0;     // can go up to realCount (the duplicate position)
+    let holdTimer;
+    let awaitingReset = false;
+
+    function setTrackPosition(index, animate) {
+        track.style.transition = animate ? '' : 'none';
+        track.style.transform  = `translateX(-${index * 100}%)`;
+        if (!animate) {
+            void track.offsetWidth; // force reflow so the disabled transition actually applies
+            track.style.transition = '';
+        }
+    }
+
+    function updateDots(realIndex) {
+        const activeDot = dots[current % realCount];
+        if (activeDot) {
+            activeDot.classList.remove('is-active');
+            activeDot.setAttribute('aria-selected', 'false');
+        }
+        const nextDot = dots[realIndex];
+        if (nextDot) {
+            nextDot.classList.add('is-active');
+            nextDot.setAttribute('aria-selected', 'true');
+        }
+    }
+
+    function scheduleNext() {
+        clearTimeout(holdTimer);
+        holdTimer = setTimeout(advance, HOLD_MS);
+    }
+
+    // Always slides left, one step at a time; wraps via the duplicated first slide.
+    // Does NOT schedule the following move itself, that only happens once this
+    // move's transition has actually finished (see transitionend below), so the
+    // next move can never overlap or race this one.
+    function advance() {
+        const next = current + 1;
+        updateDots(next % realCount);
+        setTrackPosition(next, true);
+        current = next;
+        if (current === realCount) {
+            awaitingReset = true; // we've landed on the duplicate; snap back once the transition ends
+        }
+    }
+
+    // Jumping directly to a slide via the dots (no wrap needed, just go straight there)
+    function goToDot(index) {
+        clearTimeout(holdTimer);
+        updateDots(index);
+        setTrackPosition(index, true);
+        current = index;
+        scheduleNext(); // covers the case where the clicked dot is already active (no transitionend fires)
+    }
+
+    track.addEventListener('transitionend', (e) => {
+        if (e.propertyName !== 'transform') return;
+
+        if (awaitingReset) {
+            awaitingReset = false;
+            current = 0;
+            setTrackPosition(0, false); // instant, invisible snap back to the real first slide
+        }
+
+        scheduleNext(); // this move has now visually finished - start the next hold period
+    });
+
+    dots.forEach((dot, i) => {
+        dot.addEventListener('click', () => goToDot(i));
+    });
+
+    if (realCount > 1) {
+        scheduleNext();
+    }
+})();
