@@ -16,6 +16,11 @@ other = "Layanan Kami"
 [hero_cta_secondary]
 other = "Hubungi Kami"
 
+[hero_slider_label]
+other = "Pilih gambar latar belakang"
+[hero_slider_dot_label]
+other = "Tampilkan gambar latar belakang"
+
 [hero_stat_01_label]
 other = "Proyek Selesai"
 [hero_stat_02_label]

@@ -16,6 +16,11 @@ other = "Our Services"
 [hero_cta_secondary]
 other = "Get in Touch"
 
+[hero_slider_label]
+other = "Select hero background image"
+[hero_slider_dot_label]
+other = "Show background image"
+
 [hero_stat_01_label]
 other = "Projects Completed"
 [hero_stat_02_label]
