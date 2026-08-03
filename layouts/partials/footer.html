@@ -3,6 +3,12 @@
     {{ if not .Params.hasContactSection }}
         {{ partial "contact-details.html" . }}
     {{ end }}
+    <div class="footer-socials">
+        <a href="https://youtube.com/@smartriskpln7981" class="socials-item-icon youtube-icon"></a>
+        <a href="https://facebook.com/smartrisk.pln" class="socials-item-icon facebook-icon"></a>
+        <a href="https://instagram.com/smartrisk.pln" class="socials-item-icon instagram-icon"></a>
+        <a href="https://linkedin.com/company/smartriskpln" class="socials-item-icon linkedin-icon"></a>
+    </div>
     <span class="footer-logo">
         <picture>
             <source srcset="{{ "assets/images/smartrisk_white.webp" | relURL }}" type="image/webp" />
