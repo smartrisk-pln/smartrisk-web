@@ -1,5 +1,6 @@
 *.zip
 *.bat
+.env
 URL_CHANGES.md
 static/sitemap_xml.md
 

@@ -67,12 +67,12 @@ smartrisk/
 ## Languages
 
 **Github Pages**
-- **English** (default): served at `fitrinad.github.io/smartrisk/`
-- **Indonesian**: served at `fitrinad.github.io/smartrisk/id/`
+- **English** (default): served at `<profile-name>.github.io/smartrisk/`
+- **Indonesian**: served at `<profile-name>.github.io/smartrisk/id/`
 
-**Cloudflare Pages** &rarr; redirected to `smartrisk-pln.com`; see [Domain redirects](#domain-redirects)
-- **English** (default): served at `smartrisk-pln.pages.dev/` &rarr; `smartrisk-pln.com`
-- **Indonesian**: served at `smartrisk-pln.pages.dev/id/` &rarr; `smartrisk-pln.com/id/`
+**Cloudflare Pages** &rarr; to be redirected to `smartrisk-pln.com`; see [Domain redirects](#domain-redirects)
+- **English** (default): served at `smartrisk-pln.pages.dev/`
+- **Indonesian**: served at `smartrisk-pln.pages.dev/id/`
 
 All translatable strings are in `i18n-src/en/*.toml` and `i18n-src/id/*.toml`. All TOML files in each page are merged using `merge-i18n.sh` (Github Actions and Cloudflare Pages build) or `merge-i18n.ps1` (local Windows development) before the page is built. Page structure is shared via single layout files, no duplicate HTML per language.
 
@@ -153,3 +153,17 @@ The `public/` folder is not committed to the repo, it is built on deploy.
 Path-based redirects (old slugs &rarr; new slugs) are defined in `static/_redirects` and are picked up automatically by Cloudflare Pages on build.
 
 The `smartrisk-pln.pages.dev` &rarr; `smartrisk-pln.com` domain-level redirect is **not** handled in `_redirects` since it only matches request paths, not hostnames. That redirect is handled separately as a Cloudflare **Bulk Redirect** (Delivery & performance &rarr; Bulk redirects), which operates at the account level and can intercept traffic to Cloudflare-owned domains like `*.pages.dev`. This is dashboard-only config and is not version-controlled in this repo.
+
+<u>**NOTE**</u>:   
+- The exact `*.pages.dev` subdomain is assigned per Cloudflare account and may differ from `smartrisk-pln.pages.dev` if this project is deployed under a different account.
+- Check your Cloudflare Pages project's Custom Domains page to confirm the current subdomain before setting up the redirect. 
+
+<u>**Steps to set up**</u>:   
+1. Cloudflare Dashboard &rarr; Delivery & performance &rarr; Bulk redirects.
+2. Create a redirect list:  
+    - Source URL: `https://<project-name>.pages.dev`  
+    - Target URL: `https://smartrisk-pln.com`  
+    - Enable `Subpath matching` and `Preserve path suffix` (this is the Bulk Redirects equivalent of the dynamic concat expression: `source = <project-name>.pages.dev/* destination = https://smartrisk-pln.com/$1`, it carries the path over automatically)
+    - Enable `Preserve query string`
+3. Create a Bulk Redirect Rule using that list, and deploy
+4. Test by visiting `<project-name>.pages.dev` directly

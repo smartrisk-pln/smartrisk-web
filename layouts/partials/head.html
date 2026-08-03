@@ -13,14 +13,21 @@
 {{ else }}
 <link rel="alternate" hreflang="x-default" href="{{ (index .Translations 0).Permalink }}" />
 {{ end }}
-<!-- Remove <meta name="robots" content="index, follow" /> (already index,follow by default)
+<!-- Remove <meta name="robots" content="index, follow" /> (already index,follow by default) -->
+<!--
 {{ $host := .Site.BaseURL | urls.Parse }}
 {{ if not (strings.Contains $host.Host "smartrisk-pln.com") }}
-    <meta name="robots" content="noindex, nofollow" />
+    <meta name="robots" content="noindex, nofollow" /> 
 {{ else }}
     <meta name="robots" content="index, follow" />
 {{ end }}
 -->
+<!-- Add noindex, nofollow rule for deploys to non-production domain-->
+{{ $host := .Site.BaseURL | urls.Parse }}
+{{ if not (strings.Contains $host.Host "smartrisk-pln.com") }}
+    <meta name="robots" content="noindex, nofollow" />
+{{ end }}
+
 <link rel="manifest" href="{{ "site.webmanifest" | relURL }}" />
 <meta property="og:type"        content="website" />
 <meta property="og:url"         content="{{ .Permalink }}" />
