@@ -7,10 +7,12 @@ function setActiveNav() {
     // Get the current URL path
     const parts = window.location.pathname.split('/').filter(Boolean);
     const currentLocation = parts[parts.length - 1] || '';
+    const siteBaseURL = window.siteRootUrl;
 
     // Highlights home link when on the homepage
-    // currentLocation is '' on homepage (no path segment after root)
-    if (currentLocation === '') {
+    // currentLocation is '' on homepage (no path segment after root); OR
+    // currentLocation is 
+    if ((currentLocation === '') || (currentLocation === siteBaseURL )) {
         const homeLink = [...document.querySelectorAll('.nav-links a')].find(a => {
             const href = a.getAttribute('href');
             try {
