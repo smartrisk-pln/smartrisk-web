@@ -13,7 +13,7 @@
   Cache-Control: public, max-age=3600, must-revalidate
 
 # Explicit indexing directives per host
-https://smartrisk-pln.pages.dev/*
+https://smartrisk-web.pages.dev/*
   X-Robots-Tag: noindex, nofollow
 
 https://smartrisk-pln.com/*

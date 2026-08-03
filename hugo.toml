@@ -1,4 +1,4 @@
-baseURL = 'https://fitrinad.github.io/smartrisk/'
+baseURL = 'https://smartrisk-pln.github.io/smartrisk-web/'
 title = 'SmartRisk'
 
 disableKinds = ['taxonomy', 'term']
