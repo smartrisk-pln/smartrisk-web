@@ -4,4 +4,4 @@ pages_build_output_dir  = './public'
 
 [vars]
 HUGO_VERSION    = '0.161.1'
-HUGO_BASEURL    = 'https://smartrisk-pln.com/'
+HUGO_BASEURL    = 'https://smartrisk-web.pages.dev/'
