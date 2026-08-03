@@ -1282,6 +1282,49 @@ footer .contact-details {
     padding : 7rem 0 2rem 0;
 
 }
+.footer-socials {
+    display         : flex;
+    gap             : 1rem;
+    align-items     : center;
+    justify-content : end;
+    margin          : -1.5rem -1.5rem 0rem 0;
+}
+.socials-item-icon {
+    width           : 1.2rem;
+    height          : 1.2rem;
+    flex-shrink     : 0;
+    background-color: var(--white);
+
+    mask-size       : contain;
+    mask-repeat     : no-repeat;
+    mask-position   : center;
+
+    -webkit-mask-size       : contain;
+    -webkit-mask-repeat     : no-repeat;
+    -webkit-mask-position   : center;
+}
+.socials-item-icon:hover {
+    background-color: var(--accent);
+}
+.youtube-icon {
+    mask-image          : url('../icons/youtube-icon.svg');
+    -webkit-mask-image  : url('../icons/youtube-icon.svg'); 
+}
+
+.facebook-icon {
+    mask-image          : url('../icons/facebook-icon.svg');
+    -webkit-mask-image  : url('../icons/facebook-icon.svg'); 
+}
+.instagram-icon {
+    mask-image          : url('../icons/instagram-icon.svg');
+    -webkit-mask-image  : url('../icons/instagram-icon.svg'); 
+}
+.linkedin-icon {
+    mask-image          : url('../icons/linkedin-icon.svg');
+    -webkit-mask-image  : url('../icons/linkedin-icon.svg'); 
+}
+
+
 
 
 /*---------- TABLET ----------*/
