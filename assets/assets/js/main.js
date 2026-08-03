@@ -4,35 +4,29 @@
 
 // ---------- ACTIVE NAV ---------- //
 function setActiveNav() {
-    // Get the current URL path
-    const parts = window.location.pathname.split('/').filter(Boolean);
-    const currentLocation = parts[parts.length - 1] || '';
-    const siteBaseURL = window.siteRootUrl;
+    // Strip trailing slashes so "/services/" and "/services" match,
+    // and treat root as "/" either way.
+    const normalize = (path) => path.replace(/\/+$/, '') || '/';
+    const currentPath = normalize(window.location.pathname);
 
-    // Highlights home link when on the homepage
-    // currentLocation is '' on homepage (no path segment after root); OR
-    // currentLocation is 
-    if ((currentLocation === '') || (currentLocation === siteBaseURL )) {
-        const homeLink = [...document.querySelectorAll('.nav-links a')].find(a => {
-            const href = a.getAttribute('href');
-            try {
-                const url = new URL(href);
-                return url.pathname === window.location.pathname;
-            } catch(e) { return false; }
-        });
-        if (homeLink) homeLink.classList.add('active');
-    }
-
-    // Highlights nav links based on currentLocation
     const menuLinks = document.querySelectorAll('.nav-links a');
     menuLinks.forEach(link => {
         const href = link.getAttribute('href');
-        const linkPage = href.split('/').filter(Boolean).pop() || '';
-        if (linkPage && linkPage === currentLocation) {
+        if (!href) return;
+
+        let linkPath;
+        try {
+            // Passing window.location.origin as a base makes this work for BOTH relative hrefs ("/services/") and 
+            // absolute ones ("https://smartrisk-pln.com/") -> no more throwing/catching silently on relative links.
+            linkPath = normalize(new URL(href, window.location.origin).pathname);
+        } catch (e) {
+            return;
+        }
+
+        if (linkPath === currentPath) {
             link.classList.add('active');
         }
     });
-
 }
 setActiveNav();
 
