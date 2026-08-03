@@ -30,10 +30,10 @@
     
     <div class="nav-right">
         <!-- Company Profile Download -->
-        {{ $comproPath := "assets/pdf/Company Profile SmartRisk 2026_EN_rev-1.pdf" }}
+        {{ $comproPath := "assets/pdf/Company Profile Smart 2026_Eng_rev.2.pdf" }}
         {{ $comproName := "Company Profile SmartRisk 2026_EN.pdf" }}
         {{ if eq .Site.Language.Lang "id" }}
-            {{ $comproPath = "assets/pdf/Company Profile SmartRisk 2026_ID_rev-1.pdf" }}
+            {{ $comproPath = "Company Profile Smart 2026_Ina_rev.2.pdf" }}
             {{ $comproName = "Company Profile SmartRisk 2026_ID.pdf" }}
         {{ end }}
         <a href="{{ relURL $comproPath }}" download="{{ $comproName }}" class="btn btn-primary btn-download">
