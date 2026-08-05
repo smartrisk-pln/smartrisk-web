@@ -1,0 +1,54 @@
+/* -----------------------------------------------------
+   ---------- SmartRisk - Media Page Styles ----------
+   ----------------------------------------------------- */
+
+/*---------- MEDIA SECTION LAYOUT ----------*/
+.media-section {
+    padding         : 5rem 4rem;
+    border-bottom   : 1px solid var(--rule);
+    display         : flex;
+    flex-direction  : column;
+    align-items     : center;
+    gap             : 2rem;
+}
+.media-section:last-of-type { border-bottom: none; }
+.media-section .media-section-item {
+    display         : flex;
+    flex-direction  : column;
+    align-items     : center;
+}
+.media-section iframe {
+    display     : block;
+}
+
+.video-title {
+    font-family     : 'Cal Sans', sans-serif;
+    font-size       : 1.35rem;
+    font-weight     : 600;
+    color           : var(--ink);
+    align-self      : stretch;
+    text-align      : left;
+    margin-bottom   : 0rem;
+}
+
+
+
+/*---------- TABLET ----------*/
+@media (max-width: 1100px) {
+    .media-section { padding: 4rem 1.5rem; }
+    .media-section iframe {
+        width   : 40rem;
+        height  : 22.5rem;
+    }
+}
+
+
+/*---------- MOBILE ----------*/
+@media (max-width: 780px) {
+    .page-header { grid-template-columns: 1fr; }
+    .media-section { padding: 3rem 2rem; }
+    .media-section iframe {
+        width   : 20rem;
+        height  : 11.25rem;
+    }
+}
