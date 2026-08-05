@@ -1,0 +1,23 @@
+#===========================#
+#========== MEDIA ==========#
+#===========================#
+#=================================#
+#========== PAGE HEADER ==========#
+#=================================#
+[media_page_section_label]
+other = "Media"
+[media_page_h1]
+other = "Insights &amp; Webinars"
+[media_page_p]
+other = "Our video library covering risk management training and insurance policy reviews, practical guidance from our YouTube channel to help you strengthen risk management practices."
+
+
+#============================#
+#========== VIDEOS ==========#
+#============================#
+[video_title_1]
+other = "Policy Review of PLN Group's Operational Asset Insurance"
+[video_title_2]
+other = "Smart<em>Risk</em> Webinar Series 2"
+[video_title_3]
+other = "Smart<em>Risk</em> Webinar Series 3"

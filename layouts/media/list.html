@@ -1,0 +1,38 @@
+{{ define "main" }}
+    <!---------- PAGE HEADER ---------->
+    <header class="page-header" aria-labelledby="page-heading">
+        <div>
+            <div class="section-label">{{ i18n "media_page_section_label" | safeHTML }}</div>
+            <h1 id="page-heading">{{ i18n "media_page_h1" | safeHTML }}</h1>
+        </div>
+        <div>
+            <p>
+                {{ i18n "media_page_p" | safeHTML }}
+            </p>
+        </div>
+    </header>
+    
+    <!---------- VIDEOS ---------->
+    <section class="media-section">
+        <div class="media-section-item">
+            <h2 class="video-title">
+                {{ i18n "video_title_1" | safeHTML }}
+            </h2>
+            <iframe width="720" height="405" src="https://www.youtube.com/embed/OYH0uy2W0JA?si=LbVsenvhwkh7Sjcy" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </div>
+
+        <div class="media-section-item">
+            <h2 class="video-title">
+                {{ i18n "video_title_2" | safeHTML }}
+            </h2>
+            <iframe width="720" height="405" src="https://www.youtube.com/embed/aJWKnZby55g?si=vCL0MBFRXHE31Fth" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </div>
+
+        <div class="media-section-item">
+            <h2 class="video-title">
+                {{ i18n "video_title_3" | safeHTML }}
+            </h2>
+            <iframe width="720" height="405" src="https://www.youtube.com/embed/gWPnDzO8078?si=AfZoMLk45hvsZwQW" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </div>
+    </section>
+{{ end }}

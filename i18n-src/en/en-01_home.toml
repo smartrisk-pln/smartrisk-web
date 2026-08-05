@@ -226,3 +226,14 @@ other = "PT Geo Dipa Energi"
 other = "2021"
 
 
+#===========================#
+#========== MEDIA ==========#
+#===========================#
+[media_section_label]
+other = "More About Us"
+[media_h2]
+other = "Media"
+[media_cta]
+other = "All Media"
+
+

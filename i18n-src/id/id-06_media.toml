@@ -1,0 +1,23 @@
+#===========================#
+#========== MEDIA ==========#
+#===========================#
+#=================================#
+#========== PAGE HEADER ==========#
+#=================================#
+[media_page_section_label]
+other = "Media"
+[media_page_h1]
+other = "Wawasan &amp; Webinar"
+[media_page_p]
+other = "Koleksi video kami seputar pelatihan manajemen risiko dan ulasan polis asuransi, panduan praktis dari kanal YouTube kami untuk memperkuat praktik manajemen risiko Anda."
+
+
+#============================#
+#========== VIDEOS ==========#
+#============================#
+[video_title_1]
+other = "Bedah Polis Asuransi Aset Operasional PLN Group"
+[video_title_2]
+other = "Smart<em>Risk</em> Webinar Series 2"
+[video_title_3]
+other = "Smart<em>Risk</em> Webinar Series 3"

@@ -448,7 +448,7 @@ nav {
                       visibility 0.4s;
 }
 .mobile-menu.open { 
-    max-height      : 500px;
+    max-height      : calc(100dvh - var(--nav-h, 60px));
     opacity         : 1;
     visibility      : visible;
     pointer-events  : auto;
@@ -1214,6 +1214,28 @@ nav {
 }
 
 
+/*---------- MEDIA ----------*/
+.media {
+    padding         : 4rem 4rem;
+    border-bottom   : 1px solid var(--projects-border);
+}
+.media-header {
+    display         : flex;
+    justify-content : space-between;
+    align-items     : flex-end;
+    margin-bottom   : 1rem;
+}
+.media-grid {
+    display         : flex;
+    flex-direction  : column;
+    align-items     : center;
+    gap             : 2rem;
+}
+.media iframe {
+    display: block;
+}
+
+
 /*---------- CONTACT ----------*/
 /*
 .contact-grid {
@@ -1273,8 +1295,8 @@ footer {
     font-size   : 0.8rem;
 }
 footer .footer-logo img { 
-    height: 1rem; 
-    width: auto; 
+    height  : 1rem; 
+    width   : auto; 
 }
 footer p { color: var(--footer-text) } /* overrides the rule applied specifically to <p> in line 44 */
 footer .contact-details {
@@ -1387,8 +1409,7 @@ footer .contact-details {
         border-bottom   : 1px solid var(--rule);
         padding         : 3rem 1.5rem;
     }
-    .about-visual { padding: 3rem 1.5rem; }
-    .services, .projects {
+    .about-visual, .services, .projects, .media {
         padding: 3rem 1.5rem;
     }
     .services-grid, .projects-grid {
@@ -1399,6 +1420,11 @@ footer .contact-details {
         /* flex-direction  : column; 
         gap             : 1rem; */
         align-items     :last baseline;
+    }
+
+    .media iframe {
+        width   : 40rem;
+        height  : 22.5rem;
     }
     
 }
@@ -1451,4 +1477,9 @@ footer .contact-details {
         margin-right    : 1rem; }
     .stat-num { font-size: 1.8rem; }
     .stat-label { font-size: 0.7rem; }
+
+    .media iframe {
+        width   : 20rem;
+        height  : 11.25rem;
+    }
 }

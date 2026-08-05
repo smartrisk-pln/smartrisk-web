@@ -15,6 +15,8 @@ other = "Projects"
 other = "Recent Projects"
 [nav_portfolio]
 other = "Portfolio"
+[nav_media]
+other = "Media"
 [nav_contact]
 other = "Contact"
 [nav_cta_btn]
