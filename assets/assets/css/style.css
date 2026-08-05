@@ -1309,7 +1309,7 @@ footer .contact-details {
     gap             : 1rem;
     align-items     : center;
     justify-content : end;
-    margin          : -1.5rem -1.5rem 0rem 0;
+    margin          : 0rem -1.5rem -1.5rem -1.5rem;
 }
 .socials-item-icon {
     width           : 1.2rem;

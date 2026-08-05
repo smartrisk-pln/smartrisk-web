@@ -3,12 +3,6 @@
     {{ if not .Params.hasContactSection }}
         {{ partial "contact-details.html" . }}
     {{ end }}
-    <div class="footer-socials">
-        <a href="https://youtube.com/@smartriskpln7981" class="socials-item-icon youtube-icon"></a>
-        <a href="https://facebook.com/smartrisk.pln" class="socials-item-icon facebook-icon"></a>
-        <a href="https://instagram.com/smartrisk.pln" class="socials-item-icon instagram-icon"></a>
-        <a href="https://linkedin.com/company/smartriskpln" class="socials-item-icon linkedin-icon"></a>
-    </div>
     <span class="footer-logo">
         <picture>
             <source srcset="{{ "assets/images/smartrisk_white.webp" | relURL }}" type="image/webp" />
@@ -16,11 +10,17 @@
         </picture>
     </span>
     <p>
-        © 2026 PT Solusi Manajemen Risiko Terintegrasi. {{ i18n "footer_copyright" | safeHTML }}
+        &copy; {{ now.Format "2006" }} PT Solusi Manajemen Risiko Terintegrasi. {{ i18n "footer_copyright" | safeHTML }}
     </p>
     <p>
         <a href="https://smartrisk-pln.com" style="color:inherit">smartrisk-pln.com</a>
     </p>
+    <div class="footer-socials">
+        <a href="https://youtube.com/@smartriskpln7981" class="socials-item-icon youtube-icon"></a>
+        <a href="https://facebook.com/smartrisk.pln" class="socials-item-icon facebook-icon"></a>
+        <a href="https://instagram.com/smartrisk.pln" class="socials-item-icon instagram-icon"></a>
+        <a href="https://linkedin.com/company/smartriskpln" class="socials-item-icon linkedin-icon"></a>
+    </div>
 </footer>
 
 <!-- js files in static/assets/js/
