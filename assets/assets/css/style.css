@@ -448,7 +448,7 @@ nav {
                       visibility 0.4s;
 }
 .mobile-menu.open { 
-    max-height      : 500px;
+    max-height      : calc(100dvh - var(--nav-h, 60px));
     opacity         : 1;
     visibility      : visible;
     pointer-events  : auto;
@@ -1225,10 +1225,14 @@ nav {
     align-items     : flex-end;
     margin-bottom   : 1rem;
 }
+.media-grid {
+    display         : flex;
+    flex-direction  : column;
+    align-items     : center;
+    gap             : 2rem;
+}
 .media iframe {
-    display     : block;
-    margin-left : auto;
-    margin-right: auto;
+    display: block;
 }
 
 
