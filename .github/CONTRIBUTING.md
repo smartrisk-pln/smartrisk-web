@@ -105,11 +105,18 @@ A few issues that once cost debugging time, check before re-diagnosing from scra
         ```powershell
         powershell -ExecutionPolicy Bypass -File scripts\merge-i18n.ps1
         ```
+    - To detect your local IP address (for older versions of Windows without IPv6 support use the following line instead:
+ `set ip_address_string="IP Address"`):
+        ```powershell
+        set ip_address_string="IPv4 Address"
+        for /f "usebackq tokens=2 delims=:" %%a in (`ipconfig ^| findstr /r /c:%ip_address_string%`) do set IP=%%a
+        set IP=%IP: =%
+        ```
     - Then start the Hugo dev server:
         ```powershell
-        hugo server --disableFastRender --bind 0.0.0.0 --baseURL http://<your-local-ip>:1313/smartrisk/
+        hugo server --disableFastRender --bind 0.0.0.0 --baseURL http://%IP%:1313/smartrisk/
         ```
-        > Tip: you can save both commands in a local `serve.bat` (gitignored) to run them together.
+        > Tip: you can save these commands in a local `serve_auto.bat` to run them together.
     - Preview at `http://localhost:1313/smartrisk/`
 - Check both language versions (`/en/...` and `/id/...` or your configured language paths) if you added translated content.
 - Confirm any new images referenced in front matter actually exist under `static/assets/images/...`.
