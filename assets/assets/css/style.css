@@ -561,6 +561,28 @@ nav {
     height: 100%;
     background-size: cover;
     background-position: center;
+    /* Mobile is the default so a viewport that never matches the min-width query below
+       (never reads --bg-desktop) still gets an image */
+    /* Until main.js sets --bg-mobile/--bg-desktop inline on these slides, both
+       var() lookups have nothing to resolve to and fall back to
+       background-image's initial value (none), so no image is requested. The
+       class is removed once the real background is assigned. */
+    background-image: var(--bg-mobile);
+}
+@media (min-width: 780px) {
+    .hero-slide { background-image: var(--bg-desktop); }
+}
+/* Slide 0 (LCP element) is an <img>, not a background-image (see layouts/index.html) */
+.hero-slide--img {
+    background-image: none;
+}
+.hero-slide--img picture,
+.hero-slide--img img {
+    display         : block;
+    width           : 100%;
+    height          : 100%;
+    object-fit      : cover;
+    object-position : center;
 }
 .hero-slider-overlay {
     position    : absolute;
@@ -577,6 +599,7 @@ nav {
     z-index     : 2;
 }
 .hero-dot {
+    position        : relative;
     width           : 8px;
     height          : 8px;
     padding         : 0;
@@ -586,6 +609,16 @@ nav {
     cursor          : pointer;
     transition      : background 0.3s ease, border-color 0.3s ease, transform 0.3s ease;
 }
+/* Expands the clickable area to ~40x40px without changing the visible dot size */
+.hero-dot::before {
+    content     : "";
+    position    : absolute;
+    top         : 50%;
+    left        : 50%;
+    width       : 40px;
+    height      : 40px;
+    transform   : translate(-50%, -50%)
+} 
 .hero-dot:hover {
     border-color: var(--accent);
 }

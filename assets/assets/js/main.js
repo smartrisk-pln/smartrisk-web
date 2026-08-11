@@ -334,6 +334,27 @@ window.addEventListener('load', setSidebarHeightVar);
     const allSlides = track.querySelectorAll('.hero-slide'); // includes the trailing duplicate hero-slide
     const dots   = document.querySelectorAll('.hero-dot');
     const realCount = dots.length; // number of actual distinct slides
+
+    // Slide 0 loads its background image immediately (LCP element).
+    // Every other slide only carries data-bg-* attributes in the markup, so 
+    // the browser doesn't fetch them until we assign the CSS variables below
+    // after the initial page load has finished.
+    function activateLazySlides() {
+        track.querySelectorAll('.hero-slide--lazy').forEach((slide) => {
+            const mobileWebp    = slide.dataset.bgMobileWebp;
+            const mobileJpg     = slide.dataset.bgMobileJpg;
+            const webp          = slide.dataset.bgWebp;
+            const jpg           = slide.dataset.bgJpg;
+            slide.style.setProperty('--bg-mobile', `image-set(url('${mobileWebp}') type('image/webp'), url('${mobileJpg}') type('image/jpeg'))`);
+            slide.style.setProperty('--bg-desktop', `image-set(url('${webp}') type('image/webp'), url('${jpg}') type('image/jpeg'))`);
+            slide.classList.remove('hero-slide--lazy');
+        });
+    }
+    if (document.readyState === 'complete') {
+        activateLazySlides();
+    } else {
+        window.addEventListener('load', activateLazySlides, { once: true });
+    }
     const HOLD_MS = 3000; // how long each slide stays put before advancing
 
     let current = 0;     // can go up to realCount (the duplicate position)
