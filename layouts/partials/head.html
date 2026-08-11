@@ -62,8 +62,18 @@
 <!-- css files in assets/assets/ -->
 {{ $style := resources.Get "assets/css/style.css" | resources.Minify }}
 <link rel="stylesheet" href="{{ $style.RelPermalink }}" />
+{{ if .Params.hasContactSection }}
 {{ $contact := resources.Get "assets/css/contact.css" | resources.Minify }}
+{{ if .IsHome }}
+<!-- On homepage, the contact section is below the fold, 
+     so its styles don't need to block initial render. -->
+<link rel="stylesheet" href="{{ $contact.RelPermalink }}" media="print" onload="this.media='all'; this.onload=null;">
+<noscript><link rel="stylesheet" href="{{ $contact.RelPermalink }}"></noscript>
+{{ else }}
+<!-- On /contact/, this section is the primary above-the-fold content. -->
 <link rel="stylesheet" href="{{ $contact.RelPermalink }}" />
+{{ end }}
+{{ end }}
 {{ with .Params.pageCSS }}
     {{ $pagestyle := resources.Get (printf "assets/css/%s" .) | resources.Minify }}
     <link rel="stylesheet" href="{{ $pagestyle.RelPermalink }}" />
