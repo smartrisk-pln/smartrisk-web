@@ -28,6 +28,14 @@
     <meta name="robots" content="noindex, nofollow" />
 {{ end }}
 
+{{ if .IsHome }}
+<!-- Preload the hero slide 0 image (LCP element on homepage) -->
+<link rel="preload" as="image" fetchpriority="high" media="(max-width: 779px)"
+      href="{{ "assets/images/home/hero_01-power_plant-mobile.webp" | relURL }}" />
+<link rel="preload" as="image" fetchpriority="high" media="(min-width: 780px)"
+      href="{{ "assets/images/home/hero_01-power_plant.webp" | relURL }}" />
+{{ end }}
+
 <link rel="manifest" href="{{ "site.webmanifest" | relURL }}" />
 <meta property="og:type"        content="website" />
 <meta property="og:url"         content="{{ .Permalink }}" />
