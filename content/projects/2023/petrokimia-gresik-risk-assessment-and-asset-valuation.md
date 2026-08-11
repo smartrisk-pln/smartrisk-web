@@ -8,7 +8,7 @@ tag:
     - "Asset Valuation"
     - "Risk Assessment"
 weight: 2
-image: "assets/images/projects/Petrokimia-Gresik.png"
+image: "assets/images/projects/Petrokimia-Gresik.jpg"
 pageCSS: "services-projects.css"
 summary: "Comprehensive risk assessment and asset valuation for PT Petrokimia Gresik in 2023."
 sitemap:

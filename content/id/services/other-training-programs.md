@@ -6,7 +6,7 @@ category: "Pusat Pembelajaran"
 category_code: "learning-center"
 service_code: "LC04"
 summary: "Program pelatihan khusus yang disesuaikan dengan kebutuhan klien, termasuk <i>HSE leadership</i>, <i>behavioral-based safety</i>, CSMS, dan teknis penanggulangan kebakaran."
-image: "assets/images/services/Training-HSE.png"
+image: "assets/images/services/Training-HSE.jpg"
 pageCSS: "services-projects.css"
 sitemap:
     changefreq: monthly
