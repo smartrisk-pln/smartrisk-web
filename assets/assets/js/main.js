@@ -431,3 +431,21 @@ window.addEventListener('load', setSidebarHeightVar);
         scheduleNext();
     }
 })();
+
+/* ---------- YOUTUBE FACADE (click-to-load embed) ---------- */
+(function () {
+    document.querySelectorAll('.yt-facade').forEach((facade) => {
+        const load = () => {
+            const id        = facade.dataset.ytId;
+            const title     = facade.dataset.ytTitle || 'YouTube video player';
+            const iframe    = document.createElement('iframe');
+            iframe.src      = `https://www.youtube-nocookie.com/embed/${id}?autoplay=1&rel=0`;
+            iframe.title    = title;
+            iframe.allow    = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share';
+            iframe.referrerPolicy   = 'strict-origin-when-cross-origin';
+            iframe.allowFullscreen  = true;
+            facade.replaceChildren(iframe);
+        };
+        facade.querySelector('.yt-facade-play').addEventListener('click', load, { once: true });
+    });
+})();
