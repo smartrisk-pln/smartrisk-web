@@ -235,5 +235,7 @@ other = "More About Us"
 other = "Media"
 [media_cta]
 other = "All Media"
+[youtube_play_label]
+other = "Play video:"
 
 

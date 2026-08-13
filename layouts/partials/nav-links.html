@@ -1,8 +1,8 @@
-<a href="{{ .Site.Home.RelPermalink }}">{{ i18n "nav_home" | safeHTML }}</a>
-<a href="{{ "about/" | relLangURL }}">{{ i18n "nav_about" | safeHTML }}</a>
-<a href="{{ "team/" | relLangURL }}">{{ i18n "nav_team" | safeHTML }}</a>
-<a href="{{ "services/" | relLangURL }}">{{ i18n "nav_services" | safeHTML }}</a>
-<div class="nav-item-dropdown">
+<li><a href="{{ .Site.Home.RelPermalink }}">{{ i18n "nav_home" | safeHTML }}</a></li>
+<li><a href="{{ "about/" | relLangURL }}">{{ i18n "nav_about" | safeHTML }}</a></li>
+<li><a href="{{ "team/" | relLangURL }}">{{ i18n "nav_team" | safeHTML }}</a></li>
+<li><a href="{{ "services/" | relLangURL }}">{{ i18n "nav_services" | safeHTML }}</a></li>
+<li class="nav-item-dropdown">
     <a href="{{ "projects/" | relLangURL }}" class="nav-dropdown-toggle">
         {{ i18n "nav_projects" | safeHTML }}
         <span class="nav-dropdown-caret" aria-hidden="true"></span>
@@ -13,6 +13,6 @@
             <a href="{{ "projects/portfolio/" | relLangURL }}">{{ i18n "nav_portfolio" | safeHTML }}</a>
         </div>
     </div>
-</div>
-<a href="{{ "media/" | relLangURL }}">{{ i18n "nav_media" | safeHTML }}</a>
-<a href="{{ "contact/" | relLangURL }}">{{ i18n "nav_contact" | safeHTML }}</a>
+</li>
+<li><a href="{{ "media/" | relLangURL }}">{{ i18n "nav_media" | safeHTML }}</a></li>
+<li><a href="{{ "contact/" | relLangURL }}">{{ i18n "nav_contact" | safeHTML }}</a></li>

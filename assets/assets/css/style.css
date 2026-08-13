@@ -2,6 +2,19 @@
    ---------- SmartRisk - Shared Styles ----------
    ----------------------------------------------- */
 
+/*---------- ACCESSIBILITY UTILITIES ----------*/
+.visually-hidden {
+    position    : absolute;
+    width       : 1px;
+    height      : 1px;
+    padding     : 0;
+    margin      : -1px;
+    overflow    : hidden;
+    clip        : rect(0, 0, 0, 0);
+    white-space : nowrap;
+    border      : 0;
+}
+
 /*---------- SELF-HOST FONTS ----------*/
 @font-face {
     font-family: 'Cal Sans';
@@ -461,10 +474,10 @@ nav {
 
 .mobile-menu li { 
     list-style-type : none;
+    border-bottom   : 1px solid var(--muted);
 }
 .mobile-menu li:last-child { border-bottom: none; }
-.mobile-menu a {
-    border-bottom   : 1px solid var(--muted); 
+.mobile-menu a { 
     font-size       : 1.1rem;
     font-weight     : 500;
     color           : var(--paper);
@@ -549,18 +562,40 @@ nav {
     overflow    : hidden;
 }
 .hero-slider-track {
-    position: absolute;
-    inset: 0;
-    display: flex;
-    width: 100%;
-    height: 100%;
-    transition: transform 2s ease;
+    position    : absolute;
+    inset       : 0;
+    display     : flex;
+    width       : 100%;
+    height      : 100%;
+    transition  : transform 2s ease;
 }
 .hero-slide {
-    flex: 0 0 100%;
-    height: 100%;
-    background-size: cover;
-    background-position: center;
+    flex                : 0 0 100%;
+    height              : 100%;
+    background-size     : cover;
+    background-position : center;
+    /* Mobile is the default so a viewport that never matches the min-width query below
+       (never reads --bg-desktop) still gets an image */
+    /* Until main.js sets --bg-mobile/--bg-desktop inline on these slides, both
+       var() lookups have nothing to resolve to and fall back to
+       background-image's initial value (none), so no image is requested. The
+       class is removed once the real background is assigned. */
+    background-image    : var(--bg-mobile);
+}
+@media (min-width: 780px) {
+    .hero-slide { background-image: var(--bg-desktop); }
+}
+/* Slide 0 (LCP element) is an <img>, not a background-image (see layouts/index.html) */
+.hero-slide--img {
+    background-image: none;
+}
+.hero-slide--img picture,
+.hero-slide--img img {
+    display         : block;
+    width           : 100%;
+    height          : 100%;
+    object-fit      : cover;
+    object-position : center;
 }
 .hero-slider-overlay {
     position    : absolute;
@@ -573,10 +608,11 @@ nav {
     bottom      : 1.75rem;
     transform   : translateX(-50%);
     display     : flex;
-    gap         : 0.6rem;
+    gap         : 1.2rem;
     z-index     : 2;
 }
 .hero-dot {
+    position        : relative;
     width           : 8px;
     height          : 8px;
     padding         : 0;
@@ -586,6 +622,16 @@ nav {
     cursor          : pointer;
     transition      : background 0.3s ease, border-color 0.3s ease, transform 0.3s ease;
 }
+/* Expands the clickable area to ~40x40px without changing the visible dot size */
+.hero-dot::before {
+    content     : "";
+    position    : absolute;
+    top         : 50%;
+    left        : 50%;
+    width       : 40px;
+    height      : 40px;
+    transform   : translate(-50%, -50%)
+} 
 .hero-dot:hover {
     border-color: var(--accent);
 }
@@ -1231,9 +1277,76 @@ nav {
     align-items     : center;
     gap             : 2rem;
 }
-.media iframe {
+.media iframe,
+.media .yt-facade {
     display: block;
 }
+
+
+/*---------- YOUTUBE FACADE (click-to-load embed) ----------*/
+.yt-facade {
+    position        : relative;
+    width           : 720px;
+    max-width       : 100%;
+    aspect-ratio    : 16 / 9;
+    overflow        : hidden;
+    background      : #000;
+    border-radius   : var(--radius, 0.5rem);
+}
+.yt-facade-thumb {
+    position        : absolute;
+    inset           : 0;
+    width           : 100%;
+    height          : 100%;
+    object-fit      : cover;
+}
+.yt-facade-play {
+    position        : absolute;
+    inset           : 0;
+    width           : 100%;
+    height          : 100%;
+    display         : flex;
+    align-items     : center;
+    justify-content : center;
+    background      : rgba(0, 0, 0, 0.15);
+    cursor          : pointer;
+    border          : 0;
+    padding         : 0;
+    transition      : background 0.2s ease;
+}
+.yt-facade-play:hover,
+.yt-facade-play:focus-visible { background: rgba(0, 0, 0, 0.35); }
+.yt-facade-play-icon {
+    width           : 68px;
+    height          : 48px;
+    background      : rgba(20, 20, 20, 0.85);
+    border-radius   : 14px;
+    position        : relative;
+    transition      : background 0.2s ease, transform 0.2s ease;
+}
+.yt-facade-play:hover .yt-facade-play-icon,
+.yt-facade-play:focus-visible .yt-facade-play-icon {
+    background      : #ff0000;
+    transform       : scale(1.05);
+}
+.yt-facade-play-icon::before {
+    content         : "";
+    position        : absolute;
+    top             : 50%;
+    left            : 54%;
+    transform       : translate(-50%, -50%);
+    border-style    : solid;
+    border-width    : 12px 0 12px 20px;
+    border-color    : transparent transparent transparent var(--white);
+}
+.yt-facade iframe {
+    position        : absolute;
+    inset           : 0;
+    width           : 100%;
+    height          : 100%;
+    border          : 0;
+}
+
 
 
 /*---------- CONTACT ----------*/
@@ -1374,7 +1487,7 @@ footer .contact-details {
         transition      : none;
         margin-top      : -1.5rem;
         padding-left    : 2rem;
-        border-bottom   : 1px solid var(--muted); 
+        border-bottom   : none; 
     }
     .mobile-menu .nav-dropdown-menu-inner {
         border          : none;
@@ -1422,7 +1535,8 @@ footer .contact-details {
         align-items     :last baseline;
     }
 
-    .media iframe {
+    .media iframe,
+    .media .yt-facade {
         width   : 40rem;
         height  : 22.5rem;
     }
@@ -1478,7 +1592,8 @@ footer .contact-details {
     .stat-num { font-size: 1.8rem; }
     .stat-label { font-size: 0.7rem; }
 
-    .media iframe {
+    .media iframe,
+    .media .yt-facade {
         width   : 20rem;
         height  : 11.25rem;
     }

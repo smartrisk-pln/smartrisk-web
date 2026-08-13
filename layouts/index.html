@@ -8,22 +8,44 @@
         }}
         {{ $heroSlideURLs := slice }}
         {{ range $slide := $heroSlides }}
-            {{ $webp := printf "assets/images/home/%s.webp" $slide | relURL }}
-            {{ $jpg  := printf "assets/images/home/%s.jpg"  $slide | relURL }}
-            {{ $heroSlideURLs = $heroSlideURLs | append (dict "webp" $webp "jpg" $jpg) }}
+            {{ $webp    := printf "assets/images/home/%s.webp" $slide | relURL }}
+            {{ $jpg     := printf "assets/images/home/%s.jpg"  $slide | relURL }}
+            {{ $mobileWebp  := printf "assets/images/home/%s-mobile.webp" $slide | relURL }}
+            {{ $mobileJpg   := printf "assets/images/home/%s-mobile.jpg" $slide | relURL }}
+            {{ $heroSlideURLs = $heroSlideURLs | append (dict "webp" $webp "jpg" $jpg "mobileWebp" $mobileWebp "mobileJpg" $mobileJpg) }}
         {{ end }}
         <div class="hero-slider" aria-hidden="true">
             <div class="hero-slider-track">
-                {{ range $heroSlideURLs }}
-                <div class="hero-slide"
-                     style="background-image: url('{{ .jpg }}');
-                     background-image: image-set(url('{{ .webp }}') type('image/webp'), url('{{ .jpg }}') type('image/jpeg'));"></div>
+                {{ range $i, $s := $heroSlideURLs }}
+                {{ if eq $i 0 }}
+                <!-- Slide 0 is the LCP element: load it as <img> (not a CSS background), 
+                     so it's discoverable by preload scanner and can carry 
+                     fetchpriority="high" (not possible on a background-image). -->
+                <div class="hero-slide hero-slide--img">
+                    <picture>
+                        <source media="(max-width: 779px)" srcset="{{ $s.mobileWebp }}" type="image/webp">
+                        <source media="(max-width: 779px)" srcset="{{ $s.mobileJpg }}" type="image/jpeg">
+                        <source srcset="{{ $s.webp }}" type="image/webp">
+                        <img src="{{ $s.jpg }}" alt="" fetchpriority="high" loading="eager" decoding="async">
+                    </picture>
+                </div>
+                {{ else }}
+                <!-- Later slides aren't visible on load, so their background is applied 
+                     by JS after the page has loaded rather than fetched up front. -->
+                <div class="hero-slide hero-slide--lazy"
+                     data-bg-mobile-webp="{{ $s.mobileWebp }}"
+                     data-bg-mobile-jpg="{{ $s.mobileJpg }}"
+                     data-bg-webp="{{ $s.webp }}"
+                     data-bg-jpg="{{ $s.jpg }}"></div>
+                {{ end }}
                 {{ end }}
                 {{ with index $heroSlideURLs 0 }}
                 <!-- a duplicate hero-slide to create seamless loop -->
-                <div class="hero-slide"
-                     style="background-image: url('{{ .jpg }}');
-                     background-image: image-set(url('{{ .webp }}') type('image/webp'), url('{{ .jpg }}') type('image/jpeg'));"></div>
+                <div class="hero-slide hero-slide--lazy"
+                     data-bg-mobile-webp="{{ .mobileWebp }}"
+                     data-bg-mobile-jpg="{{ .mobileJpg }}"
+                     data-bg-webp="{{ .webp }}"
+                     data-bg-jpg="{{ .jpg }}"></div>
                 {{ end }}
             </div>
             <div class="hero-slider-overlay"></div>
@@ -325,7 +347,7 @@
         </div>
 
         <div class="media-grid"> <!-- no styling rule for media-grid -->
-            <iframe width="720" height="405" src="https://www.youtube.com/embed/MfFfqZ6FFKc?si=PkoNXGdiG_qzoj7Y" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            {{ partial "youtube-facade.html" (dict "id" "MfFfqZ6FFKc" "title" (i18n "media_h2" | safeHTML )) }}
         </div>
     </section>
 
