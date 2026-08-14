@@ -34,6 +34,8 @@ Commits follow a `type(scope): description` format, from [Conventional Commits](
 | `docs`    | Changes to documentation files like this one or the README |
 | `refactor`    | Restructuring existing implementation without changing behavior |
 | `build`    | Changes to build scripts, CI/CD pipeline, or deploy configuration |
+| `perf`    | Performance-focused changes: image loading strategy, render-blocking resources, script/CSS loading order, asset compression, etc. |
+
 
 ### Scope
 
@@ -45,6 +47,7 @@ edit(projects): Revise PT Petrokimia Gresik description
 fix(services): Correct link to technical valuation page
 feat(projects): Add year-based sidebar navigation
 style(services): Adjust card hover transition
+perf(hero): Defer off-screen slides
 ```
 
 Common scopes: `services`, `projects`, `portfolio`, `about`, `team`, `contact`, `nav`, `i18n`, `css`, `data`, `scripts`, `redirects`.
@@ -74,6 +77,43 @@ A few issues that once cost debugging time, check before re-diagnosing from scra
 - **`overflow` on `<body>` other than `visible` may break `position: sticky` site-wide.** Setting `overflow-x: hidden` (or `auto`/`scroll`) directly on `<body>` may stop the browser's normal "overflow propagates to the viewport" behavior, so `<body>` becomes its own scroll container instead of the page; possibly breaking every `position: sticky` element on the site. If you need to clip horizontal overflow, put it on `<html>` instead.
 - **Any ancestor with non-`visible` overflow breaks `position: sticky` for its descendants**, even `overflow: hidden` added as a safety-net rule. If a sticky element stops sticking after an unrelated CSS change, check every ancestor between it and the page root for a stray `overflow` value first.
 - **`static/_redirects` only matches on request path, not hostname.** A rule like `https://smartrisk-pln.pages.dev/* https://smartrisk-pln.com/:splat 301` looks valid but is silently ignored. Cloudflare Pages has no way to match a full source URL with a domain in `_redirects`. Domain-level redirects (e.g. `pages.dev` &rarr; the custom domain) must be configured as a Cloudflare **Bulk Redirect** in the account dashboard (Delivery & performance &rarr; Bulk redirects), not in this repo.
+
+
+
+## Replacing or Adding a Homepage Hero Slide
+
+The hero slider needs 4 image variants per slide (see README's [Homepage Hero Slider](../README.md#homepage-hero-slider) section for why) since slide 0 is the page's LCP element and is handled differently from the rest.
+
+1. Export/resize the source image into 4 files in `static/assets/images/home/`:  
+   - `<name>.jpg`, `<name>.webp` &rarr; desktop (full width)
+   - `<name>-mobile.jpg`, `<name>-mobile.webp` &rarr; mobile (~900px wide)
+2. Add the filename stem to the `$heroSlides` slice in `layouts/index.html`.
+3. **If you're replacing slide 0** (first image, LCP element), also update the hardcoded filename in the `<link rel="preload">` pair in `head.html`, or the new slide won't get prioritized.  
+4. Run `hugo server`, watch the slider cycle through all the images, and confirm no broken images on both mobile and desktop displays.  
+5. Commit as `perf(hero)` if the change is performance-motivated (e.g. a better-compressed replacement), or `content(hero)` if it's new content.
+
+
+
+## Adding a YouTube Video Embed
+
+Never embed a raw `<iframe>` for YouTube (see README's [YouTube Embeds](../README.md#youtube-embeds) section for details on the facade pattern). Always use the `youtube-facade` partial:  
+```go-html-template
+{{ partial "youtube-facade.html" (dict "id" "<VIDEO_ID>" "title" "<Accessible title>") }}
+```
+
+1. Get the video ID from the YouTube URL (`youtube.com/watch?v=<VIDEO_ID>`).
+2. Pass a real accessible `title` &rarr; add an i18n key for it rather than hardcoding a string. The video title string can be added to the i18n toml files, `en-06_media.toml` and `id-06_media.toml`, for example:  
+```toml
+# --- en-06_media.toml ---
+[video_title_1]
+other = "Policy Review of PLN Group's Operational Asset Insurance"
+
+# --- id-06_media.toml ---
+[video_title_1]
+other = "Bedah Polis Asuransi Aset Operasional PLN Group"
+```
+3. Run `hugo server`, confirm the thumbnail renders (pulled from `i.ytimg.com`) and clicking it swaps in the real player.  
+4. Commit as `content(media)` for a new video, `feat(media)` if you're changing how embeds work.  
 
 
 
