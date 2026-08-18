@@ -1,0 +1,133 @@
+{{ define "main" }}
+    <!---------- PAGE HEADER ---------->
+    <header class="page-header" aria-labelledby="page-heading">
+        <div>
+            <div class="section-label">{{ i18n "privacy_header_section_label" | safeHTML }}</div>
+            <h1 id="page-heading">{{ i18n "privacy_header_h1" | safeHTML }}</h1>
+        </div>
+        <div>
+            <p>
+                {{ i18n "privacy_header_p" | safeHTML }}
+            </p>
+            <p class="policy-updated">{{ i18n "privacy_last_updated" | safeHTML }}</p>
+        </div>
+    </header>
+
+    <!---------- CONTROLLER ---------->
+    <section class="policy-section" aria-labelledby="controller-heading">
+        <h2 id="controller-heading">{{ i18n "privacy_controller_h2" | safeHTML }}</h2>
+        <p>{{ i18n "privacy_controller_p" | safeHTML }}</p>
+    </section>
+
+    <!---------- COLLECTION ---------->
+    <section class="policy-section" aria-labelledby="collection-heading">
+        <h2 id="collection-heading">{{ i18n "privacy_collection_h2" | safeHTML }}</h2>
+        <p>{{ i18n "privacy_collection_intro_p" | safeHTML }}</p>
+        <div class="policy-table-wrap">
+            <table class="policy-table">
+                <thead>
+                    <tr>
+                        <th scope="col">{{ i18n "privacy_collection_table_col_source" | safeHTML }}</th>
+                        <th scope="col">{{ i18n "privacy_collection_table_col_data" | safeHTML }}</th>
+                        <th scope="col">{{ i18n "privacy_collection_table_col_purpose" | safeHTML }}</th>
+                        <th scope="col">{{ i18n "privacy_collection_table_col_basis" | safeHTML }}</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th scope="row">{{ i18n "privacy_collection_row01_source" | safeHTML }}</th>
+                        <td>{{ i18n "privacy_collection_row01_data" | safeHTML }}</td>
+                        <td>{{ i18n "privacy_collection_row01_purpose" | safeHTML }}</td>
+                        <td>{{ i18n "privacy_collection_row01_basis" | safeHTML }}</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">{{ i18n "privacy_collection_row02_source" | safeHTML }}</th>
+                        <td>{{ i18n "privacy_collection_row02_data" | safeHTML }}</td>
+                        <td>{{ i18n "privacy_collection_row02_purpose" | safeHTML }}</td>
+                        <td>{{ i18n "privacy_collection_row02_basis" | safeHTML }}</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">{{ i18n "privacy_collection_row03_source" | safeHTML }}</th>
+                        <td>{{ i18n "privacy_collection_row03_data" | safeHTML }}</td>
+                        <td>{{ i18n "privacy_collection_row03_purpose" | safeHTML }}</td>
+                        <td>{{ i18n "privacy_collection_row03_basis" | safeHTML }}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <p>{{ i18n "privacy_collection_closing_p" | safeHTML }}</p>
+    </section>
+
+    <!---------- COOKIES ---------->
+    <section class="policy-section" aria-labelledby="cookies-heading">
+        <h2 id="cookies-heading">{{ i18n "privacy_cookies_h2" | safeHTML }}</h2>
+        <p>{{ i18n "privacy_cookies_p" | safeHTML }}</p>
+    </section>
+
+    <!---------- THIRD PARTIES ---------->
+    <section class="policy-section" aria-labelledby="thirdparty-heading">
+        <h2 id="thirdparty-heading">{{ i18n "privacy_thirdparty_h2" | safeHTML }}</h2>
+        <p>{{ i18n "privacy_thirdparty_intro_p" | safeHTML }}</p>
+        <ul class="policy-thirdparty-list">
+            <li>
+                <strong>{{ i18n "privacy_thirdparty_01_title" | safeHTML }}</strong>
+                - {{ i18n "privacy_thirdparty_01_desc" | safeHTML }}
+                <a href="{{ i18n "privacy_thirdparty_01_link" | safeHTML }}">{{ i18n "privacy_thirdparty_01_link_label" | safeHTML }}</a>
+            </li>
+            <li>
+                <strong>{{ i18n "privacy_thirdparty_02_title" | safeHTML }}</strong>
+                - {{ i18n "privacy_thirdparty_02_desc" | safeHTML }}
+                <a href="{{ i18n "privacy_thirdparty_02_link" | safeHTML }}">{{ i18n "privacy_thirdparty_02_link_label" | safeHTML }}</a>
+            </li>
+            <li>
+                <strong>{{ i18n "privacy_thirdparty_03_title" | safeHTML }}</strong>
+                - {{ i18n "privacy_thirdparty_03_desc" | safeHTML }}
+                <a href="{{ i18n "privacy_thirdparty_03_link" | safeHTML }}">{{ i18n "privacy_thirdparty_03_link_label" | safeHTML }}</a>
+            </li>
+        </ul>
+    </section>
+
+    <!---------- INTERNATIONAL TRANSFERS ---------->
+    <section class="policy-section" aria-labelledby="transfers-heading">
+        <h2 id="cookies-heading">{{ i18n "privacy_transfers_h2" | safeHTML }}</h2>
+        <p>{{ i18n "privacy_transfers_p" | safeHTML }}</p>
+    </section>
+
+    <!---------- RETENTION ---------->
+    <section class="policy-section" aria-labelledby="retention-heading">
+        <h2 id="retention-heading">{{ i18n "privacy_retention_h2" | safeHTML }}</h2>
+        <p>{{ i18n "privacy_retention_p01" | safeHTML }}</p>
+        <p>{{ i18n "privacy_retention_p02" | safeHTML }}</p>
+    </section>  
+    
+    <!---------- RIGHTS ---------->
+    <section class="policy-section" aria-labelledby="rights-heading">
+        <h2 id="rights-heading">{{ i18n "privacy_rights_h2" | safeHTML }}</h2>
+        <p>{{ i18n "privacy_rights_intro_p" | safeHTML }}</p>
+        <ul class="policy-rights-list">
+            <li>{{ i18n "privacy_rights_item01" | safeHTML }}</li>
+            <li>{{ i18n "privacy_rights_item02" | safeHTML }}</li>
+            <li>{{ i18n "privacy_rights_item03" | safeHTML }}</li>
+            <li>{{ i18n "privacy_rights_item04" | safeHTML }}</li>
+        </ul>
+        <p>{{ i18n "privacy_rights_closing_p" | safeHTML }}</p>
+    </section> 
+
+    <!---------- CHILDREN'S PRIVACY ---------->
+    <section class="policy-section" aria-labelledby="children-heading">
+        <h2 id="children-heading">{{ i18n "privacy_children_h2" | safeHTML }}</h2>
+        <p>{{ i18n "privacy_children_p" | safeHTML }}</p>
+    </section>
+
+    <!---------- CHANGES ---------->
+    <section class="policy-section" aria-labelledby="changes-heading">
+        <h2 id="changes-heading">{{ i18n "privacy_changes_h2" | safeHTML }}</h2>
+        <p>{{ i18n "privacy_changes_p" | safeHTML }}</p>
+    </section>
+
+    <!---------- CONTACT ---------->
+    <section class="policy-section" aria-labelledby="contact-heading">
+        <h2 id="contact-heading">{{ i18n "privacy_contact_h2" | safeHTML }}</h2>
+        <p>{{ i18n "privacy_contact_p" | safeHTML }}</p>
+    </section>
+{{ end }}
