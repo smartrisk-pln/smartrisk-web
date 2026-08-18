@@ -36,7 +36,8 @@
 /*---------- TABLET ----------*/
 @media (max-width: 1100px) {
     .media-section { padding: 4rem 1.5rem; }
-    .media-section iframe {
+    .media-section iframe,
+    .media-section .yt-facade {
         width   : 40rem;
         height  : 22.5rem;
     }
@@ -47,7 +48,8 @@
 @media (max-width: 780px) {
     .page-header { grid-template-columns: 1fr; }
     .media-section { padding: 3rem 2rem; }
-    .media-section iframe {
+    .media-section iframe,
+    .media-section .yt-facade {
         width   : 20rem;
         height  : 11.25rem;
     }
