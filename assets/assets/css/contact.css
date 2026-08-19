@@ -55,6 +55,12 @@
     gap         : 1rem;
     align-items : flex-start;
 }
+.contact-item .contact-item-text a {
+    color: inherit;
+}
+.contact-item .contact-item-text a:hover {
+    color: var(--accent);
+}
 /* .contact-item-icon {
     font-size   : 1rem;
     margin-top  : 0.2rem;
@@ -167,6 +173,12 @@
     resize      : vertical; 
     min-height  : 400px; 
 }
+.form-dark .form-privacy-notice {
+    margin-top: 0.6rem;
+}
+.form-dark .form-privacy-notice { font-size: 0.7rem; }
+.form-dark .form-privacy-notice a { color: inherit; }
+.form-dark .form-privacy-notice a:hover { color: var(--accent); }
 
 
 /*---------- TABLET ----------*/

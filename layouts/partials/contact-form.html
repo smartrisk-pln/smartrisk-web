@@ -44,5 +44,7 @@
         <input type="text" name="_gotcha" style="display:none" />
         <p id="form-status" aria-live="polite" aria-atomic="true"></p>
         <button type="submit" id="submit-btn" class="btn btn-submit">{{ i18n "contact_form_submit" | safeHTML }}</button>
+        {{ $contactPrivacyURL := "privacy-policy/" | relLangURL }}
+        <p class="form-privacy-notice">{{ safeHTML (printf (i18n "contact_privacy_notice") $contactPrivacyURL) }}</p>
     </form>
 </div>

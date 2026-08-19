@@ -30,12 +30,12 @@ other = "Jl. Trunojoyo Blok M/135, Kebayoran Baru, Gedung 1 Lantai 4, Jakarta 12
 [contact_item_title_03]
 other = "Telepon / Whatsapp"
 [contact_item_details_03]
-other = "<a href='tel:+628118208123' style='color: rgba(250, 250, 250, 0.5);'>+62-811-8208-123</a>"
+other = "<a href='tel:+628118208123'>+62-811-8208-123</a>"
 
 [contact_item_title_04]
 other = "Email"
 [contact_item_details_04]
-other = "<a href='mailto:admin@smartrisk-pln.com' style='color: rgba(250, 250, 250, 0.5);'>admin@smartrisk-pln.com</a>"
+other = "<a href='mailto:admin@smartrisk-pln.com'>admin@smartrisk-pln.com</a>"
 
 
 #==================================#
@@ -87,5 +87,8 @@ other = "Jelaskan secara singkat proyek atau pertanyaan Anda"
 
 [contact_form_submit]
 other = "Kirim Pesan"
+
+[contact_privacy_notice]
+other = "Informasi Anda akan digunakan untuk menanggapi pertanyaan Anda, sebagaimana dijelaskan dalam <a href='%s'>kebijakan privasi kami</a>."
 
 
