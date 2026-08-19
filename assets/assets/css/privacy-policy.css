@@ -2,6 +2,13 @@
    ---------- SmartRisk - Privacy Policy Page Styles ----------
    ------------------------------------------------------------ */
 
+/*---------- DESIGN TOKENS ----------*/
+:root {
+    --third-party-link: #1760c7;
+}
+
+
+/*---------- POLICY SECTION LAYOUT ----------*/
 .page-header .policy-updated {
     font-size       : 0.8rem;
     font-style      : italic;
@@ -17,6 +24,8 @@
     margin-bottom   : 1rem;
     line-height     : 1.6;
 }
+.policy-section .policy-thirdparty-list a { color: inherit; }
+.policy-section .policy-thirdparty-list a:hover { color: var(--third-party-link); }
 
 
 /*---------- COLLECTION TABLE ----------*/
