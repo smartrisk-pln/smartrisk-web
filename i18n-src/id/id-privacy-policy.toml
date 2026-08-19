@@ -1,0 +1,182 @@
+#=======================================#
+#========== KEBIJAKAN PRIVASI ==========#
+#=======================================#
+#=================================#
+#========== PAGE HEADER ==========#
+#=================================#
+[privacy_header_section_label]
+other = "Hukum"
+[privacy_header_h1]
+other = "Kebijakan Privasi"
+[privacy_header_p]
+other = "Bagaimana SmartRisk mengumpulkan, menggunakan, dan melindungi informasi di situs web ini."
+[privacy_last_updated]
+other = "Terakhir diperbarui: 18 Agustus 2026"
+
+
+#================================#
+#========== CONTROLLER ==========#
+#================================#
+[privacy_controller_h2]
+other = "1. Tentang kami"
+[privacy_controller_p]
+other = "Situs web ini (smartrisk-pln.com) dikelola oleh <strong>PT Solusi Manajemen Risiko Terintegrasi</strong>, Gedung Menara Hijau, Jl. MT Haryono Kav 33, Lantai 3 Suite 301, Jakarta 12770, Indonesia (&quot;SmartRisk,&quot; &quot;kami&quot;). Untuk pertanyaan mengenai kebijakan ini atau data Anda, silakan hubungi kami di <strong>admin@smartrisk-pln.com</strong>."
+
+
+#================================#
+#========== COLLECTION ==========#
+#================================#
+[privacy_collection_h2]
+other = "2. Apa yang kami kumpulkan dan mengapa"
+[privacy_collection_intro_p]
+other = "Kami membatasi pengumpulan data di situs ini hanya pada yang diperlukan agar situs dapat berfungsi. Kami tidak menggunakan pelacak iklan atau profil lintas situs dalam bentuk apa pun."
+
+[privacy_collection_table_col_source]
+other = "Sumber"
+[privacy_collection_table_col_data]
+other = "Data yang dikumpulkan"
+[privacy_collection_table_col_purpose]
+other = "Tujuan"
+[privacy_collection_table_col_basis]
+other = "Dasar hukum"
+
+[privacy_collection_row01_source]
+other = "Formulir kontak"
+[privacy_collection_row01_data]
+other = "Nama, alamat email, dan isi pesan yang Anda kirimkan"
+[privacy_collection_row01_purpose]
+other = "Untuk menanggapi pertanyaan Anda"
+[privacy_collection_row01_basis]
+other = "Pelaksanaan permintaan Anda, atau kepentingan sah kami dalam menangani pertanyaan bisnis"
+
+[privacy_collection_row02_source]
+other = "Video YouTube yang disematkan"
+[privacy_collection_row02_data]
+other = "Jika Anda mengklik <i lang='en'>play</i> untuk memutar video, YouTube (dioperasikan oleh Google) menerima alamat IP Anda dan data teknis standar saat itu; tidak sebelumnya"
+[privacy_collection_row02_purpose]
+other = "Untuk menampilkan video yang Anda pilih untuk ditonton"
+[privacy_collection_row02_basis]
+other = "Persetujuan Anda, yang diberikan melalui tindakan mengklik <i lang='en'>play</i> untuk memutar video"
+
+[privacy_collection_row03_source]
+other = "Analitik situs web"
+[privacy_collection_row03_data]
+other = "Statistik lalu lintas agregat dan tanpa <i lang='en'>cookies</i> (halaman yang dikunjungi, perkiraan lokasi tingkat negara, jenis perangkat)"
+[privacy_collection_row03_purpose]
+other = "Untuk memahami penggunaan situs dan meningkatkannya"
+[privacy_collection_row03_basis]
+other = "Kepentingan sah; tidak ada <i lang='en'>cookies</i> yang dipasang dan tidak ada profil individu yang dibuat"
+
+[privacy_collection_closing_p]
+other = "Kami tidak menggunakan <i lang='en'>cookies</i> iklan, piksel pemasaran, atau alat apa pun yang melacak Anda di situs web lain."
+
+
+#=============================#
+#========== COOKIES ==========#
+#=============================#
+[privacy_cookies_h2]
+other = "3. <i lang='en'>Cookies</i>"
+[privacy_cookies_p]
+other = "Situs ini tidak memasang <i lang='en'>cookies</i> pemasaran atau pelacakan. <i lang='en'>Cookies</i> yang digunakan (jika ada) terbatas secara ketat pada yang diperlukan untuk fungsi dasar situs, dan tidak digunakan untuk membangun profil Anda atau melacak Anda di situs lain."
+
+
+#===================================#
+#========== THIRD PARTIES ==========#
+#===================================#
+[privacy_thirdparty_h2]
+other = "4. Pihak ketiga yang bekerja sama dengan kami"
+[privacy_thirdparty_intro_p]
+other = "Kami tidak menjual, menyewakan, atau memperdagangkan data pribadi Anda kepada siapa pun."
+
+[privacy_thirdparty_01_title]
+other = "StaticForms"
+[privacy_thirdparty_01_desc]
+other = "Memproses pengiriman formulir kontak atas nama kami agar kami dapat menerima dan menanggapi pesan Anda."
+# [privacy_thirdparty_01_link]
+# Third party privacy policy links are defined in the EN i18n toml file (i18n-src/en/en-privacy-policy.toml).
+[privacy_thirdparty_01_link_label]
+other = "Kebijakan Privasi StaticForms"
+
+[privacy_thirdparty_02_title]
+other = "Google / YouTube"
+[privacy_thirdparty_02_desc]
+other = "Menyediakan pemutaran video yang disematkan, hanya diaktifkan saat Anda mengklik <i lang='en'>play</i> untuk memutar video."
+# [privacy_thirdparty_02_link]
+# Third party privacy policy links are defined in the EN i18n toml file (i18n-src/en/en-privacy-policy.toml).
+[privacy_thirdparty_02_link_label]
+other = "Kebijakan Privasi Google"
+
+[privacy_thirdparty_03_title]
+other = "Cloudflare"
+[privacy_thirdparty_03_desc]
+other = "Menyediakan <i lang='en'>hosting</i>, pengiriman konten, dan analitik situs web tanpa <i lang='en'>cookies</i> untuk situs ini. Jika anda berada di Uni Eropa (EU), skrip analitik Cloudflare tidak dimuat sama sekali untuk kunjungan Anda."
+# [privacy_thirdparty_03_link]
+# Third party privacy policy links are defined in the EN i18n toml file (i18n-src/en/en-privacy-policy.toml).
+[privacy_thirdparty_03_link_label]
+other = "Kebijakan Privasi Cloudflare"
+
+
+#=============================================#
+#========== INTERNATIONAL TRANSFERS ==========#
+#=============================================#
+[privacy_transfers_h2]
+other = "5. Transfer data internasional"
+[privacy_transfers_p]
+other = "Karena penyedia layanan kami (StaticForms, Google, Cloudflare) mengoperasikan infrastruktur di luar Indonesia, data Anda dapat diproses di negara lain, termasuk Amerika Serikat. Jika hal ini terjadi, penyedia kami menerapkan perlindungan mereka sendiri untuk transfer data internasional (seperti klausul kontrak standar); lihat tautan penyedia di atas untuk detailnya."
+
+
+#===============================#
+#========== RETENTION ==========#
+#===============================#
+[privacy_retention_h2]
+other = "6. Berapa lama kami menyimpan data"
+[privacy_retention_p01]
+other = "Pengiriman formulir kontak disimpan hanya selama diperlukan untuk menangani pertanyaan Anda dan untuk jangka waktu wajar setelahnya untuk catatan kami, kemudian dihapus."
+[privacy_retention_p02]
+other = "Data analitik bersifat agregat dan hanya disimpan dalam bentuk ringkasan; tidak ada profil pengunjung individu yang disimpan."
+
+
+#============================#
+#========== RIGHTS ==========#
+#============================#
+[privacy_rights_h2]
+other = "7. Hak Anda"
+[privacy_rights_intro_p]
+other = "Bergantung pada lokasi Anda, Anda mungkin memiliki hak untuk:"
+[privacy_rights_item01]
+other = "Mengetahui data pribadi apa yang kami simpan tentang Anda"
+[privacy_rights_item02]
+other = "Meminta salinan data tersebut"
+[privacy_rights_item03]
+other = "Meminta kami untuk memperbaiki atau menghapusnya"
+[privacy_rights_item04]
+other = "Menolak atau membatasi cara kami menggunakannya"
+[privacy_rights_closing_p]
+other = "Untuk menggunakan hak-hak tersebut, hubungi kami di <strong>admin@smartrisk-pln.com</strong>."
+
+
+#========================================#
+#========== CHILDREN'S PRIVACY ==========#
+#========================================#
+[privacy_children_h2]
+other = "8. Privasi anak-anak"
+[privacy_children_p]
+other = "Situs ini ditujukan untuk audiens bisnis dan tidak ditujukan kepada anak-anak. Kami tidak dengan sengaja mengumpulkan data dari anak-anak."
+
+
+#=============================#
+#========== CHANGES ==========#
+#=============================#
+[privacy_changes_h2]
+other = "9. Perubahan pada kebijakan ini"
+[privacy_changes_p]
+other = "Kami dapat memperbarui kebijakan ini sesuai kebutuhan. Tanggal &quot;Terakhir diperbarui&quot; di atas akan mencerminkan revisi terbaru. Perubahan material akan tercermin langsung di sini, karena ini adalah satu-satunya cara kami memberitahu pengunjung."
+
+
+#=============================#
+#========== CONTACT ==========#
+#=============================#
+[privacy_contact_h2]
+other = "10. Hubungi kami"
+[privacy_contact_p]
+other = "Pertanyaan tentang kebijakan ini atau bagaimana kami menangani data Anda: <strong>admin@smartrisk-pln.com</strong>."

@@ -13,7 +13,10 @@
         &copy; {{ now.Format "2006" }} PT Solusi Manajemen Risiko Terintegrasi. {{ i18n "footer_copyright" | safeHTML }}
     </p>
     <p>
-        <a href="https://smartrisk-pln.com" style="color:inherit">smartrisk-pln.com</a>
+        <a href="https://smartrisk-pln.com">smartrisk-pln.com</a> 
+    </p>
+    <p>
+        <a href="{{ (.Site.GetPage "/privacy-policy").RelPermalink }}">{{ i18n "footer_privacy_policy" }}</a>
     </p>
     <div class="footer-socials">
         <a href="https://youtube.com/@smartriskpln7981" class="socials-item-icon youtube-icon"><span class="visually-hidden">YouTube</span></a>

@@ -36,7 +36,8 @@ other = "Main navigation"
 #============================#
 [footer_copyright]
 other = "All rights reserved."
-
+[footer_privacy_policy]
+other = "Privacy Policy"
 
 
 #==============================#

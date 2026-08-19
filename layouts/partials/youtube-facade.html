@@ -5,8 +5,12 @@
      Params: id (video id, required), title (accessible label, required)
 -->
 <div class="yt-facade" data-yt-id="{{ .id }}" data-yt-title="{{ .title }}">
-    <img class="yt-facade-thumb" src="https://i.ytimg.com/vi/{{ .id }}/sddefault.jpg" alt="" loading="lazy" width="720" height="540" />
-    <button type="button" class="yt-facade-play" aria-label="{{ i18n "youtube_play_label" | safeHTML }} {{.title }}">
-        <span class="yt-facade-play-icon" aria-hidden="true"></span>
-    </button>
+    <div class="yt-facade-media">
+        <img class="yt-facade-thumb" src="https://i.ytimg.com/vi/{{ .id }}/sddefault.jpg" alt="" loading="lazy" width="720" height="540" />
+        <button type="button" class="yt-facade-play" aria-label="{{ i18n "youtube_play_label" | safeHTML }} {{.title }}">
+            <span class="yt-facade-play-icon" aria-hidden="true"></span>
+        </button>
+    </div>
+    {{ $privacyURL := "privacy-policy/" | relLangURL }}
+    <p class="yt-facade-notice">{{ safeHTML (printf (i18n "yt_facade_consent_notice") $privacyURL) }}</p>
 </div>

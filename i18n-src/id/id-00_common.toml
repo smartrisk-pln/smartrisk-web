@@ -36,7 +36,8 @@ other = "Navigasi utama"
 #============================#
 [footer_copyright]
 other = "All rights reserved."
-
+[footer_privacy_policy]
+other = "Kebijakan Privasi"
 
 
 #==============================#

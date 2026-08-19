@@ -12,6 +12,13 @@ other = "Insights &amp; Webinars"
 other = "Our video library covering risk management training and insurance policy reviews, practical guidance from our YouTube channel to help you strengthen risk management practices."
 
 
+#====================================#
+#========== CONSENT NOTICE ==========#
+#====================================#
+[yt_facade_consent_notice]
+other = 'Clicking play loads a video from YouTube, which will retrieve your IP address. See our <a href="%s">privacy policy</a>.'
+
+
 #============================#
 #========== VIDEOS ==========#
 #============================#
@@ -21,3 +28,5 @@ other = "Policy Review of PLN Group's Operational Asset Insurance"
 other = "Smart<em>Risk</em> Webinar Series 2"
 [video_title_3]
 other = "Smart<em>Risk</em> Webinar Series 3"
+
+

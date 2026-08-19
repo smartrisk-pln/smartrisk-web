@@ -1285,14 +1285,28 @@ nav {
 
 /*---------- YOUTUBE FACADE (click-to-load embed) ----------*/
 .yt-facade {
-    position        : relative;
     width           : 720px;
     max-width       : 100%;
+}
+.yt-facade-media {
+    position        : relative;
+    width           : 100%;
     aspect-ratio    : 16 / 9;
     overflow        : hidden;
     background      : #000;
     border-radius   : var(--radius, 0.5rem);
 }
+.yt-facade-notice {
+    display     : block;
+    margin-top  : 0.5rem;
+    font-size   : 0.7rem;
+    line-height : 1.4;
+    color       : var(--muted);
+    text-align  : left;
+}
+.yt-facade-notice a { color: inherit; }
+.yt-facade-notice a:hover { color: var(--accent); }
+
 .yt-facade-thumb {
     position        : absolute;
     inset           : 0;
@@ -1339,14 +1353,13 @@ nav {
     border-width    : 12px 0 12px 20px;
     border-color    : transparent transparent transparent var(--white);
 }
-.yt-facade iframe {
+.yt-facade-media iframe {
     position        : absolute;
     inset           : 0;
     width           : 100%;
     height          : 100%;
     border          : 0;
 }
-
 
 
 /*---------- CONTACT ----------*/
@@ -1411,11 +1424,12 @@ footer .footer-logo img {
     height  : 1rem; 
     width   : auto; 
 }
-footer p { color: var(--footer-text) } /* overrides the rule applied specifically to <p> in line 44 */
+footer p { color: var(--footer-text); } /* overrides the rule applied specifically to <p> in line 44 */
+footer p a { color: inherit; }
+footer p a:hover { color: var(--accent); }
 footer .contact-details {
     gap     : 1rem;
     padding : 7rem 0 2rem 0;
-
 }
 .footer-socials {
     display         : flex;
@@ -1496,10 +1510,10 @@ footer .contact-details {
         padding         : 0;
     }
     .mobile-menu .nav-dropdown-menu a { 
-        display       : block;
-        width         : 100%;
-        padding       : 0.5rem 0; 
-        border-bottom : none;
+        display         : block;
+        width           : 100%;
+        padding         : 0.5rem 0; 
+        border-bottom   : none;
     }
     
     .hero, .about { grid-template-columns: 1fr; }
@@ -1535,8 +1549,8 @@ footer .contact-details {
         align-items     :last baseline;
     }
 
-    .media iframe,
-    .media .yt-facade {
+    .yt-facade,
+    .yt-facade-media {
         width   : 40rem;
         height  : 22.5rem;
     }
@@ -1592,8 +1606,8 @@ footer .contact-details {
     .stat-num { font-size: 1.8rem; }
     .stat-label { font-size: 0.7rem; }
 
-    .media iframe,
-    .media .yt-facade {
+    .yt-facade,
+    .yt-facade-media {
         width   : 20rem;
         height  : 11.25rem;
     }
