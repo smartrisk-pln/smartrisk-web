@@ -1425,6 +1425,8 @@ footer .footer-logo img {
     width   : auto; 
 }
 footer p { color: var(--footer-text); } /* overrides the rule applied specifically to <p> in line 44 */
+footer p a { color: inherit; }
+footer p a:hover { color: var(--accent); }
 footer .contact-details {
     gap     : 1rem;
     padding : 7rem 0 2rem 0;
