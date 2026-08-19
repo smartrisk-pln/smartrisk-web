@@ -24,6 +24,7 @@ smartrisk/
 │   ├── team/
 │   ├── services/
 │   ├── projects/       ← Recent Projects (year-based) and Portfolio (interactive map)
+│   ├── media/          ← Media page (video embeds via youtube-facade partial) 
 │   ├── contact/
 │   └── id/             ← Indonesian content (contentDir for ID language)
 ├── data/
@@ -43,8 +44,9 @@ smartrisk/
 │   ├── services/
 │   ├── projects/
 │   │   └── portfolio/  ← Interactive SEA project map (MapLibre GL JS)
+│   ├── media/          ← Media page (video embed uses youtube-facade)
 │   ├── contact/
-│   ├── partials/       ← Shared components: nav, footer, head, contact form
+│   ├── partials/       ← Shared components: nav, footer, head, contact form, youtube-facade
 │   ├── index.html      ← Homepage layout (uses i18n strings)
 │   ├── 404.html        ← Custom 404 error page
 │   ├── robots.txt      ← robots.txt with sitemap reference
@@ -77,6 +79,22 @@ smartrisk/
 All translatable strings are in `i18n-src/en/*.toml` and `i18n-src/id/*.toml`. All TOML files in each page are merged using `merge-i18n.sh` (Github Actions and Cloudflare Pages build) or `merge-i18n.ps1` (local Windows development) before the page is built. Page structure is shared via single layout files, no duplicate HTML per language.
 
 
+## Homepage Hero Slider  
+
+The homepage hero background slides through 3 images, defined as a slice of filename stems in `layouts/index.html` (`$heroSlides`). Each stem needs 4 image files in `static/assets/images/home/`:
+- `<name>.jpg`, `<name>.webp` &rarr; desktop  
+- `<name>-mobile.jpg`, `<name>-mobile.webp` &rarr; mobile (loads under a 780px breakpoint)
+
+Slide 0 is treated differently since it's the page's LCP (Largest Contentful Paint) element:
+- **Slide 0** renders as an `<img>` with `fetchpriority="high"`, so it's discoverable by the browser's preload scanner and prioritized. CSS `background-image`s can't carry `fetchpriority` &rarr; slide 0 is styled differently.  
+- **Slides 1-3** render as empty `<div>`s carrying `data-bg-*` attributes instead of a real background. `main.js` assigns their actual `background-image` (via CSS custom properties `--bg-mobile`/`--bg-desktop`) only after `window.load`, so they don't compete with slide 0 for bandwidth during the critical rendering path.  
+
+To add/replace a hero slide:
+- Add the filename stem to `$heroSlides` in `layouts/index.html`, 
+- Generate the 4 image variants, and
+- Adjust the `link rel="preload"` pair in `head.html` if slide 0 changes (currently hardcoded to `hero_01-power_plant`).
+
+
 ## Portfolio Map
 
 The Portfolio page (`/projects/portfolio`) renders an interactive SEA map (MapLibre GL JS) showing project locations by year and category.
@@ -91,6 +109,25 @@ To regenerate `projects.yaml` after updating `portfolio.csv`:
 python scripts/csv_to_yaml.py
 ```
 
+
+## YouTube Embeds  
+
+YouTube videos are not embedded directly on a page. Never embed YouTube videos with a raw `<iframe>`, instead use the `youtube-facade.html` partial:  
+```go-html-template
+{{ partial "youtube-facade.html" (dict "id" "<VIDEO_ID>" "title" "<Accessible title>") }}
+```
+This renders a thumbnail + play button and only loads the real player (via `youtube-nocookie.com`) once clicked, avoiding YouTube's JS/network weight and third-party cookies on every page load. Currently used on the homepage and `/media/`.  
+
+The video title string can be added to the i18n toml files, `en-06_media.toml` and `id-06_media.toml`, for example:  
+```toml
+# --- en-06_media.toml ---
+[video_title_1]
+other = "Policy Review of PLN Group's Operational Asset Insurance"
+
+# --- id-06_media.toml ---
+[video_title_1]
+other = "Bedah Polis Asuransi Aset Operasional PLN Group"
+```
 
 ## Local development (Windows)
 
