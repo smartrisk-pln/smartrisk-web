@@ -12,6 +12,13 @@ other = "Wawasan &amp; Webinar"
 other = "Koleksi video kami seputar pelatihan manajemen risiko dan ulasan polis asuransi, panduan praktis dari kanal YouTube kami untuk memperkuat praktik manajemen risiko Anda."
 
 
+#====================================#
+#========== CONSENT NOTICE ==========#
+#====================================#
+[yt_facade_consent_notice]
+other ='Mengklik <i lang="en">play</i> akan memuat video dari YouTube, yang akan menerima alamat IP Anda. Lihat <a href="%s">kebijakan privasi</a> kami.'
+
+
 #============================#
 #========== VIDEOS ==========#
 #============================#
@@ -21,3 +28,5 @@ other = "Bedah Polis Asuransi Aset Operasional PLN Group"
 other = "Smart<em>Risk</em> Webinar Series 2"
 [video_title_3]
 other = "Smart<em>Risk</em> Webinar Series 3"
+
+
