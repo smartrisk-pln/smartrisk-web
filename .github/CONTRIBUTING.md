@@ -50,7 +50,7 @@ style(services): Adjust card hover transition
 perf(hero): Defer off-screen slides
 ```
 
-Common scopes: `services`, `projects`, `portfolio`, `about`, `team`, `contact`, `nav`, `i18n`, `css`, `data`, `scripts`, `redirects`.
+Common scopes: `services`, `projects`, `portfolio`, `about`, `team`, `contact`, `nav`, `i18n`, `css`, `data`, `scripts`, `redirects`, `privacy`.
 
 ### Examples
 
@@ -119,11 +119,19 @@ other = "Bedah Polis Asuransi Aset Operasional PLN Group"
 
 ## Adding a New Service or Project Page
 
-1. Create the `.md` file (EN version) under `content/services/` or `content/projects/`, and the matching translation (ID version) under `content/id/services/` or `content/id/projects/`.
-2. **The filename becomes the URL slug** — make sure it matches the `href` already linked to it in `layouts/services/list.html` or `layouts/projects/list.html`. A mismatch here causes a 404 page not found error.
-3. Fill in the required front matter fields (see an existing page for the current field list; e.g. `title`, `summary`, `category`/`tag`, `image`).
-4. Run `hugo server` locally and click through to the new page to confirm it renders before committing.
-5. Commit with `content(services): Add <page name>` or `content(projects): Add <page name>`.
+1. Create the `.md` file (EN version) under `content/services/` or `content/projects/<year>/`, and the matching translation (ID version) under `content/id/services/` or `content/id/projects/<year>/`.
+2. **The filename becomes the URL slug** — make sure it matches the `href` already linked to it in `layouts/services/list.html` or `layouts/projects/list.html`. A mismatch here causes a 404 page not found error. (**NOTE:** The list of services and projects are now generated automatically based on the `.md` files in `content/services/` or `content/projects/<year>/`)
+3. If the new project page involves adding a new `<year>` folder, remember to add to the `_headers` file:
+    ```
+    https://smartrisk-pln.com/id/projects/<year>/
+    X-Robots-Tag: noindex, nofollow
+    https://smartrisk-pln.com/projects/<year>/
+    X-Robots-Tag: noindex, nofollow
+    ``` 
+   to make sure the empty projects year subpage is not indexed or followed. 
+4. Fill in the required front matter fields (see an existing page for the current field list; e.g. `title`, `summary`, `category`/`tag`, `image`).
+5. Run `hugo server` locally and click through to the new page to confirm it renders before committing.
+6. Commit with `content(services): Add <page name>` or `content(projects): Add <page name>`.
 
 
 ## Updating Portfolio Map Data
