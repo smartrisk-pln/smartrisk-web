@@ -1283,84 +1283,6 @@ nav {
 }
 
 
-/*---------- YOUTUBE FACADE (click-to-load embed) ----------*/
-.yt-facade {
-    width           : 720px;
-    max-width       : 100%;
-}
-.yt-facade-media {
-    position        : relative;
-    width           : 100%;
-    aspect-ratio    : 16 / 9;
-    overflow        : hidden;
-    background      : #000;
-    border-radius   : var(--radius, 0.5rem);
-}
-.yt-facade-notice {
-    display     : block;
-    margin-top  : 0.5rem;
-    font-size   : 0.7rem;
-    line-height : 1.4;
-    color       : var(--muted);
-    text-align  : left;
-}
-.yt-facade-notice a { color: inherit; }
-.yt-facade-notice a:hover { color: var(--accent); }
-
-.yt-facade-thumb {
-    position        : absolute;
-    inset           : 0;
-    width           : 100%;
-    height          : 100%;
-    object-fit      : cover;
-}
-.yt-facade-play {
-    position        : absolute;
-    inset           : 0;
-    width           : 100%;
-    height          : 100%;
-    display         : flex;
-    align-items     : center;
-    justify-content : center;
-    background      : rgba(0, 0, 0, 0.15);
-    cursor          : pointer;
-    border          : 0;
-    padding         : 0;
-    transition      : background 0.2s ease;
-}
-.yt-facade-play:hover,
-.yt-facade-play:focus-visible { background: rgba(0, 0, 0, 0.35); }
-.yt-facade-play-icon {
-    width           : 68px;
-    height          : 48px;
-    background      : rgba(20, 20, 20, 0.85);
-    border-radius   : 14px;
-    position        : relative;
-    transition      : background 0.2s ease, transform 0.2s ease;
-}
-.yt-facade-play:hover .yt-facade-play-icon,
-.yt-facade-play:focus-visible .yt-facade-play-icon {
-    background      : #ff0000;
-    transform       : scale(1.05);
-}
-.yt-facade-play-icon::before {
-    content         : "";
-    position        : absolute;
-    top             : 50%;
-    left            : 54%;
-    transform       : translate(-50%, -50%);
-    border-style    : solid;
-    border-width    : 12px 0 12px 20px;
-    border-color    : transparent transparent transparent var(--white);
-}
-.yt-facade-media iframe {
-    position        : absolute;
-    inset           : 0;
-    width           : 100%;
-    height          : 100%;
-    border          : 0;
-}
-
 
 /*---------- CONTACT ----------*/
 /*
@@ -1475,7 +1397,6 @@ footer .contact-details {
 
 
 
-
 /*---------- TABLET ----------*/
 @media (max-width: 1100px) {
     .nav-links { display: none; }
@@ -1548,14 +1469,9 @@ footer .contact-details {
         gap             : 1rem; */
         align-items     :last baseline;
     }
-
-    .yt-facade,
-    .yt-facade-media {
-        width   : 40rem;
-        height  : 22.5rem;
-    }
-    
 }
+
+
 /*---------- MOBILE ----------*/
 @media (max-width: 780px) {
     .logo img { 
@@ -1605,10 +1521,4 @@ footer .contact-details {
         margin-right    : 1rem; }
     .stat-num { font-size: 1.8rem; }
     .stat-label { font-size: 0.7rem; }
-
-    .yt-facade,
-    .yt-facade-media {
-        width   : 20rem;
-        height  : 11.25rem;
-    }
 }

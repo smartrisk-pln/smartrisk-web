@@ -73,6 +73,11 @@
 <link rel="stylesheet" href="{{ $contact.RelPermalink }}" />
 {{ end }}
 
+{{ if .Params.hasYTFacade }}
+{{ $ytFacadeCSS := resources.Get "assets/css/ytfacade.css" | resources.Minify }}
+<link rel="stylesheet" href="{{ $ytFacadeCSS.RelPermalink }}" />
+{{ end }}
+
 {{ with .Params.pageCSS }}
     {{ $pagestyle := resources.Get (printf "assets/css/%s" .) | resources.Minify }}
     <link rel="stylesheet" href="{{ $pagestyle.RelPermalink }}" />
