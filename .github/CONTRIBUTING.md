@@ -77,6 +77,7 @@ A few issues that once cost debugging time, check before re-diagnosing from scra
 - **`overflow` on `<body>` other than `visible` may break `position: sticky` site-wide.** Setting `overflow-x: hidden` (or `auto`/`scroll`) directly on `<body>` may stop the browser's normal "overflow propagates to the viewport" behavior, so `<body>` becomes its own scroll container instead of the page; possibly breaking every `position: sticky` element on the site. If you need to clip horizontal overflow, put it on `<html>` instead.
 - **Any ancestor with non-`visible` overflow breaks `position: sticky` for its descendants**, even `overflow: hidden` added as a safety-net rule. If a sticky element stops sticking after an unrelated CSS change, check every ancestor between it and the page root for a stray `overflow` value first.
 - **`static/_redirects` only matches on request path, not hostname.** A rule like `https://smartrisk-pln.pages.dev/* https://smartrisk-pln.com/:splat 301` looks valid but is silently ignored. Cloudflare Pages has no way to match a full source URL with a domain in `_redirects`. Domain-level redirects (e.g. `pages.dev` &rarr; the custom domain) must be configured as a Cloudflare **Bulk Redirect** in the account dashboard (Delivery & performance &rarr; Bulk redirects), not in this repo.
+- **Missing `hasYTFacade: true` on the front matter means an unstyled facade.** The thumbnail + play button will render but without any CSS if the page includes the `youtube-facade.html` partial but doesn't set the flag. `ytfacade.css` only loads when the flag is present.  
 
 
 
@@ -103,17 +104,18 @@ Never embed a raw `<iframe>` for YouTube (see README's [YouTube Embeds](../READM
 
 1. Get the video ID from the YouTube URL (`youtube.com/watch?v=<VIDEO_ID>`).
 2. Pass a real accessible `title` &rarr; add an i18n key for it rather than hardcoding a string. The video title string can be added to the i18n toml files, `en-06_media.toml` and `id-06_media.toml`, for example:  
-```toml
-# --- en-06_media.toml ---
-[video_title_1]
-other = "Policy Review of PLN Group's Operational Asset Insurance"
+    ```toml
+    # --- en-06_media.toml ---
+    [video_title_1]
+    other = "Policy Review of PLN Group's Operational Asset Insurance"
 
-# --- id-06_media.toml ---
-[video_title_1]
-other = "Bedah Polis Asuransi Aset Operasional PLN Group"
-```
-3. Run `hugo server`, confirm the thumbnail renders (pulled from `i.ytimg.com`) and clicking it swaps in the real player.  
-4. Commit as `content(media)` for a new video, `feat(media)` if you're changing how embeds work.  
+    # --- id-06_media.toml ---
+    [video_title_1]
+    other = "Bedah Polis Asuransi Aset Operasional PLN Group"
+    ```
+3. Set `hasYTFacade: true` in the page's front matter if it isn't already set. This is what tells `head.html` to load `ytfacade.css` on that page. Currently set on the `content/_index.md` (homepage) and `content/media/_index.md` (and their `id/` equivalents).   
+4. Run `hugo server`, confirm the thumbnail renders (pulled from `i.ytimg.com`) and clicking it swaps in the real player.  
+5. Commit as `content(media)` for a new video, `feat(media)` if you're changing how embeds work.  
 
 
 

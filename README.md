@@ -118,6 +118,9 @@ YouTube videos are not embedded directly on a page. Never embed YouTube videos w
 ```
 This renders a thumbnail + play button and only loads the real player (via `youtube-nocookie.com`) once clicked, avoiding YouTube's JS/network weight and third-party cookies on every page load. Currently used on the homepage and `/media/`.  
 
+The facade's styling rules are in its own file (`ytfacade.css`) which is only loaded on pages that use it, indicated by the `hasYTFacade: true` front-matter flag checked in `head.html`.  
+**If you add the partial to a new page, set `hasYTFacade: true` in that page's front matter**; otherwise the thumbnail + play button will render unstyled since the CSS won't be linked.
+
 The video title string can be added to the i18n toml files, `en-06_media.toml` and `id-06_media.toml`, for example:  
 ```toml
 # --- en-06_media.toml ---
