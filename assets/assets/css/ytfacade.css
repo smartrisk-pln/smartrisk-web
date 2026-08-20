@@ -49,27 +49,44 @@
 .yt-facade-play:hover,
 .yt-facade-play:focus-visible { background: rgba(0, 0, 0, 0.35); }
 .yt-facade-play-icon {
+    aspect-ratio    : 234/165;
     width           : 68px;
-    height          : 48px;
+    height          : auto;
     background      : rgba(20, 20, 20, 0.85);
-    border-radius   : 14px;
+    
+    mask-image      : url("../icons/yt-play-pill.svg");
+    mask-size       : contain;
+    mask-repeat     : no-repeat;
+    mask-position   : center;
+    
+    -webkit-mask-image   : url("../icons/yt-play-pill.svg");
+    -webkit-mask-size    : contain;
+    -webkit-mask-repeat  : no-repeat;
+    -webkit-mask-position: center;
+
     position        : relative;
     transition      : background 0.2s ease, transform 0.2s ease;
 }
 .yt-facade-play:hover .yt-facade-play-icon,
 .yt-facade-play:focus-visible .yt-facade-play-icon {
-    background      : #ff0000;
-    transform       : scale(1.05);
+    background  : #ff0000;
+    transform   : scale(1.05);
 }
 .yt-facade-play-icon::before {
-    content         : "";
-    position        : absolute;
-    top             : 50%;
-    left            : 54%;
-    transform       : translate(-50%, -50%);
-    border-style    : solid;
-    border-width    : 12px 0 12px 20px;
-    border-color    : transparent transparent transparent var(--white);
+    content     : "";
+    position    : absolute;
+    inset       : 0;
+    background  : var(--white);
+
+    mask-image      : url("../icons/yt-play-triangle.svg");
+    mask-size       : contain;
+    mask-repeat     : no-repeat;
+    mask-position   : center;
+
+    -webkit-mask-image   : url("../icons/yt-play-triangle.svg");
+    -webkit-mask-size    : contain;
+    -webkit-mask-repeat  : no-repeat;
+    -webkit-mask-position: center;
 }
 .yt-facade-media iframe {
     position        : absolute;
