@@ -446,6 +446,14 @@ window.addEventListener('load', setSidebarHeightVar);
             iframe.referrerPolicy   = 'strict-origin-when-cross-origin';
             iframe.allowFullscreen  = true;
             media.replaceChildren(iframe);
+
+            const notice = facade.querySelector('.yt-facade-notice');
+            if (notice) {
+                notice.addEventListener('transitionend', () => {
+                    notice.style.visibility = 'hidden';
+                }, { once: true });
+                notice.classList.add('is-hidden');
+            }
         };
         facade.querySelector('.yt-facade-play').addEventListener('click', load, { once: true });
     });

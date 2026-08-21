@@ -21,6 +21,13 @@
     line-height : 1.4;
     color       : var(--muted);
     text-align  : left;
+
+    opacity: 1;
+    overflow: hidden;
+    transition: opacity 0.2s ease
+}
+.yt-facade-notice.is-hidden {
+    opacity: 0;
 }
 .yt-facade-notice a { color: inherit; }
 .yt-facade-notice a:hover { color: var(--accent); }
