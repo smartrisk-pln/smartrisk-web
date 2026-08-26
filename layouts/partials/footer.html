@@ -32,3 +32,5 @@
 <!-- js files in assets/assets/js -->
 {{ $js := resources.Get "assets/js/main.js" | resources.Minify }}
 <script src="{{ $js.RelPermalink }}" defer></script>
+{{ $waJS := resources.Get "assets/js/whatsapp-chat.js" | resources.Minify }}
+<script src="{{ $waJS.RelPermalink }}" defer></script>
