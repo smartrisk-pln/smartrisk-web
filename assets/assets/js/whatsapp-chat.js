@@ -70,7 +70,7 @@
     // ---------- CONSTANTS ---------- //
     /* STORAGE_KEY: the key used in sessionStorage to remember whether the user has dismissed the tooltip this session.
     sessionStorage is cleared when the browser tab is closed,  unlike localStorage which persists indefinitely */
-    var STORAGE_KEY = 'sr_wa_tooltip_dismissed';
+    var STORAGE_KEY = 'wa_tooltip_dismissed';
 
 
     // ---------- HELPER: getLang() ---------- //
@@ -130,51 +130,20 @@
     
     // ---------- MAIN: inject() ---------- //
     /* Builds and injects the entire widget (CSS, HTML, behavior) into the current page. 
+    Styling comes from `assets/assets/css/whatsapp-chat/css`, loaded separately via <link> in head.html.
     Called once after the DOM is ready (see bottom of file). */
     function inject() {
         if (!shouldShow()) return;
 
         var lang  = getLang();
-        var pos   = CONFIG.position === 'left' ? 'left: 1.5rem;' : 'right: 1.5rem;';
-        var align = CONFIG.position === 'left' ? 'flex-start' : 'flex-end';
 
-        // ---------- INJECT CSS ---------- //
-        var style = document.createElement('style');
-        style.textContent = [
-            '.wa-wrap { position:fixed; bottom:1.5rem;' + pos + 
-            'z-index:9999; display:flex; flex-direction:column; align-items:' + align + '; gap:10px; font-family:inherit; }',
-
-            '.wa-tooltip { width:280px; max-width:calc(100vw-3rem); background:#fff; border-radius:16px; box-shadow:0 10px 40px rgba(0,0,0,.18); padding:16px; opacity:0; transform:translateY(12px) scale(.98); pointer-events:none; transition:opacity .25s ease, transform .25s ease; position:relative; }',
-            '.wa-tooltip.visible { opacity:1; transform:translateY(0) scale(1); pointer-events:auto; }',
-
-            '.wa-tooltip-close { position:absolute; top:8px; right:8px; width:24px; height:24px; border:none; background:transparent; border-radius:50%; cursor:pointer; font-size:14px; line-height:1; color:#888; display:flex; align-items:center; justify-content:center; }',
-            '.wa-tooltip-close:hover { background:#f0f0f0; color:#333; }',
-
-            '.wa-agent { display:flex; align-items:center; gap:10px; margin-bottom:8px; }',
-
-            '.wa-avatar { width:36px; height:36px; border-radius:50%; background:#25d366; color:#fff; display:flex; align-items:center; justify-content:center; flex-shrink:0;}',
-            '.wa-avatar svg { width:20px; height:20px; }',
-            '.wa-agent-name { font-weight:600; font-size:14px; color:#111; }',
-            '.wa-agent-sub { font-size:12px; color:#777;}',
-
-            '.wa-msg { font-size:13px; color:#444; line-height:1.5; background:#f5f5f5; border-radius:10px; padding:10px 12px;}',
-
-            '.wa-btn-wrap { position:relative; width:50px; height:50px; }',
-
-            '.wa-pulse { position:absolute; inset:0; border-radius:50%; background:#25d366; opacity:.5; animation:wa-pulse 2.2s ease-out infinite;}',
-            '@keyframes wa-pulse { 0% { transform:scale(.9); opacity:.5; } 70% { transform:scale(1.6); opacity:0; } 100% { transform:scale(1.6); opacity:0; } }',
-            '@media (prefers-reduced-motion:reduce) { .wa-pulse { animation:none; } }',
-
-            '.wa-btn { position:relative; display:flex; align-items:center; justify-content:center; width:100%; height:100%; border-radius:50%; background:#25d366; color:#fff; box-shadow:0 4px 16px rgba(0,0,0,.2); text-decoration:none; transition:transform .15s ease;}',
-            '.wa-btn:hover { transform:scale(1.06); }',
-            '.wa-btn:focus-visible { outline:3px solid #128c7e; outline-offset:2px; }',
-        ].join('\n');
-        document.head.appendChild(style);
+        /* CSS lives in assets/assets/css/whatsapp-chat.css, loaded via <link> in head.html -> no runtime <style> injection needed. */
 
 
         // ---------- BUILD DOM ---------- //
         var wrap = document.createElement('div');
         wrap.className = 'wa-wrap';
+        if (CONFIG.position === 'left') wrap.classList.add('wa-left');
 
         var tooltip = document.createElement('div');
         tooltip.className = 'wa-tooltip';

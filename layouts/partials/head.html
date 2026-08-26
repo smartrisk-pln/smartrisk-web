@@ -62,6 +62,8 @@
 <!-- css files in assets/assets/ -->
 {{ $style := resources.Get "assets/css/style.css" | resources.Minify }}
 <link rel="stylesheet" href="{{ $style.RelPermalink }}" />
+{{ $waWidget := resources.Get "assets/css/whatsapp-chat.css" | resources.Minify }}
+<link rel="stylesheet" href="{{ $waWidget.RelPermalink }}" />
 {{ $contact := resources.Get "assets/css/contact.css" | resources.Minify }}
 {{ if .IsHome }}
 <!-- On homepage, the contact section is below the fold, 
