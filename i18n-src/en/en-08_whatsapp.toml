@@ -1,0 +1,20 @@
+#==========================================#
+#========== WHATSAPP CHAT WIDGET ==========#
+#==========================================#
+[wa_tooltip]
+other = "Chat with us on WhatsApp"
+
+[wa_agent_name]
+other = "SmartRisk Team"
+[wa_agent_sub]
+other = "Typically replies within 1 business day."
+
+[wa_message]
+other = "Hello, I would like to inquire about SmartRisk's services."
+
+[wa_dismiss_aria]
+other = "Dismiss chat invitation"
+[wa_dialog_aria]
+other = "WhatsApp chat invitation"
+[wa_open_aria]
+other = "Open WhatsApp chat with SmartRisk"

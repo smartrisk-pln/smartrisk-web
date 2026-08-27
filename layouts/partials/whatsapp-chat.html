@@ -1,0 +1,36 @@
+<!-- 
+    WhatsApp chat widget - floating button + dismissible tooltip card
+    - Language text and wa.me link are resolved here at build time via Hugo's i18n (see i18n-src/en/en-08_whatsapp.toml and i18n-src/id/id-08_whatsapp.toml), 
+        so the widget renders with no client-side language detection needed.
+    - Visibility: this partial is called only from footer.html,which is only called in baseof.html.
+        layouts/404.html never calls footer.html, so the widget is structurally absent from the 404 page 
+        -> no explicit hide-on-404 rule is needed
+    - Runtime behavior (showing/hiding/dismissing tooltip) is handled separately in assets/assets/js/whatsapp-chat.js, against the class names here.
+-->
+{{ $waPhone := "628118208123" }}
+
+<!-- 'left' or 'right' - which corner the widget appears in -->
+{{ $waPosition := "right" }}
+
+{{ $waMessage := i18n "wa_message" }}
+{{ $waURL := printf "https://wa.me/%s?text=%s" $waPhone (urlquery $waMessage) }}
+
+<div class="wa-wrap{{ if eq $waPosition "left" }} wa-left{{ end }}">
+    <div class="wa-tooltip" role="dialog" aria-modal="false" aria-label="{{ i18n "wa_dialog_aria" }}" id="wa-tooltip">
+        <button type="button" class="wa-tooltip-close" aria-label="{{ i18n "wa_dismiss_aria" }}">&#x2715;</button>
+        <div class="wa-agent">
+            <div class="wa-avatar" aria-hidden="true"></div>
+            <div>
+                <div class="wa-agent-name">{{ i18n "wa_agent_name" }}</div>
+                <div class="wa-agent-sub">{{ i18n "wa_agent_sub" }}</div>
+            </div>
+        </div>
+        <div class="wa-msg">{{ i18n "wa_tooltip" }}</div>
+    </div>
+    <div class="wa-btn-wrap">
+        <div class="wa-pulse" aria-hidden="true"></div>
+        <a href="{{ $waURL }}" class="wa-btn" target="_blank" rel="noopener noreferrer" aria-label="{{ i18n "wa_open_aria" }}">
+            <span class="wa-icon" aria-hidden="true"></span>
+        </a>
+    </div>
+</div>
