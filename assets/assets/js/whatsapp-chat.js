@@ -158,7 +158,7 @@
         var agentDiv = document.createElement('div');
         agentDiv.className = 'wa-agent';
         agentDiv.innerHTML = 
-            '<div class="wa-avatar">' + ICON_HTML + '</div>' +
+            '<div class="wa-avatar">' + '</div>' +
             '<div>' +
                 '<div class="wa-agent-name">' + (CONFIG.agentName[lang] || CONFIG.agentName.en) + '</div>' + 
                 '<div class="wa-agent-sub">' + (CONFIG.agentSub[lang] || CONFIG.agentSub.en) + '</div>' + 
