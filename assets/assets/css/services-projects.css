@@ -24,11 +24,13 @@
 /*---------- SIDEBAR ----------*/
 .services-sidebar,
 .projects-sidebar {
+    /* position     : relative; */
+    z-index         : 0;
     background-color: var(--sidebar-bg);
     padding         : 0;
     border-right    : 1px solid var(--rule-dark);
     align-self      : stretch;
-    /* height          : 100%; */
+    /* height       : 100%; */
 }
 
 .services-sidebar nav,

@@ -991,10 +991,17 @@ nav {
     margin-right: 0.6rem;
     padding     : 0;
     
-    background-image    : url('../icons/download-icon.svg');
-    background-size     : contain;
-    background-repeat   : no-repeat;
-    background-position : center;
+    -webkit-mask-image      : url('../icons/download-icon.svg');
+    -webkit-mask-size       : contain;
+    -webkit-mask-repeat     : no-repeat;
+    -webkit-mask-position   : center;
+
+    mask-image      : url('../icons/download-icon.svg');
+    mask-size       : contain;
+    mask-repeat     : no-repeat;
+    mask-position   : center;
+
+    background-color: var(--white)
 }
 .download-text {
     display     : block;
@@ -1351,7 +1358,7 @@ footer p a { color: inherit; }
 footer p a:hover { color: var(--accent); }
 footer .contact-details {
     gap     : 1rem;
-    padding : 7rem 0 2rem 0;
+    padding : 5rem 0 2rem 0;
 }
 .footer-socials {
     display         : flex;
