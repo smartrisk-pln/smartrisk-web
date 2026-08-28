@@ -26,9 +26,34 @@
     </div>
 </footer>
 
+{{/* WhatsApp Widget Structural exclusion - 
+    layouts/404.html never calls footer.html, so this is currently redundant,
+    but keeps the rule explicit */}}
+{{ $isErrorPage := eq .Kind "404" }}
+
+{{/* Denylist - specific pages to always hide, regardless of showOnPages. 
+    Empty by default; add site.GetPage calls as needed.*/}}
+{{ $hideOnPages := slice }}
+{{/* e.g. 
+     {{ $hideOnPages := slice (site.GetPage "projects/portfolio") }} 
+*/}}
+
+{{/* Allowlist - leave empty to show on every page not hidden above. 
+    Populate to show ONLY on the pages listed here. */}}
+{{ $showOnPages := slice }}
+
+{{ $isHidden  := or $isErrorPage (in $hideOnPages .) }}
+{{ $isAllowed := or (eq (len $showOnPages) 0) (in $showOnPages .) }}
+
+{{ if and (not $isHidden) $isAllowed }}
+{{ partial "whatsapp-chat.html" . }}
+{{ end }}
+
 <!-- js files in static/assets/js/
 <script src="{{ "assets/js/main.js" | relURL }}" defer></script>
 -->
 <!-- js files in assets/assets/js -->
 {{ $js := resources.Get "assets/js/main.js" | resources.Minify }}
 <script src="{{ $js.RelPermalink }}" defer></script>
+{{ $waJS := resources.Get "assets/js/whatsapp-chat.js" | resources.Minify }}
+<script src="{{ $waJS.RelPermalink }}" defer></script>
