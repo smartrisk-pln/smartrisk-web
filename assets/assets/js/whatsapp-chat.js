@@ -16,7 +16,7 @@
     
     /* TOOLTIP_DELAY: milliseconds before the tooltip card auto-opens after the page loads.
     Set to 0 to disable auto-open entirely. */
-    var TOOLTIP_DELAY = 2000;
+    var TOOLTIP_DELAY = 0;
     
     function init() {
         var tooltip = document.querySelector('.wa-tooltip');
