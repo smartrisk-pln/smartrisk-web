@@ -4,8 +4,8 @@
         
 .wa-wrap { 
     position        : fixed; 
-    bottom          : 1.5rem; 
-    right           : 1.5rem;
+    bottom          : 2rem; 
+    right           : 1rem;
     z-index         : 9999; 
     display         : flex; 
     flex-direction  : column; 
