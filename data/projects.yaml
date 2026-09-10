@@ -736,7 +736,7 @@ years:
     projects:
       - category: Mining
         items:
-          - name: PT Antam Tbk
+          - name: PT Antam Tbk.
             location: Pomalaa, Southeast Sulawesi
             province: ID-SG
             country: Indonesia
@@ -853,17 +853,17 @@ years:
       - category: Power Plants
         items:
           - name: Nho'n Trach 1 & 2 CCPP (PetroVietnam)
-            location: Đồng Nai Province, Vietnam
+            location: Đồng Nai, Vietnam
             province: VN-39
             country: Vietnam
             coords: [10.738400705057375, 106.91965595970828]
           - name: Ca Mau 1 & 2 CCPP (PetroVietnam)
-            location: Cà Mau Province, Vietnam
+            location: Cà Mau, Vietnam
             province: VN-59
             country: Vietnam
             coords: [9.23800401238043, 105.06082456586545]
           - name: Vung Ang 1 TPP (PetroVietnam)
-            location: Hà Tĩnh Province, Vietnam
+            location: Hà Tĩnh, Vietnam
             province: VN-23
             country: Vietnam
             coords: [18.0976906732312, 106.38086606596065]
@@ -1217,6 +1217,27 @@ years:
 
   - year: 2014
     projects:
+      - category: Chemical
+        items:
+          - name: PT Nipsea Paint and Chemicals
+            location: Purwakarta, West Java
+            province: ID-JB
+            country: Indonesia
+            coords: [-6.492811959629731, 107.50961251719843]
+      - category: Hospitality & Tourism
+        items:
+          - name: PT Widja Putra Karya - The Oberoi Bali, Hotel and Resort
+            location: Kuta, Bali
+            province: ID-BA
+            country: Indonesia
+            coords: [-8.687260443503835, 115.15515515130724]
+      - category: Water Treatment Plant
+        items:
+          - name: PT Tirta Kencana Cahaya Mandiri
+            location: Tangerang, Banten
+            province: ID-BT
+            country: Indonesia
+            coords: [-6.195000403984955, 106.62818669636096]
       - category: Manufacturing
         items:
           - name: PT Indorama Polychem Indonesia
