@@ -1,7 +1,7 @@
 ---
-title: "Operational Risk Assessment | SmartRisk"
-service_title: "Operational Risk Assessment"
-description: "SmartRisk provides operational risk assessment services for various industrial facilities."
+title: "Operational Risk Assessment & Survey | SmartRisk"
+service_title: "Operational Risk Assessment & Survey"
+description: "SmartRisk provides operational risk assessment and survey services for various industrial facilities."
 category: "Consultation"
 category_code: "consultation"
 service_code: "C01"
@@ -13,7 +13,7 @@ sitemap:
     priority: 0.7
 ---
 
-**SmartRisk** provides operational risk assessment services for various facilities, tailored specifically to the agreed-upon scope of work. In general, this service is useful for both existing and newly proposed insurance plans. The results of this risk assessment can be used to clearly identify and communicate a detailed risk profile of the assets.
+**SmartRisk** provides operational risk assessment and survey services for various facilities, tailored specifically to the agreed-upon scope of work. In general, this service is useful for both existing and newly proposed insurance plans. The results of this risk assessment can be used to clearly identify and communicate a detailed risk profile of the assets.
 
 ## Scope of Our Service
 
