@@ -943,7 +943,6 @@ nav {
 .btn-primary { 
     background  : var(--accent); 
     color       : var(--white); 
-    border      : none; 
 }
 .btn-primary:hover { background: var(--accent-hover); }
 
