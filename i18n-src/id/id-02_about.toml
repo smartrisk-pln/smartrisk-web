@@ -66,7 +66,7 @@ other = "SmartRisk menyadari nilai mendasar dari percobaan terhadap perkiraan da
 [spec_section_label]
 other = "Area Kerja Kami"
 [spec_h2]
-other = "Bidang Keahlian"
+other = "Bidang <em>Keahlian</em>"
 
 [spec_01_title]
 other = "Energi & Utilitas"
@@ -139,7 +139,7 @@ other = "Peninjauan dan pelaporan berkelanjutan untuk memantau <i lang='EN'>risk
 [pillars_section_label]
 other = "Yang Menggerakkan Kami"
 [pillars_h2]
-other = "Komitmen Kami"
+other = "<em>Komitmen</em> Kami"
 
 [pillar_01_title]
 other = "Independensi"

@@ -66,7 +66,7 @@ other = "SmartRisk recognizes the fundamental value of testing forecasts and ant
 [spec_section_label]
 other = "Where We Work"
 [spec_h2]
-other = "Sector of Expertise"
+other = "Sector of <em>Expertise</em>"
 
 [spec_01_title]
 other = "Energy & Utilities"
@@ -139,7 +139,7 @@ other = "Ongoing review and reporting to track risk posture over time."
 [pillars_section_label]
 other = "What Drives Us"
 [pillars_h2]
-other = "Our Commitments"
+other = "Our <em>Commitments</em>"
 
 [pillar_01_title]
 other = "Independence"
