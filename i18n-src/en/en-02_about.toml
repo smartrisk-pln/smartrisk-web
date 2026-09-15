@@ -66,33 +66,33 @@ other = "SmartRisk recognizes the fundamental value of testing forecasts and ant
 [spec_section_label]
 other = "Where We Work"
 [spec_h2]
-other = "Sector Expertise"
+other = "Sector of Expertise"
 
 [spec_01_title]
-other = "Energy"
+other = "Energy & Utilities"
 [spec_01_sub]
-other = "Power generation, oil &amp; gas, renewable energy"
+other = "Power generation &middot; transmission &middot; renewable energy"
 [spec_02_title]
-other = "Insurance"
+other = "Oil & Gas"
 [spec_02_sub]
-other = "Program design, placement, claims advisory"
+other = "Upstream &middot; downstream &middot; processing"
 [spec_03_title]
-other = "Ports &amp; Marine Cargo"
+other = "Mining & Minerals"
 [spec_03_sub]
-other = "Container terminals, bulk cargo, logistics"
+other = "Coal &middot; nickel &middot; bauxite &middot; precious metals"
 
 [spec_04_title]
-other = "Mining"
+other = "Ports & Marine Cargo"
 [spec_04_sub]
-other = "Coal, nickel, bauxite, precious metals"
+other = "Container terminals &middot; bulk cargo &middot; logistics"
 [spec_05_title]
-other = "Construction Projects"
+other = "Manufacturing"
 [spec_05_sub]
-other = "Capital projects, EPC, infrastructure"
+other = "Chemical &middot; steel &middot; industrial facilities"
 [spec_06_title]
-other = "High-Rise Buildings"
+other = "Construction & EPC"
 [spec_06_sub]
-other = "Commercial, residential, mixed-use"
+other = "Capital projects &middot; EPC &middot; commissioning"
 
 
 #============================#

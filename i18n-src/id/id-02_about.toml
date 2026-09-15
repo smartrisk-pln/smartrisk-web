@@ -69,24 +69,24 @@ other = "Area Kerja Kami"
 other = "Bidang Keahlian"
 
 [spec_01_title]
-other = "Energi"
+other = "Energi & Utilitas"
 [spec_01_sub]
-other = "Pembangkit listrik, minyak &amp; gas, energi terbarukan"
+other = "Pembangkit listrik &middot; transmisi &middot; energi terbarukan"
 [spec_02_title]
-other = "Asuransi"
+other = "Minyak & Gas"
 [spec_02_sub]
-other = "Desain program, penempatan, <i lang='EN'>advisory</i> klaim"
+other = "Hulu &middot; hilir &middot; pengolahan"
 [spec_03_title]
-other = "Pelabuhan &amp; Kargo Laut"
+other = "Pertambangan & Mineral"
 [spec_03_sub]
-other = "Terminal kontainer, kargo curah, logistik"
+other = "Batu bara &middot; nikel &middot; bauksit &middot; logam mulia"
 
 [spec_04_title]
-other = "Pertambangan"
+other = "Pelabuhan & Kargo Laut"
 [spec_04_sub]
-other = "Batu bara, nikel, bauksit, logam mulia"
+other = "Terminal kontainer &middot; kargo curah &middot; logistik"
 [spec_05_title]
-other = "Proyek Konstruksi"
+other = "Manufaktur"
 [spec_05_sub]
 other = "Proyek modal, EPC, infrastruktur"
 [spec_06_title]
