@@ -7,9 +7,9 @@
 [contact_info_section_label]
 other = "Hubungi SmartRisk"
 [contact_info_text_h1]
-other = "Mari diskusikan tantangan <em>risiko</em> Anda."
+other = "Punya Tantangan <em>Risiko</em>?"
 [contact_info_text_p]
-other = "Hubungi tim kami di Jakarta. Kami siap mendiskusikan proyek Anda."
+other = "Ceritakan kebutuhan, proyek, atau aset yang ingin Anda lindungi. Tim SmartRisk akan membantu menentukan pendekatan yang tepat."
 [contact_map_title]
 other = "Lokasi kantor SmartRisk di Google Maps"
 
@@ -44,7 +44,7 @@ other = "<a href='mailto:admin@smartrisk-pln.com'>admin@smartrisk-pln.com</a>"
 [contact_form_section_label]
 other = "Hubungi Kami"
 [contact_form_text_h2]
-other = "Kirim <em>Pesan</em>"
+other = "<em>Konsultasi</em> dengan Kami"
 
 [contact_form_name_01]
 other = "Nama Lengkap"
