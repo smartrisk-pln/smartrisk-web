@@ -96,6 +96,40 @@ other = "Capital projects &middot; EPC &middot; commissioning"
 
 
 #============================#
+#========== UNIQUE ==========#
+#============================#
+[unique_section_label]
+other = "What Sets Us Apart"
+[unique_h2]
+other = "Why <em>SmartRisk</em>?"
+
+[unique_point_01_title]
+other = "Independent by design"
+[unique_point_01_desc]
+other = "No conflicts of interest with insurers, brokers, or vendors."
+
+[unique_point_02_title]
+other = "Built for complex industries"
+[unique_point_02_desc]
+other = "Experienced in energy, mining, infrastructure, maritime, and industrial operations."
+
+[unique_point_03_title]
+other = "Engineering-led"
+[unique_point_03_desc]
+other = "Risk assessment supported by professional certified technical experts."
+
+[unique_point_04_title]
+other = "From assessment to action"
+[unique_point_04_desc]
+other = "Not only identifying risks, but also providing actionable recommendations."
+
+[unique_point_05_title]
+other = "Local expertise. International framework."
+[unique_point_05_desc]
+other = "Combining an understanding of the Indonesian industry with international frameworks and standards."
+
+
+#============================#
 #========== METHOD ==========#
 #============================#
 [method_section_label]

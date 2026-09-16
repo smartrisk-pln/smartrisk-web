@@ -96,6 +96,40 @@ other = "Komersial, residensial, <i lang='EN'>mixed-use</i>"
 
 
 #============================#
+#========== UNIQUE ==========#
+#============================#
+[unique_section_label]
+other = "Yang Membedakan Kami"
+[unique_h2]
+other = "Mengapa <em>SmartRisk</em>?"
+
+[unique_point_01_title]
+other = "Terstruktur secara independen"
+[unique_point_01_desc]
+other = "Tidak memiliki konflik kepentingan dengan insurer."
+
+[unique_point_02_title]
+other = "Untuk industri kompleks"
+[unique_point_02_desc]
+other = "Pengalaman di bidang energi, pertambangan, maritim, dan operasi industrial."
+
+[unique_point_03_title]
+other = "Mengutamakan aspek teknis"
+[unique_point_03_desc]
+other = "<i lang='EN'>Risk assessment</i> didukung oleh tenaga ahli profesional yang bersertifikat."
+
+[unique_point_04_title]
+other = "Dari penilaian hingga tindakan"
+[unique_point_04_desc]
+other = "Bukan hanya mengidentifikasi risiko, tetapi menghasilkan rekomendasi yang dapat diterapkan."
+
+[unique_point_05_title]
+other = "Keahlian lokal. <i lang='EN'>Framework</i> internasional."
+[unique_point_05_desc]
+other = "Menggabungkan pemahaman industri Indonesia dengan <i lang='EN'>framework</i> dan standar internasional"
+
+
+#============================#
 #========== METHOD ==========#
 #============================#
 [method_section_label]

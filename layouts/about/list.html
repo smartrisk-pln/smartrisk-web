@@ -31,7 +31,7 @@
     </div>
 
     <!---------- STORY ---------->
-    <section class="story" aria-labelledby="story-heading">
+    <section class="story" id="story" aria-labelledby="story-heading">
         <div class="story-text reveal">
             <div class="section-label">{{ i18n "story_section_label" | safeHTML }}</div>
             <h2 id="story-heading">{{ i18n "story_h2" | safeHTML }}</h2>
@@ -62,7 +62,7 @@
     </section>
 
     <!---------- SPECIALIZATIONS ---------->
-    <section class="specializations" aria-labelledby="specializations-heading">
+    <section class="specializations" id="industries" aria-labelledby="specializations-heading">
         <div class="reveal">
             <div class="section-label">{{ i18n "spec_section_label" | safeHTML }}</div>
             <h2 id="specializations-heading">{{ i18n "spec_h2" | safeHTML }}</h2>
@@ -107,8 +107,56 @@
     </section>
 
 
+    <!---------- UNIQUE ---------->
+    <section class="unique" id="unique" aria-labelledby="unique-heading">
+        <div class="unique-inner">
+            <div class="unique-text reveal">
+                <div class="section-label">{{ i18n "unique_section_label" | safeHTML }}</div>
+                <h2 id="unique-heading">{{ i18n "unique_h2" | safeHTML }}</h2>
+            </div>
+            <div class="unique-visual reveal">
+                <div class="unique-point">
+                    <div class="unique-point-num">&middot;</div>
+                    <div>
+                        <div class="unique-point-title">{{ i18n "unique_point_01_title" | safeHTML }}</div>
+                        <div class="unique-point-desc">{{ i18n "unique_point_01_desc" | safeHTML }}</div>
+                    </div>
+                </div>
+                <div class="unique-point">
+                    <div class="unique-point-num">&middot;</div>
+                    <div>
+                        <div class="unique-point-title">{{ i18n "unique_point_02_title" | safeHTML }}</div>
+                        <div class="unique-point-desc">{{ i18n "unique_point_02_desc" | safeHTML }}</div>
+                    </div>
+                </div>
+                <div class="unique-point">
+                    <div class="unique-point-num">&middot;</div>
+                    <div>
+                        <div class="unique-point-title">{{ i18n "unique_point_03_title" | safeHTML }}</div>
+                        <div class="unique-point-desc">{{ i18n "unique_point_03_desc" | safeHTML }}</div>
+                    </div>
+                </div>
+                <div class="unique-point">
+                    <div class="unique-point-num">&middot;</div>
+                    <div>
+                        <div class="unique-point-title">{{ i18n "unique_point_04_title" | safeHTML }}</div>
+                        <div class="unique-point-desc">{{ i18n "unique_point_04_desc" | safeHTML }}</div>
+                    </div>
+                </div>
+                <div class="unique-point">
+                    <div class="unique-point-num">&middot;</div>
+                    <div>
+                        <div class="unique-point-title">{{ i18n "unique_point_05_title" | safeHTML }}</div>
+                        <div class="unique-point-desc">{{ i18n "unique_point_05_desc" | safeHTML }}</div>
+                    </div>
+                </div>
+            </div>
+        </div>    
+    </section>
+
+
     <!---------- METHOD ---------->
-    <section class="method" aria-labelledby="method-heading">
+    <section class="method" id="method" aria-labelledby="method-heading">
         <div class="method-inner">
             <div class="method-text reveal">
                 <div class="section-label">{{ i18n "method_section_label" | safeHTML }}</div>
@@ -162,7 +210,7 @@
 
 
     <!---------- MISSION PILLARS ---------->
-    <section class="mission-pillars" aria-labelledby="mission-pillars-heading">
+    <section class="mission-pillars" id="commitment" aria-labelledby="mission-pillars-heading">
         <div class="reveal">
             <div class="section-label">{{ i18n "pillars_section_label" | safeHTML }}</div>
             <h2 id="mission-pillars-heading">{{ i18n "pillars_h2" | safeHTML }}</h2>
