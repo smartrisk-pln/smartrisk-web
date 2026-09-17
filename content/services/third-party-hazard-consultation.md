@@ -7,7 +7,7 @@ category_code: "consultation"
 service_code: "C09"
 summary: "Broad analysis of surrounding areas and effective mitigation measures to reduce the impact of third-party hazards arising from industrial incidents or accidents."
 image: "assets/images/services/w8-min-1024x683.jpg"
-pageCSS: "services-projects.css"
+pageCSS: "industries-services-projects.css"
 sitemap:
     changefreq: monthly
     priority: 0.7

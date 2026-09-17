@@ -7,7 +7,7 @@ category_code: "consultation"
 service_code: "C11"
 summary: "Layanan tambahan meliputi penilaian risiko kebakaran dan ledakan, investigasi forensik teknikal, analisis HAZOP/SIL/LOPA, penilaian <i>human capital maturity</i>, dan manajemen performa terintegrasi."
 image: "assets/images/services/w14-min-768x580.jpg"
-pageCSS: "services-projects.css"
+pageCSS: "industries-services-projects.css"
 sitemap:
     changefreq: monthly
     priority: 0.7

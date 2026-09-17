@@ -7,7 +7,7 @@ category_code: "consultation"
 service_code: "C04"
 summary: "Pendekatan <i>value engineering</i> yang sistematis untuk meningkatkan efisiensi konstruksi proyek dengan menganalisis fungsi komponen dan mengganti elemen berbiaya tinggi namun bernilai rendah tanpa mengorbankan keselamatan."
 image: "assets/images/services/w4-768x384.jpg"
-pageCSS: "services-projects.css"
+pageCSS: "industries-services-projects.css"
 sitemap:
     changefreq: monthly
     priority: 0.7

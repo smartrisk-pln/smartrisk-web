@@ -7,7 +7,7 @@ category_code: "consultation"
 service_code: "C07"
 summary: "Implementing Business Continuity Management (BCM) systems and standards to keep operations running through natural hazards or disasters, incorporating cost-saving sustainability measures."
 image: "assets/images/services/w6-1024x512.jpg"
-pageCSS: "services-projects.css"
+pageCSS: "industries-services-projects.css"
 sitemap:
     changefreq: monthly
     priority: 0.7

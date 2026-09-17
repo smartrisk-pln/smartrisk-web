@@ -3,7 +3,7 @@ title: "Portofolio | SmartRisk"
 is_year: false
 description: "Peta portofolio interaktif proyek-proyek SmartRisk yang telah selesai di Asia Tenggara."
 layout: "portfolio"
-pageCSS: "services-projects.css"
+pageCSS: "industries-services-projects.css"
 robotsdisallow: false
 sitemap_exclude: false
 sitemap:

@@ -7,7 +7,7 @@ category_code: "consultation"
 service_code: "C01"
 summary: "Identifikasi dan penilaian bahaya operasional secara sistematis; termasuk analisis EML/PML, skenario interupsi bisnis, dan evaluasi risiko berbasis GIS; yang disesuaikan dengan ruang lingkup yang telah disepakati"
 image: "assets/images/services/w1-1024x512.jpg"
-pageCSS: "services-projects.css"
+pageCSS: "industries-services-projects.css"
 sitemap:
     changefreq: monthly
     priority: 0.7

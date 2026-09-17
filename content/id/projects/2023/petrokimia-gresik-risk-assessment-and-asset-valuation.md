@@ -9,7 +9,7 @@ tag:
     - "Penilaian Risiko"
 weight: 2
 image: "assets/images/projects/Petrokimia-Gresik.jpg"
-pageCSS: "services-projects.css"
+pageCSS: "industries-services-projects.css"
 summary: "Penilaian risiko dan valuasi aset menyeluruh untuk PT Petrokimia Gresik di tahun 2023."
 sitemap:
     changefreq: monthly

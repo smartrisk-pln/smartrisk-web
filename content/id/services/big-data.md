@@ -7,7 +7,7 @@ category_code: "it-solution"
 service_code: "IS03"
 summary: "Memanfaatkan <i>dataset</i> besar dari penggunaan internet, <i>smart device</i>, media sosial, dan digitalisasi media untuk mengatasi tantangan bisnis yang sebelumnya tidak dapat ditangani."
 image: "assets/images/services/cloud-1018x1024.jpg"
-pageCSS: "services-projects.css"
+pageCSS: "industries-services-projects.css"
 sitemap:
     changefreq: monthly
     priority: 0.7

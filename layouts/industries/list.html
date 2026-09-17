@@ -1,0 +1,86 @@
+{{ define "main" }}
+
+    <!---------- PAGE HEADER ---------->
+    <header class="page-header" aria-labelledby="page-heading">
+        <div>
+            <div class="section-label">{{ i18n "industries_header_section_label" | safeHTML }}</div>
+            <h1 id="page-heading">{{ i18n "industries_header_h1" | safeHTML }}</h1>
+        </div>
+        <div>
+            <p>{{ i18n "industries_header_p" | safeHTML }}</p>
+        </div>
+    </header>
+
+    <!---------- PROJECTS BY SECTOR ---------->
+    <section class="industries-page" aria-labelledby="industries-projects-heading">
+        <div class="industries-page-inner">
+
+            <!---------- SIDEBAR ---------->
+            <aside class="industries-sidebar" aria-label="{{ i18n "industries_sidebar_aria" | safeHTML }}">
+                <nav>
+                    {{ range .Params.industries }}
+                    <a href="#{{ .code }}" class="sidebar-link">{{ .title | safeHTML }}</a>
+                    {{ end }}
+                </nav>
+            </aside>
+
+            <!---------- SECTOR PROJECT ENTRIES ---------->
+            <div class="industries-entries">
+
+                {{ $allProjects := where site.RegularPages "Section" "projects" }}
+
+                {{ range $sector := .Params.industries }}
+                {{ $code := $sector.code }}
+                {{ $sectorProjects := where $allProjects ".Params.industry_sector" "intersect" (slice $code) }}
+                {{ $sectorProjects = sort $sectorProjects "Params.year" "desc" }}
+
+                <div class="industries-sector-group" id="{{ $code }}">
+
+                    <div class="industries-sector-header">
+                        <h2 class="industries-sector-title">{{ $sector.title | safeHTML }}</h2>
+                        <p class="industries-sector-desc">{{ $sector.desc | safeHTML }}</p>
+                    </div>
+
+                    {{ if $sectorProjects }}
+                        {{ range $i, $project := $sectorProjects }}
+                        <div class="project-entry">
+                            <a href="{{ $project.RelPermalink }}" class="project-entry-link">
+                                <div class="project-entry-content">
+                                    {{ with $project.Params.tag }}
+                                    <div class="project-tags">
+                                        <span class="project-tag">{{ . }}</span>
+                                    </div>
+                                    {{ end }}
+                                    <h3 class="project-entry-title">{{ $project.Params.project_title }}</h3>
+                                    {{ with $project.Params.summary }}
+                                    <p class="project-entry-desc">{{ . }}</p>
+                                    {{ end }}
+                                    {{ with $project.Params.client }}
+                                    <div class="project-entry-client">{{ . }}</div>
+                                    {{ end }}
+                                </div>
+                                {{ with $project.Params.image }}
+                                <div class="project-entry-img">
+                                    <img src="{{ . | relURL }}" alt="{{ $project.Title }}" loading="lazy" />
+                                </div>
+                                {{ end }}
+                            </a>
+                        </div>
+                        {{ if lt $i (sub (len $sectorProjects) 1) }}
+                        <hr class="project-divider" />
+                        {{ end }}
+                        {{ end }}
+                    {{ else }}
+                    <p class="industries-sector-empty">
+                        {{ i18n "industries_sector_empty" | safeHTML }}
+                    </p>
+                    {{ end }}
+                </div>
+
+                {{ end }}{{/* end range sectors */}}
+
+            </div><!-- /.industries-entries -->
+        </div><!-- /.industries-page-inner -->
+    </section>
+
+{{ end }}

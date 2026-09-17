@@ -7,7 +7,7 @@ year: "2021"
 tag: "Survei Risiko"
 weight: 1
 image: "assets/images/projects/ip.jpg"
-pageCSS: "services-projects.css"
+pageCSS: "industries-services-projects.css"
 summary: "Layanan survei risiko unit pembangkitan PGU & POMU PT Indonesia Power di tahun 2021."
 sitemap:
     changefreq: monthly

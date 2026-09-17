@@ -7,7 +7,7 @@ category_code: "consultation"
 service_code: "C10"
 summary: "Comprehensive research and studies; including customer loyalty surveys, employee engagement surveys, and field observations; forming the foundation for tailored recommendations aligned with your organization's goals."
 image: "assets/images/services/w12-min-1024x774.jpg"
-pageCSS: "services-projects.css"
+pageCSS: "industries-services-projects.css"
 sitemap:
     changefreq: monthly
     priority: 0.7

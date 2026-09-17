@@ -7,7 +7,7 @@ year: "2022"
 tag: "Risiko & Asuransi"
 weight: 1
 image: "assets/images/projects/plnbatam-600x465.jpg"
-pageCSS: "services-projects.css"
+pageCSS: "industries-services-projects.css"
 summary: "Konsultasi asuransi mencakup penilaian risiko, analisis, dan rekomendasi penutupan asuransi untuk PT PLN Batam di tahun 2022."
 sitemap:
     changefreq: monthly

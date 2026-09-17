@@ -7,7 +7,7 @@ year: "2024"
 tag: "Risk & Insurance"
 weight: 1
 image: "assets/images/projects/PT-BAG.jpg"
-pageCSS: "services-projects.css"
+pageCSS: "industries-services-projects.css"
 summary: "Procurement of risk management and insurance consulting services for PT Bahtera Adhiguna in 2024."
 sitemap:
     changefreq: monthly

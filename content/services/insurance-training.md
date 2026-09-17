@@ -7,7 +7,7 @@ category_code: "learning-center"
 service_code: "LC03"
 summary: "Insurance training covering property & business interruption, CAR, liability, personal accident, marine hull, and marine cargo; equipping risk management personnel with industry-specific technical knowledge."
 image: "assets/images/services/w17-min-1024x774.jpg"
-pageCSS: "services-projects.css"
+pageCSS: "industries-services-projects.css"
 sitemap:
     changefreq: monthly
     priority: 0.7

@@ -7,7 +7,7 @@ category_code: "consultation"
 service_code: "C08"
 summary: "Solusi lengkap pengurangan risiko bencana; dari manajemen administratif hingga pembangunan kapasitas operasional; untuk memastikan tanggap darurat yang tepat dari semua <i>stakeholder</i>."
 image: "assets/images/services/w7-1024x512.jpg"
-pageCSS: "services-projects.css"
+pageCSS: "industries-services-projects.css"
 sitemap:
     changefreq: monthly
     priority: 0.7

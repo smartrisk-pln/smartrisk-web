@@ -7,7 +7,7 @@ category_code: "learning-center"
 service_code: "LC02"
 summary: "Program pelatihan meliputi manajemen risiko perusahaan berdasarkan ISO 31000, <i>risk-based audit</i>, manajemen risiko proyek, dan kelangsungan bisnis berdasarkan ISO 22301; dengan sertifikasi BNSP (CRMP & CRMO)."
 image: "assets/images/services/w16-min-1024x774.jpg"
-pageCSS: "services-projects.css"
+pageCSS: "industries-services-projects.css"
 sitemap:
     changefreq: monthly
     priority: 0.7

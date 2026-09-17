@@ -7,7 +7,7 @@ category_code: "consultation"
 service_code: "C05"
 summary: "Meninjau strategi manajemen risiko dan langkah-langkah transfer risiko dengan analisis independen yang dipimpin para ahli, menjembatani departemen teknis dan keuangan untuk desain program asuransi yang efektif."
 image: "assets/images/services/w5-1024x512.jpg"
-pageCSS: "services-projects.css"
+pageCSS: "industries-services-projects.css"
 sitemap:
     changefreq: monthly
     priority: 0.7

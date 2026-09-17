@@ -7,7 +7,7 @@ category_code: "consultation"
 service_code: "C01"
 summary: "Systematic identification and assessment of operational hazards; including EML/PML analysis, business interruption scenarios, and GIS-based risk evaluation; tailored to the agreed-upon scope of work."
 image: "assets/images/services/w1-1024x512.jpg"
-pageCSS: "services-projects.css"
+pageCSS: "industries-services-projects.css"
 sitemap:
     changefreq: monthly
     priority: 0.7

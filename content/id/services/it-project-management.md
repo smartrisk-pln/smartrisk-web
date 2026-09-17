@@ -7,7 +7,7 @@ category_code: "it-solution"
 service_code: "IS01"
 summary: "Manajemen proyek IT dan <i>quality assurance</i>, termasuk solusi <i>green & smart building</i>, pengembangan <i>green port</i>, dan sistem manajemen dokumen."
 image: "assets/images/services/w18-min-1-1024x774.jpg"
-pageCSS: "services-projects.css"
+pageCSS: "industries-services-projects.css"
 sitemap:
     changefreq: monthly
     priority: 0.7

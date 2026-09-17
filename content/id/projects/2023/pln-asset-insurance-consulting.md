@@ -7,7 +7,7 @@ year: "2023"
 tag: "Risiko & Asuransi"
 weight: 1
 image: "assets/images/projects/antam-2.jpg"
-pageCSS: "services-projects.css"
+pageCSS: "industries-services-projects.css"
 summary: "Pengadaan layanan konsultasi asuransi dan risiko untuk asuransi aset PT PLN di tahun 2023."
 sitemap:
     changefreq: monthly

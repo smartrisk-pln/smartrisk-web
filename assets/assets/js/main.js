@@ -100,8 +100,8 @@ if (hamburger && mobileMenu) {
 // ---------- SIDEBAR ---------- //
 // Active highlight on scroll //
 (function () {
-    // Works for both services and projects pages
-    const sidebar = document.querySelector('.services-sidebar, .projects-sidebar');
+    // Works for industries, services, and projects pages
+    const sidebar = document.querySelector('.industries-sidebar, .services-sidebar, .projects-sidebar');
     if (!sidebar) return;
 
     const links    = sidebar.querySelectorAll('.sidebar-link');
@@ -137,6 +137,71 @@ if (hamburger && mobileMenu) {
     );
 
     sections.forEach(s => sidebarObserver.observe(s.el));
+})();
+
+
+// ---------------- INDUSTRIES SIDEBAR --------------- // 
+// ---------- BALANCED WRAP + SCROLL OFFSET ---------- //
+(function () {
+    const sidebar = document.querySelector('.industries-sidebar');
+    const nav = sidebar ? sidebar.querySelector('nav') : null;
+    if (!sidebar || !nav) return;
+
+    const links = Array.from(nav.querySelectorAll('.sidebar-link'));
+    const total = links.length;
+    if (!total) return;
+
+    // All column counts that divide evenly into the item count (descending),
+    // e.g. 6 items -> [6, 3, 2, 1]. Only these counts do not produce a row with just a single link.
+    const validCounts = [];
+    for (let i = total; i >= 1; i--) {
+        if (total % i === 0) validCounts.push(i);
+    }
+
+    const mobileQuery = window.matchMedia('(max-width: 860px)');
+
+    function balance() {
+        const gap = parseFloat(getComputedStyle(nav).columnGap) || 8;
+        const containerWidth = nav.getBoundingClientRect().width;
+
+        // Measure natural width of the widest label (single column, no wrapping constraint)
+        nav.style.gridTemplateColumns = `repeat(${total}, max-content)`;
+        const maxLabelWidth = Math.max(...links.map(l => l.getBoundingClientRect().width));
+
+        // Pick the most columns (from the valid divisor list) whose row still fits
+        let chosen = validCounts[validCounts.length - 1]; // fallback: 1 per row
+        for (const cols of validCounts) {
+            const needed = cols * maxLabelWidth + (cols-1) * gap;
+            if (needed <= containerWidth) { chosen = cols; break; }
+        }
+        nav.style.gridTemplateColumns = `repeat(${chosen}, 1fr)`;
+    }
+
+    function updateScrollOffset() {
+        const navH = parseFloat(
+            getComputedStyle(document.documentElement).getPropertyValue('--nav-h')
+        ) || 60;
+        const buffer = 24; // ~1.5rem breathing room, matches the old calc()
+
+        // On mobile, the sidebar is sticky and stacks below the site nav,
+        // covering content underneath it; so its height has to count toward the offset too.
+        // On desktop, it sits beside the the content, not over it.
+        const offset = mobileQuery.matches
+            ? sidebar.getBoundingClientRect().height + navH + buffer
+            : navH + buffer;
+
+        document.documentElement.style.setProperty('--industries-scroll-offset', `${offset}px`);
+    }
+
+    function refresh() {
+        balance();
+        // Wait a frame (row count may have changed) before measuring height
+        requestAnimationFrame(updateScrollOffset);
+    }
+
+    new ResizeObserver(refresh).observe(sidebar);
+    window.addEventListener('load', refresh);
+    mobileQuery.addEventListener('change', refresh);
 })();
 
 

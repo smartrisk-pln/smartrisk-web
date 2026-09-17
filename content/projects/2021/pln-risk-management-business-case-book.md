@@ -7,7 +7,7 @@ year: "2021"
 tag: "Risk Management"
 weight: 3
 image: "assets/images/projects/bisnis-case-750x465.jpg"
-pageCSS: "services-projects.css"
+pageCSS: "industries-services-projects.css"
 summary: "Development of 10 Business Case Studies book covering strategic, financial, project, operational, and compliance risk management; within and beyond the PLN environment."
 sitemap:
     changefreq: monthly

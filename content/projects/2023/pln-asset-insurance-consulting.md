@@ -7,7 +7,7 @@ year: "2023"
 tag: "Risk & Insurance"
 weight: 1
 image: "assets/images/projects/antam-2.jpg"
-pageCSS: "services-projects.css"
+pageCSS: "industries-services-projects.css"
 summary: "Procurement of insurance and risk consulting advisory services for asset insurance at PT PLN in 2023."
 sitemap:
     changefreq: monthly

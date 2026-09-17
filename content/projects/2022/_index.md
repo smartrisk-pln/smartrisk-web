@@ -2,7 +2,7 @@
 title: "2022"
 is_year: true
 description: "SmartRisk project case studies from 2022."
-pageCSS: "services-projects.css"
+pageCSS: "industries-services-projects.css"
 robotsdisallow: true
 sitemap_exclude: true
 # To change to a browseable projects year page:

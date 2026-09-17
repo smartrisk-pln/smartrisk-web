@@ -1,0 +1,42 @@
+#===================================#
+#========== INDUSTRIES PAGE ========#
+#===================================#
+#=================================#
+#========== PAGE HEADER ==========#
+#=================================#
+[industries_header_section_label]
+other = "Klien Kami"
+[industries_header_h1]
+other = "Industri yang <em>Kami Layani</em>"
+[industries_header_p]
+other = "Dari pembangkit listrik hingga pelabuhan, kami menghadirkan keahlian manajemen risiko untuk industri dengan tingkat bahaya dan konsekuensi tertinggi di Indonesia."
+[industries_sidebar_aria]
+other = "Lompat ke proyek berdasarkan industri"
+
+
+#=========================================#
+#========== SECTOR CATEGORIES ============#
+#=========================================#
+# Sector categories are defined in content/id/industries/_index.md:
+#   - Code          : content/id/industries/_index.md → indutries → code
+#   - Title         : content/id/industries/_index.md → indutries → title
+#   - Description   : content/id/industries/_index.md → indutries → desc
+# English equivalents are in content/industries/_index.md
+# See layouts/industries/list.html for how these are rendered.
+
+
+#======================================#
+#========== SECTOR ENTRIES ============#
+#======================================#
+# Sector entry (project) titles, tags, and descriptions are not defined here.
+# They are sourced from the front matter of each project page:
+#   - Title     : content/id/projects/<year>/<slug>.md → project_title
+#   - Summary   : content/id/projects/<year>/<slug>.md → summary
+#   - Image     : content/id/projects/<year>/<slug>.md → image
+#   - Sector    : content/id/projects/<year>/<slug>.md → industry_sector
+# English equivalents are in content/projects/<slug>.md
+# See layouts/industries/list.html for how these are rendered by industry_sector.
+# Placeholder for an industry sector with no corresponding projects yet:
+[industries_sector_empty]
+other = "Proyek baru di sektor ini akan segera hadir."
+

@@ -7,7 +7,7 @@ category_code: "it-solution"
 service_code: "IS01"
 summary: "End-to-end IT project management and quality assurance, including green & smart building solutions, green port development, and document management systems."
 image: "assets/images/services/w18-min-1-1024x774.jpg"
-pageCSS: "services-projects.css"
+pageCSS: "industries-services-projects.css"
 sitemap:
     changefreq: monthly
     priority: 0.7
