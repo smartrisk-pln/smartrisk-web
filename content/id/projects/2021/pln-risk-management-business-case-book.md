@@ -7,6 +7,7 @@ year: "2021"
 tag: "Manajemen Risiko"
 weight: 3
 image: "assets/images/projects/bisnis-case-750x465.jpg"
+industry_sector: ["energy-utilities"]
 pageCSS: "industries-services-projects.css"
 summary: "Penyusunan buku tentang 10 studi kasus bisnis yang mencakup manajemen risiko strategis, finansial, proyek, operasional, dan kepatuhan; baik di lingkungan PT PLN maupun eksternal."
 sitemap:

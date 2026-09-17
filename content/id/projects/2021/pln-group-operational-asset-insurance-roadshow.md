@@ -7,6 +7,7 @@ year: "2021"
 tag: "Risiko & Asuransi"
 weight: 4
 image: "assets/images/projects/roadshow.jpg"
+industry_sector: ["energy-utilities"]
 pageCSS: "industries-services-projects.css"
 summary: "Program roadshow asuransi untuk aset operasional di seluruh PT PLN Group."
 sitemap:

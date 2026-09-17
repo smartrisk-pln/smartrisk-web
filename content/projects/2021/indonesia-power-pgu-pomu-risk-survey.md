@@ -7,6 +7,7 @@ year: "2021"
 tag: "Risk Survey"
 weight: 1
 image: "assets/images/projects/ip.jpg"
+industry_sector: ["energy-utilities"]
 pageCSS: "industries-services-projects.css"
 summary: "Risk survey services for power generation units (PGU & POMU) managed by PT Indonesia Power in 2021."
 sitemap:

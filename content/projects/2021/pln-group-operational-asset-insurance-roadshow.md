@@ -7,6 +7,7 @@ year: "2021"
 tag: "Risk & Insurance"
 weight: 4
 image: "assets/images/projects/roadshow.jpg"
+industry_sector: ["energy-utilities"]
 pageCSS: "industries-services-projects.css"
 summary: "Insurance roadshow program for operational assets across the PT PLN Group."
 sitemap:

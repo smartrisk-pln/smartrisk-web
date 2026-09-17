@@ -7,6 +7,7 @@ year: "2024"
 tag: "Risiko & Asuransi"
 weight: 1
 image: "assets/images/projects/PT-BAG.jpg"
+industry_sector: ["ports-marine"]
 pageCSS: "industries-services-projects.css"
 summary: "Pengadaan layanan konsultansi manajemen risiko dan asuransi PT Bahtera Adhiguna tahun 2024."
 sitemap:
