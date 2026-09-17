@@ -4,10 +4,12 @@ project_title: "Konsultasi Asuransi Aset Operasional"
 description: "Layanan konsultasi penutupan asuransi aset operasional PT Geo Dipa Energi di tahun 2021."
 client: "PT Geo Dipa Energi"
 year: "2021"
-tag: "Konsultasi Asuransi"
+tag: 
+    - "Konsultasi Asuransi"
 weight: 2
 image: "assets/images/projects/cover-bc4-1.jpg"
-industry_sector: ["energy-utilities"]
+industry_sector: 
+    - "energy-utilities"
 pageCSS: "industries-services-projects.css"
 summary: "Layanan konsultasi penutupan asuransi aset operasional PT Geo Dipa Energi di tahun 2021."
 sitemap:

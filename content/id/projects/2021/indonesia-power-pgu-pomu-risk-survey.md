@@ -4,10 +4,12 @@ project_title: "Survei Risiko PGU & POMU"
 description: "Layanan survei risiko unit pembangkitan PGU & POMU PT Indonesia Power di tahun 2021."
 client: "PT Indonesia Power"
 year: "2021"
-tag: "Survei Risiko"
+tag: 
+    - "Survei Risiko"
 weight: 1
 image: "assets/images/projects/ip.jpg"
-industry_sector: ["energy-utilities"]
+industry_sector: 
+    - "energy-utilities"
 pageCSS: "industries-services-projects.css"
 summary: "Layanan survei risiko unit pembangkitan PGU & POMU PT Indonesia Power di tahun 2021."
 sitemap:

@@ -4,10 +4,12 @@ project_title: "Risk Management & Insurance Consulting"
 description: "Procurement of risk management and insurance consulting services for PT Bahtera Adhiguna in 2024."
 client: "PT Pelayaran Bahtera Adhiguna (BAg)"
 year: "2024"
-tag: "Risk & Insurance"
+tag: 
+    - "Risk & Insurance"
 weight: 1
 image: "assets/images/projects/PT-BAG.jpg"
-industry_sector: ["ports-marine"]
+industry_sector: 
+    - "ports-marine"
 pageCSS: "industries-services-projects.css"
 summary: "Procurement of risk management and insurance consulting services for PT Bahtera Adhiguna in 2024."
 sitemap:

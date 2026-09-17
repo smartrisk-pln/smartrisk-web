@@ -9,7 +9,8 @@ tag:
     - "Risk Assessment"
 weight: 2
 image: "assets/images/projects/Petrokimia-Gresik.jpg"
-industry_sector: ["manufacturing"]
+industry_sector: 
+    - "manufacturing"
 pageCSS: "industries-services-projects.css"
 summary: "Comprehensive risk assessment and asset valuation for PT Petrokimia Gresik in 2023."
 sitemap:

@@ -4,10 +4,12 @@ project_title: "Penilaian Risiko & Rekomendasi Penutupan Asuransi"
 description: "Konsultasi asuransi mencakup penilaian risiko, analisis, dan rekomendasi penutupan asuransi untuk PT PLN Batam di tahun 2022."
 client: "PT PLN Batam"
 year: "2022"
-tag: "Risiko & Asuransi"
+tag: 
+    - "Risiko & Asuransi"
 weight: 1
 image: "assets/images/projects/plnbatam-600x465.jpg"
-industry_sector: ["energy-utilities"]
+industry_sector: 
+    - "energy-utilities"
 pageCSS: "industries-services-projects.css"
 summary: "Konsultasi asuransi mencakup penilaian risiko, analisis, dan rekomendasi penutupan asuransi untuk PT PLN Batam di tahun 2022."
 sitemap:

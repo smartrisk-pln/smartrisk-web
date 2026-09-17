@@ -48,7 +48,13 @@
                                 <div class="project-entry-content">
                                     {{ with $project.Params.tag }}
                                     <div class="project-tags">
-                                        <span class="project-tag">{{ . }}</span>
+                                        {{ $tags := . }}
+                                        {{ if not (reflect.IsSlice .) }}
+                                            {{ $tags = slice . }}
+                                        {{ end }}
+                                        {{ range sort $tags }}
+                                            <span class="project-tag">{{ . }}</span>
+                                        {{ end }}
                                     </div>
                                     {{ end }}
                                     <h3 class="project-entry-title">{{ $project.Params.project_title }}</h3>

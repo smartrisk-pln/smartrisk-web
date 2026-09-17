@@ -4,10 +4,12 @@ project_title: "Roadshow Asuransi Aset Operasional"
 description: "Program roadshow asuransi untuk aset operasional di seluruh PT PLN Group."
 client: "PT PLN Group"
 year: "2021"
-tag: "Risiko & Asuransi"
+tag: 
+    - "Risiko & Asuransi"
 weight: 4
 image: "assets/images/projects/roadshow.jpg"
-industry_sector: ["energy-utilities"]
+industry_sector: 
+    - "energy-utilities"
 pageCSS: "industries-services-projects.css"
 summary: "Program roadshow asuransi untuk aset operasional di seluruh PT PLN Group."
 sitemap:

@@ -4,10 +4,12 @@ project_title: "Konsultasi Manajemen Risiko dan Asuransi"
 description: "Pengadaan layanan konsultansi manajemen risiko dan asuransi PT Bahtera Adhiguna tahun 2024."
 client: "PT Pelayaran Bahtera Adhiguna (BAg)"
 year: "2024"
-tag: "Risiko & Asuransi"
+tag: 
+    - "Risiko & Asuransi"
 weight: 1
 image: "assets/images/projects/PT-BAG.jpg"
-industry_sector: ["ports-marine"]
+industry_sector: 
+    - "ports-marine"
 pageCSS: "industries-services-projects.css"
 summary: "Pengadaan layanan konsultansi manajemen risiko dan asuransi PT Bahtera Adhiguna tahun 2024."
 sitemap:
