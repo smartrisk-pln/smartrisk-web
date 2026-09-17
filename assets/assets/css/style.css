@@ -1404,7 +1404,7 @@ footer .contact-details {
 
 
 /*---------- TABLET ----------*/
-@media (max-width: 1100px) {
+@media (max-width: 1200px) {
     .nav-links { display: none; }
     .hamburger { display: flex !important ; } 
 
