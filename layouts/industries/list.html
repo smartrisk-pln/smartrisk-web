@@ -31,7 +31,19 @@
 
                 {{ range $sector := .Params.industries }}
                 {{ $code := $sector.code }}
-                {{ $sectorProjects := where $allProjects ".Params.industry_sector" "intersect" (slice $code) }}
+                
+                {{ $sectorProjects := slice }}
+                {{ range $allProjects }}
+                    {{ $sectors := .Params.industry_sector }}
+                    {{ if $sectors }}
+                        {{ if not (reflect.IsSlice $sectors) }}
+                            {{ $sectors = slice $sectors }}
+                        {{ end }}
+                        {{ if in $sectors $code }}
+                            {{ $sectorProjects = $sectorProjects | append . }}
+                        {{ end }}
+                    {{ end }}
+                {{ end }}
                 {{ $sectorProjects = sort $sectorProjects "Params.year" "desc" }}
 
                 <div class="industries-sector-group" id="{{ $code }}">
