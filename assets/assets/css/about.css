@@ -108,9 +108,14 @@
     padding         : 2.5rem 2rem;
     border-right    : 1px solid var(--rule);
     transition      : background 0.2s;
+    text-decoration : none;
+    color           : inherit;
 }
 .spec-card:last-child { border-right: none; }
 .spec-card:hover { background: var(--paper); }
+.spec-card:hover .spec-title {
+    color: var(--accent-hover);
+}
 /*
 .spec-icon {
     font-size       : 2rem;
@@ -124,6 +129,7 @@
     font-weight     : 700;
     margin-bottom   : 0.5rem;
 }
+
 .spec-sub {
     font-size   : 0.8rem;
     color       : var(--muted);
