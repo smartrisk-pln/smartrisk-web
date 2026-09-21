@@ -7,7 +7,7 @@ year: "2023"
 tag: 
     - "Risiko & Asuransi"
 weight: 1
-image: "assets/images/projects/antam-2.jpg"
+image: "assets/images/projects/2023_pln.jpg"
 industry_sector: 
     - "energy-utilities"
 pageCSS: "industries-services-projects.css"
