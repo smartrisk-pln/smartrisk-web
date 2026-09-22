@@ -66,8 +66,9 @@ if (hamburger && mobileMenu) {
         // document.body.style.overflow = open ? 'hidden' : '';
     });
 
-    // Close menu when any link inside is clicked
-    mobileMenu.querySelectorAll('a').forEach(link => {
+    // Close menu when any link inside is clicked (but not the Projects dropdown toggle, 
+    // which only expands its submenu rather than navigating)
+    mobileMenu.querySelectorAll('a:not(.nav-dropdown-toggle').forEach(link => {
         link.addEventListener('click', (e) => {
             e.stopPropagation();
             closeMenu();
@@ -94,6 +95,16 @@ if (hamburger && mobileMenu) {
         }
     });
 }
+
+// ---------- MOBILE NAV DROPDOWN (Projects) ---------- //
+document.querySelectorAll('#mobile-menu .nav-dropdown-toggle').forEach((toggle) => {
+    toggle.addEventListener('click', (e) => {
+        e.preventDefault();
+        const item = toggle.closest('.nav-item-dropdown');
+        const isOpen = item.classList.toggle('open');
+        toggle.setAttribute('aria-expanded', isOpen);
+    });
+});
 
 
 
