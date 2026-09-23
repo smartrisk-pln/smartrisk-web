@@ -62,6 +62,11 @@ other = "Alamat Email"
 other = "email@anda.com"
 
 [contact_form_name_04]
+other = "Telepon / WhatsApp"
+[contact_form_placeholder_04]
+other = "+628123456789"
+
+[contact_form_name_05]
 other = "Layanan yang Diminati"
 [contact_form_options_title]
 other = "Pilih Layanan..."
@@ -80,9 +85,9 @@ other = "Kelangsungan &amp; Ketahanan Bisnis"
 [contact_form_option_07]
 other = "Lainnya / Pertanyaan Umum"
 
-[contact_form_name_05]
+[contact_form_name_06]
 other = "Pesan"
-[contact_form_placeholder_05]
+[contact_form_placeholder_06]
 other = "Jelaskan secara singkat proyek atau pertanyaan Anda"
 
 [contact_form_submit]

@@ -25,7 +25,11 @@
             <input type="email" id="field-email" name="email" placeholder='{{ i18n "contact_form_placeholder_03" | safeHTML }}' required aria-required="true" />
         </div>
         <div class="form-group">
-            <label for="field-service">{{ i18n "contact_form_name_04" | safeHTML }}</label>
+            <label for="field-phone">{{ i18n "contact_form_name_04" | safeHTML }}</label>
+            <input type="tel" id="field-phone" name="tel" placeholder='{{ i18n "contact_form_placeholder_04" | safeHTML }}' required aria-required="true" />
+        </div>
+        <div class="form-group">
+            <label for="field-service">{{ i18n "contact_form_name_05" | safeHTML }}</label>
             <select id="field-service" name="service">
                 <option value="">{{ i18n "contact_form_options_title" | safeHTML }}</option>
                 <option>{{ i18n "contact_form_option_01" | safeHTML }}</option>
@@ -38,8 +42,8 @@
             </select>
         </div>
         <div class="form-group">
-            <label for="field-message">{{ i18n "contact_form_name_05" | safeHTML }}</label>
-            <textarea id="field-message" name="message" placeholder='{{ i18n "contact_form_placeholder_05" | safeHTML }}'></textarea>
+            <label for="field-message">{{ i18n "contact_form_name_06" | safeHTML }}</label>
+            <textarea id="field-message" name="message" placeholder='{{ i18n "contact_form_placeholder_06" | safeHTML }}'></textarea>
         </div>
         <input type="text" name="_gotcha" style="display:none" />
         <p id="form-status" aria-live="polite" aria-atomic="true"></p>

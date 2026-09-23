@@ -62,6 +62,11 @@ other = "Email Address"
 other = "your@email.com"
 
 [contact_form_name_04]
+other = "Phone / WhatsApp"
+[contact_form_placeholder_04]
+other = "+628123456789"
+
+[contact_form_name_05]
 other = "Service of Interest"
 [contact_form_options_title]
 other = "Select a service..."
@@ -80,9 +85,9 @@ other = "Business Continuity &amp; Resilience"
 [contact_form_option_07]
 other = "Other / General Inquiry"
 
-[contact_form_name_05]
+[contact_form_name_06]
 other = "Message"
-[contact_form_placeholder_05]
+[contact_form_placeholder_06]
 other = "Briefly describe your project or inquiry"
 
 [contact_form_submit]
