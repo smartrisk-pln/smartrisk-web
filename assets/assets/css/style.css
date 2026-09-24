@@ -679,7 +679,7 @@ nav {
     font-size       : 1.05rem;
     line-height     : 1.75;
     color           : var(--hero-body);
-    max-width       : 480px;
+    /* max-width       : 480px; */
     margin-bottom   : 3rem;
     opacity         : 0;
     animation       : fadeUp 0.5s 0.2s forwards;
