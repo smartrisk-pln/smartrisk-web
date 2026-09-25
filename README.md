@@ -22,6 +22,7 @@ smartrisk/
 │   ├── _index.md       ← English homepage
 │   ├── about/
 │   ├── team/
+│   ├── industries/     ← Recent Projects (by industry sector)
 │   ├── services/
 │   ├── projects/       ← Recent Projects (year-based) and Portfolio (interactive map)
 │   ├── media/          ← Media page (video embeds via youtube-facade partial) 
@@ -41,6 +42,7 @@ smartrisk/
 │   │   └── baseof.html ← HTML shell (head, nav, main, footer)
 │   ├── about/
 │   ├── team/
+│   ├── industries/
 │   ├── services/
 │   ├── projects/
 │   │   └── portfolio/  ← Interactive SEA project map (MapLibre GL JS)
