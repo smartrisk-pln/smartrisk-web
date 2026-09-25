@@ -283,55 +283,33 @@
             <a href="projects/" class="btn btn-outline btn-right-arrow-ink">{{ i18n "projects_cta" | safeHTML }}</a>
         </div>
 
+        <!-- render project entries from front matter -->
         <div class="projects-grid">
-            {{ $proj01 := site.GetPage "projects/2024/pt-bag-risk-management-and-insurance-consulting" }}
-            <a href="{{ with $proj01 }}{{ .RelPermalink }}{{ else }}{{ "projects/" | relLangURL }}{{ end }}" class="project-card">
-                <span class="project-tag">{{ i18n "project_01_tag" | safeHTML }}</span>
-                <div class="project-title">{{ i18n "project_01_title" | safeHTML }}</div>
-                <div class="project-client">{{ i18n "project_01_client" | safeHTML }}</div>
-                <div class="project-year">{{ i18n "project_01_year" | safeHTML }}</div>
-            </a>
-
-            {{ $proj02 := site.GetPage "projects/2023/petrokimia-gresik-risk-assessment-and-asset-valuation" }}
-            <a href="{{ with $proj02 }}{{ .RelPermalink }}{{ else }}{{ "projects/" | relLangURL }}{{ end }}" class="project-card">
-                <span class="project-tag">{{ i18n "project_02_tag" | safeHTML }}</span>
-                <div class="project-title">{{ i18n "project_02_title" | safeHTML }}</div>
-                <div class="project-client">{{ i18n "project_02_client" | safeHTML }}</div>
-                <div class="project-year">{{ i18n "project_02_year" | safeHTML }}</div>
-            </a>
-
-            {{ $proj03 := site.GetPage "projects/2023/pln-asset-insurance-consulting" }}
-            <a href="{{ with $proj03 }}{{ .RelPermalink }}{{ else }}{{ "projects/" | relLangURL }}{{ end }}" class="project-card">
-                <span class="project-tag">{{ i18n "project_03_tag" | safeHTML }}</span>
-                <div class="project-title">{{ i18n "project_03_title" | safeHTML }}</div>
-                <div class="project-client">{{ i18n "project_03_client" | safeHTML }}</div>
-                <div class="project-year">{{ i18n "project_03_year" | safeHTML }}</div>
-            </a>
-            
-            {{ $proj04 := site.GetPage "projects/2022/pln-batam-insurance-and-risk-assessment" }}
-            <a href="{{ with $proj04 }}{{ .RelPermalink }}{{ else }}{{ "projects/" | relLangURL }}{{ end }}" class="project-card">
-                <span class="project-tag">{{ i18n "project_04_tag" | safeHTML }}</span>
-                <div class="project-title">{{ i18n "project_04_title" | safeHTML }}</div>
-                <div class="project-client">{{ i18n "project_04_client" | safeHTML }}</div>
-                <div class="project-year">{{ i18n "project_04_year" | safeHTML }}</div>
-            </a>
-
-            {{ $proj05 := site.GetPage "projects/2021/indonesia-power-pgu-pomu-risk-survey" }}
-            <a href="{{ with $proj05 }}{{ .RelPermalink }}{{ else }}{{ "projects/" | relLangURL }}{{ end }}" class="project-card">
-                <span class="project-tag">{{ i18n "project_05_tag" | safeHTML }}</span>
-                <div class="project-title">{{ i18n "project_05_title" | safeHTML }}</div>
-                <div class="project-client">{{ i18n "project_05_client" | safeHTML }}</div>
-                <div class="project-year">{{ i18n "project_05_year" | safeHTML }}</div>
-            </a>
-
-            {{ $proj06 := site.GetPage "projects/2021/geo-dipa-asset-insurance-consulting" }}
-            <a href="{{ with $proj06 }}{{ .RelPermalink }}{{ else }}{{ "projects/" | relLangURL }}{{ end }}" class="project-card">
-                <span class="project-tag">{{ i18n "project_06_tag" | safeHTML }}</span>
-                <div class="project-title">{{ i18n "project_06_title" | safeHTML }}</div>
-                <div class="project-client">{{ i18n "project_06_client" | safeHTML }}</div>
-                <div class="project-year">{{ i18n "project_06_year" | safeHTML }}</div>
-            </a>
-
+            {{ range slice 
+                "projects/2026/citacontrac-risk-profile"
+                "projects/2025/hcml-risk-assessment"
+                "projects/2024/pt-bag-risk-management-and-insurance-consulting"
+                "projects/2023/petrokimia-gresik-risk-assessment-and-asset-valuation"
+                "projects/2022/vdni-risk-assessment"
+                "projects/2021/geo-dipa-asset-insurance-consulting"
+            }}
+                {{ with site.GetPage . }}
+                <a href="{{ .RelPermalink }}" class="project-card">
+                    {{ with .Params.tag }}
+                        {{ $tags := . }}
+                        {{ if not (reflect.IsSlice .) }}{{ $tags = slice . }}{{ end }}
+                        <div class="project-tags">
+                            {{ range $tags }}
+                            <span class="project-tag">{{ . }}</span>
+                            {{ end }}
+                        </div>
+                    {{ end }}
+                    <div class="project-title">{{ .Params.project_title }}</div>
+                    <div class="project-client">{{ .Params.client }}</div>
+                    <div class="project-year">{{ .Params.year }}</div>
+                </a>
+                {{ end }}
+            {{ end }}
         </div>
     </section>
 

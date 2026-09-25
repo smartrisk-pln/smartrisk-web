@@ -5,7 +5,7 @@ description: "Penilaian risiko untuk PT Husky-CNOOC Madura Limited (HCML) tahun 
 client: "PT Husky-CNOOC Madura Limited"
 year: "2025"
 tag: 
-    - "Risk Assessment"
+    - "Penilaian Risiko"
 weight: 1
 image: "assets/images/projects/2025_hcml.jpg"
 industry_sector: 

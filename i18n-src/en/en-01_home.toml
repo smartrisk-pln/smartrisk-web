@@ -171,59 +171,16 @@ other = "Recent <em>Projects</em>"
 [projects_cta]
 other = "All Projects"
 
-[project_01_tag]
-other = "Risk &amp; Insurance"
-[project_01_title]
-other = "Risk Management &amp; Insurance Consulting"
-[project_01_client]
-other = "PT Pelayaran Bahtera Adhiguna (BAg)"
-[project_01_year]
-other = "2024"
-
-[project_02_tag]
-other = "Asset Valuation"
-[project_02_title]
-other = "Risk Assessment &amp; Asset Valuation"
-[project_02_client]
-other = "PT Petrokimia Gresik"
-[project_02_year]
-other = "2023"
-
-[project_03_tag]
-other = "Risk &amp; Insurance"
-[project_03_title]
-other = "Insurance and Risk Consulting Services for Asset Insurance"
-[project_03_client]
-other = "PT PLN (Persero)"
-[project_03_year]
-other = "2023"
-
-[project_04_tag]
-other = "Risk &amp; Insurance"
-[project_04_title]
-other = "Risk Assessment &amp; Insurance Closure Recommendations"
-[project_04_client]
-other = "PT PLN Batam"
-[project_04_year]
-other = "2022"
-
-[project_05_tag]
-other = "Risk Survey"
-[project_05_title]
-other = "PGU &amp; POMU - Generation Units Risk Survey"
-[project_05_client]
-other = "PT Indonesia Power"
-[project_05_year]
-other = "2021"
-
-[project_06_tag]
-other = "Insurance Consulting"
-[project_06_title]
-other = "Operational Asset Insurance Consulting"
-[project_06_client]
-other = "PT Geo Dipa Energi"
-[project_06_year]
-other = "2021"
+#======================================#
+#========== PROJECT ENTRIES ==========#
+#======================================#
+# Displayed project entry titles, clients, years, and tags are not defined here.
+# They are sourced from the front matter of each project page:
+#   - Title     : content/projects/<year>/<slug>.md → project_title
+#   - Client   : content/projects/<year>/<slug>.md → client
+#   - Year     : content/projects/<year>/<slug>.md → year
+# Indonesian equivalents are in content/id/projects/<slug>.md
+# See layouts/index.html for how these are rendered on homepage.
 
 
 #===========================#
