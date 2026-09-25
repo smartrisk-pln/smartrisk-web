@@ -7,7 +7,7 @@ category_code: "consultation"
 service_code: "C07"
 summary: "Penerapan sistem dan standar <i>Business Continuity Management</i> (BCM) untuk menjaga kelangsungan operasi saat menghadapi bencana alam, dengan mengintegrasikan langkah keberlanjutan yang hemat biaya."
 image: "assets/images/services/w6-1024x512.jpg"
-pageCSS: "services-projects.css"
+pageCSS: "industries-services-projects.css"
 sitemap:
     changefreq: monthly
     priority: 0.7

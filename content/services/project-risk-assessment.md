@@ -7,7 +7,7 @@ category_code: "consultation"
 service_code: "C02"
 summary: "Supporting clients in understanding construction-phase risks, applying mitigation and prevention plans to reduce insurance premium costs during project execution."
 image: "assets/images/services/w2-1024x512.jpg"
-pageCSS: "services-projects.css"
+pageCSS: "industries-services-projects.css"
 sitemap:
     changefreq: monthly
     priority: 0.7

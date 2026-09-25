@@ -7,7 +7,7 @@ category_code: "learning-center"
 service_code: "LC03"
 summary: "Pelatihan asuransi mencakup properti & interupsi bisnis, CAR, <i>liability</i>, <i>personal accident</i>, asuransi kapal, dan asuransi pengangkutan; membekali personil manajemen risiko dengan pengetahuan teknis industri."
 image: "assets/images/services/w17-min-1024x774.jpg"
-pageCSS: "services-projects.css"
+pageCSS: "industries-services-projects.css"
 sitemap:
     changefreq: monthly
     priority: 0.7

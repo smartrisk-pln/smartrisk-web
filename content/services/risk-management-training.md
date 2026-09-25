@@ -7,7 +7,7 @@ category_code: "learning-center"
 service_code: "LC02"
 summary: "Training programs include enterprise risk management per ISO 31000, risk-based audit, project risk management, and business continuity per ISO 22301; with BNSP certification (CRMP & CRMO)."
 image: "assets/images/services/w16-min-1024x774.jpg"
-pageCSS: "services-projects.css"
+pageCSS: "industries-services-projects.css"
 sitemap:
     changefreq: monthly
     priority: 0.7

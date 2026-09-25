@@ -7,7 +7,7 @@
 [about_header_section_label]
 other = "Tentang Smartrisk"
 [about_header_h1]
-other = "Keahlian risiko, disampaikan<br /> secara <em>independen</em>"
+other = "Dengan <em>Pengalaman</em> yang Terbukti,<br /> <em>Dipercaya</em> oleh Industri."
 [about_header_p]
 other = "PT Solusi Manajemen Risiko Terintegrasi (SmartRisk) didirikan pada tahun 2020 sebagai perusahaan <i lang='EN'>joint venture</i> YPK-PLN untuk memberikan konsultasi risiko yang bebas dari konflik kepentingan asuransi atau broker."
 
@@ -66,33 +66,67 @@ other = "SmartRisk menyadari nilai mendasar dari percobaan terhadap perkiraan da
 [spec_section_label]
 other = "Area Kerja Kami"
 [spec_h2]
-other = "Bidang Keahlian"
+other = "Bidang <em>Keahlian</em>"
 
 [spec_01_title]
-other = "Energi"
+other = "Energi & Utilitas"
 [spec_01_sub]
-other = "Pembangkit listrik, minyak &amp; gas, energi terbarukan"
+other = "Pembangkit listrik &middot; transmisi &middot; energi terbarukan"
 [spec_02_title]
-other = "Asuransi"
+other = "Minyak & Gas"
 [spec_02_sub]
-other = "Desain program, penempatan, <i lang='EN'>advisory</i> klaim"
+other = "Hulu &middot; hilir &middot; pengolahan"
 [spec_03_title]
-other = "Pelabuhan &amp; Kargo Laut"
+other = "Pertambangan & Mineral"
 [spec_03_sub]
-other = "Terminal kontainer, kargo curah, logistik"
+other = "Batu bara &middot; nikel &middot; bauksit &middot; logam mulia"
 
 [spec_04_title]
-other = "Pertambangan"
+other = "Pelabuhan & Kargo Laut"
 [spec_04_sub]
-other = "Batu bara, nikel, bauksit, logam mulia"
+other = "Terminal kontainer &middot; kargo curah &middot; logistik"
 [spec_05_title]
-other = "Proyek Konstruksi"
+other = "Manufaktur"
 [spec_05_sub]
-other = "Proyek modal, EPC, infrastruktur"
+other = "Kimia &middot; baja &middot; fasilitas industri"
 [spec_06_title]
-other = "Gedung Bertingkat"
+other = "Konstruksi & EPC"
 [spec_06_sub]
-other = "Komersial, residensial, <i lang='EN'>mixed-use</i>"
+other = "Proyek modal &middot; EPC &middot; <i lang='EN'>commissioning</i>"
+
+
+#============================#
+#========== UNIQUE ==========#
+#============================#
+[unique_section_label]
+other = "Yang Membedakan Kami"
+[unique_h2]
+other = "Mengapa <em>SmartRisk</em>?"
+
+[unique_point_01_title]
+other = "Terstruktur secara independen"
+[unique_point_01_desc]
+other = "Tidak memiliki konflik kepentingan dengan insurer."
+
+[unique_point_02_title]
+other = "Untuk industri kompleks"
+[unique_point_02_desc]
+other = "Pengalaman di bidang energi, pertambangan, maritim, dan operasi industrial."
+
+[unique_point_03_title]
+other = "Mengutamakan aspek teknis"
+[unique_point_03_desc]
+other = "<i lang='EN'>Risk assessment</i> didukung oleh tenaga ahli profesional yang bersertifikat."
+
+[unique_point_04_title]
+other = "Dari penilaian hingga tindakan"
+[unique_point_04_desc]
+other = "Bukan hanya mengidentifikasi risiko, tetapi menghasilkan rekomendasi yang dapat diterapkan."
+
+[unique_point_05_title]
+other = "Keahlian lokal. <i lang='EN'>Framework</i> internasional."
+[unique_point_05_desc]
+other = "Menggabungkan pemahaman industri Indonesia dengan <i lang='EN'>framework</i> dan standar internasional"
 
 
 #============================#
@@ -139,7 +173,7 @@ other = "Peninjauan dan pelaporan berkelanjutan untuk memantau <i lang='EN'>risk
 [pillars_section_label]
 other = "Yang Menggerakkan Kami"
 [pillars_h2]
-other = "Komitmen Kami"
+other = "<em>Komitmen</em> Kami"
 
 [pillar_01_title]
 other = "Independensi"

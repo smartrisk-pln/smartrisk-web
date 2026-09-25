@@ -7,7 +7,7 @@ category_code: "consultation"
 service_code: "C05"
 summary: "Reviewing risk management strategies and risk-transfer measures with independent, expert-led analysis that bridges technical and finance departments for effective insurance program design."
 image: "assets/images/services/w5-1024x512.jpg"
-pageCSS: "services-projects.css"
+pageCSS: "industries-services-projects.css"
 sitemap:
     changefreq: monthly
     priority: 0.7

@@ -340,15 +340,15 @@ nav {
     border-top      : 5px solid currentColor;
     transition      : transform 0.2s ease;
 }
-.nav-item-dropdown:hover .nav-dropdown-caret,
-.nav-item-dropdown:focus-within .nav-dropdown-caret {
+.nav-links .nav-item-dropdown:hover .nav-dropdown-caret,
+.nav-links .nav-item-dropdown:focus-within .nav-dropdown-caret {
     transform: rotate(-180deg);
 }
 .nav-dropdown-menu {
     position        : absolute;
     top             : 100%;
     left            : 0;
-    padding-top     : 1rem;   /* invisible spacer, still part of the hoverable box */
+    padding-top     : 0.5rem;   /* invisible spacer, still part of the hoverable box */
     opacity         : 0;
     visibility      : hidden;
     pointer-events  : none;
@@ -482,7 +482,7 @@ nav {
     font-weight     : 500;
     color           : var(--paper);
     text-decoration : none;
-    padding         : 1rem 0.5rem;
+    padding         : 0.8rem 0.5rem;
     display         : block;
     transition      : color 0.2s;
 }
@@ -679,7 +679,7 @@ nav {
     font-size       : 1.05rem;
     line-height     : 1.75;
     color           : var(--hero-body);
-    max-width       : 480px;
+    /* max-width       : 480px; */
     margin-bottom   : 3rem;
     opacity         : 0;
     animation       : fadeUp 0.5s 0.2s forwards;
@@ -943,7 +943,6 @@ nav {
 .btn-primary { 
     background  : var(--accent); 
     color       : var(--white); 
-    border      : none; 
 }
 .btn-primary:hover { background: var(--accent-hover); }
 
@@ -1405,7 +1404,7 @@ footer .contact-details {
 
 
 /*---------- TABLET ----------*/
-@media (max-width: 1100px) {
+@media (max-width: 1200px) {
     .nav-links { display: none; }
     .hamburger { display: flex !important ; } 
 
@@ -1417,19 +1416,33 @@ footer .contact-details {
     .mobile-menu .nav-dropdown-toggle {
         display         : flex !important;
         width           : 100%;
-        justify-content : space-between;
+        justify-content : flex-start;
+        gap             : 0.5rem;
     }
-    .mobile-menu .nav-dropdown-caret { display: none; }
+    .mobile-menu .nav-dropdown-caret { 
+        display     : block;
+        transition  : transform 0.2s ease; 
+    }
+    .mobile-menu .nav-item-dropdown.open .nav-dropdown-caret {
+        transform   : rotate(-180deg);
+    }
     .mobile-menu .nav-dropdown-menu {
         position        : static;
+        opacity         : 0;
+        visibility      : hidden;
+        pointer-events  : none;
+        max-height      : 0;
+        overflow        : hidden;
+        transform       : none;
+        transition      : opacity 0.18s ease, max-height 0.25s ease;
+        padding-left    : 2rem;
+        border-bottom   : none; 
+    }
+    .mobile-menu .nav-item-dropdown.open .nav-dropdown-menu {
         opacity         : 1;
         visibility      : visible;
         pointer-events  : auto;
-        transform       : none;
-        transition      : none;
-        margin-top      : -1.5rem;
-        padding-left    : 2rem;
-        border-bottom   : none; 
+        max-height      : 200px;
     }
     .mobile-menu .nav-dropdown-menu-inner {
         border          : none;

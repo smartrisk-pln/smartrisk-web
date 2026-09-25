@@ -7,7 +7,7 @@ category_code: "it-solution"
 service_code: "IS02"
 summary: "In-house software solutions including HAZOP's and RiskGra platforms, with upcoming tools for maturity level assessment and cyber risk management."
 image: "assets/images/services/w19-min-1024x774.jpg"
-pageCSS: "services-projects.css"
+pageCSS: "industries-services-projects.css"
 sitemap:
     changefreq: monthly
     priority: 0.7

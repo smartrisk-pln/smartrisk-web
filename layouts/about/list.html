@@ -31,7 +31,7 @@
     </div>
 
     <!---------- STORY ---------->
-    <section class="story" aria-labelledby="story-heading">
+    <section class="story" id="story" aria-labelledby="story-heading">
         <div class="story-text reveal">
             <div class="section-label">{{ i18n "story_section_label" | safeHTML }}</div>
             <h2 id="story-heading">{{ i18n "story_h2" | safeHTML }}</h2>
@@ -62,53 +62,105 @@
     </section>
 
     <!---------- SPECIALIZATIONS ---------->
-    <section class="specializations" aria-labelledby="specializations-heading">
+    <section class="specializations" id="industries" aria-labelledby="specializations-heading">
         <div class="reveal">
             <div class="section-label">{{ i18n "spec_section_label" | safeHTML }}</div>
             <h2 id="specializations-heading">{{ i18n "spec_h2" | safeHTML }}</h2>
         </div>
         <div class="spec-grid reveal">
-            <div class="spec-card">
+            <a href="{{ "industries/#energy-utilities" | relLangURL }}" class="spec-card">
+                <!-- ENERGY & UTILITIES -->
                 <!-- <span class="spec-icon" aria-hidden="true">&#9889;&#65039;</span> -->
                 <div class="spec-title">{{ i18n "spec_01_title" | safeHTML }}</div>
                 <div class="spec-sub">{{ i18n "spec_01_sub" | safeHTML }}</div>
-            </div>
-            <div class="spec-card">
+            </a>
+            <a href="{{ "industries/#oil-gas" | relLangURL }}" class="spec-card">
+                <!-- OIL & GAS -->
                 <!-- <span class="spec-icon" aria-hidden="true">&#128737;&#65039;</span> -->
                 <div class="spec-title">{{ i18n "spec_02_title" | safeHTML }}</div>
                 <div class="spec-sub">{{ i18n "spec_02_sub" | safeHTML }}</div>
-            </div>
-            <div class="spec-card">
+            </a>
+            <a href="{{ "industries/#mining-minerals" | relLangURL }}" class="spec-card">
+                <!-- MINING & MINERALS -->
                 <!-- <span class="spec-icon" aria-hidden="true">&#128674;&#65039;</span> -->
                 <div class="spec-title">{{ i18n "spec_03_title" | safeHTML }}</div>
                 <div class="spec-sub">{{ i18n "spec_03_sub" | safeHTML }}</div>
-            </div>
-            
+            </a>            
         </div>
         
         <div class="spec-grid spec-grid-row2 reveal">
-            <div class="spec-card">
+            <a href="{{ "industries/#ports-marine" | relLangURL }}" class="spec-card">
+                <!-- PORTS & MARINE CARGO -->
                 <!-- <span class="spec-icon" aria-hidden="true">&#9935;&#65039;</span> -->
                 <div class="spec-title">{{ i18n "spec_04_title" | safeHTML }}</div>
                 <div class="spec-sub">{{ i18n "spec_04_sub" | safeHTML }}</div>
-            </div>
-            
-            <div class="spec-card">
+            </a>
+            <a href="{{ "industries/#manufacturing" | relLangURL }}" class="spec-card">
+                <!-- MANUFACTURING -->
                 <!-- <span class="spec-icon" aria-hidden="true">&#127959;&#65039;</span> -->
                 <div class="spec-title">{{ i18n "spec_05_title" | safeHTML }}</div>
                 <div class="spec-sub">{{ i18n "spec_05_sub" | safeHTML }}</div>
-            </div>
-            <div class="spec-card">
+            </a>
+            <a href="{{ "industries/#construction-epc" | relLangURL }}" class="spec-card">
+                <!-- CONSTRUCTION & EPC -->
                 <!-- <span class="spec-icon" aria-hidden="true">&#127970;&#65039;</span> -->
                 <div class="spec-title">{{ i18n "spec_06_title" | safeHTML }}</div>
                 <div class="spec-sub">{{ i18n "spec_06_sub" | safeHTML }}</div>
-            </div>
+            </a>
         </div>
     </section>
 
 
+    <!---------- UNIQUE ---------->
+    <section class="unique" id="unique" aria-labelledby="unique-heading">
+        <div class="unique-inner">
+            <div class="unique-text reveal">
+                <div class="section-label">{{ i18n "unique_section_label" | safeHTML }}</div>
+                <h2 id="unique-heading">{{ i18n "unique_h2" | safeHTML }}</h2>
+            </div>
+            <div class="unique-visual reveal">
+                <div class="unique-point">
+                    <div class="unique-point-num">&middot;</div>
+                    <div>
+                        <div class="unique-point-title">{{ i18n "unique_point_01_title" | safeHTML }}</div>
+                        <div class="unique-point-desc">{{ i18n "unique_point_01_desc" | safeHTML }}</div>
+                    </div>
+                </div>
+                <div class="unique-point">
+                    <div class="unique-point-num">&middot;</div>
+                    <div>
+                        <div class="unique-point-title">{{ i18n "unique_point_02_title" | safeHTML }}</div>
+                        <div class="unique-point-desc">{{ i18n "unique_point_02_desc" | safeHTML }}</div>
+                    </div>
+                </div>
+                <div class="unique-point">
+                    <div class="unique-point-num">&middot;</div>
+                    <div>
+                        <div class="unique-point-title">{{ i18n "unique_point_03_title" | safeHTML }}</div>
+                        <div class="unique-point-desc">{{ i18n "unique_point_03_desc" | safeHTML }}</div>
+                    </div>
+                </div>
+                <div class="unique-point">
+                    <div class="unique-point-num">&middot;</div>
+                    <div>
+                        <div class="unique-point-title">{{ i18n "unique_point_04_title" | safeHTML }}</div>
+                        <div class="unique-point-desc">{{ i18n "unique_point_04_desc" | safeHTML }}</div>
+                    </div>
+                </div>
+                <div class="unique-point">
+                    <div class="unique-point-num">&middot;</div>
+                    <div>
+                        <div class="unique-point-title">{{ i18n "unique_point_05_title" | safeHTML }}</div>
+                        <div class="unique-point-desc">{{ i18n "unique_point_05_desc" | safeHTML }}</div>
+                    </div>
+                </div>
+            </div>
+        </div>    
+    </section>
+
+
     <!---------- METHOD ---------->
-    <section class="method" aria-labelledby="method-heading">
+    <section class="method" id="method" aria-labelledby="method-heading">
         <div class="method-inner">
             <div class="method-text reveal">
                 <div class="section-label">{{ i18n "method_section_label" | safeHTML }}</div>
@@ -162,7 +214,7 @@
 
 
     <!---------- MISSION PILLARS ---------->
-    <section class="mission-pillars" aria-labelledby="mission-pillars-heading">
+    <section class="mission-pillars" id="commitment" aria-labelledby="mission-pillars-heading">
         <div class="reveal">
             <div class="section-label">{{ i18n "pillars_section_label" | safeHTML }}</div>
             <h2 id="mission-pillars-heading">{{ i18n "pillars_h2" | safeHTML }}</h2>
@@ -196,7 +248,7 @@
     <section class="cta-strip reveal">
         <h2>{{ i18n "about_cta_h2" | safeHTML }}</h2>
         <div class="cta-actions">
-            <a href="{{ "contact/" | relLangURL }}" class="btn btn-outline-light">{{ i18n "about_cta_btn_01" | safeHTML }}</a>
+            <a href="{{ "contact/" | relLangURL }}" class="btn btn-primary">{{ i18n "about_cta_btn_01" | safeHTML }}</a>
             <a href="{{ "team/" | relLangURL }}" class="btn btn-outline-light">{{ i18n "about_cta_btn_02" | safeHTML }}</a>
         </div>
     </section>

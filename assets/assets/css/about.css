@@ -108,9 +108,14 @@
     padding         : 2.5rem 2rem;
     border-right    : 1px solid var(--rule);
     transition      : background 0.2s;
+    text-decoration : none;
+    color           : inherit;
 }
 .spec-card:last-child { border-right: none; }
 .spec-card:hover { background: var(--paper); }
+.spec-card:hover .spec-title {
+    color: var(--accent-hover);
+}
 /*
 .spec-icon {
     font-size       : 2rem;
@@ -124,6 +129,7 @@
     font-weight     : 700;
     margin-bottom   : 0.5rem;
 }
+
 .spec-sub {
     font-size   : 0.8rem;
     color       : var(--muted);
@@ -132,6 +138,59 @@
 .spec-grid-row2 { border-top: 1px solid var(--rule); }
 .spec-grid-row2 .spec-card { border-right: 1px solid var(--rule); }
 .spec-grid-row2 .spec-card:last-child { border-right: none; }
+
+
+/*---------- UNIQUE ----------*/
+.unique {
+    padding         : 7rem 4rem;
+    border-bottom   : 1px solid var(--rule);
+}
+.unique-inner {
+    display                 : grid;
+    grid-template-columns   : 1fr;
+    gap                     : 3rem;
+    align-items             : start;
+}
+.unique-text h2 { margin-bottom: 1.5rem; }
+.unique-text p {
+    font-size   : 1rem;
+    line-height : 1.8;
+    color       : var(--muted);
+}
+.unique-text p + p { margin-top: 1em; }
+.unique-visual {
+    display         : flex;
+    flex-direction  : column;
+    gap             : 0;
+}
+.unique-point {
+    display         : flex;
+    gap             : 1.5rem;
+    padding         : 1.75rem 0;
+    border-bottom   : 1px solid var(--rule);
+    align-items     : flex-start;
+}
+.unique-point:last-child { border-bottom: none; }
+.unique-point-num {
+    font-family : 'Cal Sans', sans-serif;
+    font-size   : 2rem;
+    font-weight : 600;
+    color       : var(--accent);
+    line-height : 1;
+    flex-shrink : 0;
+    width       : 2rem;
+    text-align  : center;
+}
+.unique-point-title {
+    font-weight     : 500;
+    font-size       : 0.95rem;
+    margin-bottom   : 0.3rem;
+}
+.unique-point-desc {
+    font-size   : 0.82rem;
+    color       : var(--muted);
+    line-height : 1.55;
+}
 
 
 /*---------- METHOD ----------*/
@@ -143,7 +202,7 @@
     display                 : grid;
     grid-template-columns   : 1fr 1fr;
     gap                     : 6rem;
-    align-items             : center;
+    align-items             : start;
 }
 .method-text h2 { margin-bottom: 1.5rem; }
 .method-text p {
@@ -173,6 +232,7 @@
     line-height : 1;
     flex-shrink : 0;
     width       : 2rem;
+    text-align  : center;
 }
 .method-step-title {
     font-weight     : 500;
@@ -258,6 +318,7 @@
     .story-text,
     .story-aside { padding: 4rem 1.5rem; }
     .specializations,
+    .unique,
     .method,
     .mission-pillars { padding: 4rem 1.5rem; }
     .spec-grid { grid-template-columns: 1fr; }

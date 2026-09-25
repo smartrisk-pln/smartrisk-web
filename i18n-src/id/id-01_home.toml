@@ -9,7 +9,7 @@ other = "Konsultan Risiko Independen &middot; Didirikan di Jakarta, Indonesia"
 [hero_h1]
 other = "Mengelola Risiko secara <em>Global</em>"
 [hero_body]
-other = "SmartRisk adalah konsultan manajemen risiko independen dengan pengalaman lebih dari satu dekade membantu klien di sektor energi, infrastruktur, dan industri dalam mengidentifikasi, menilai, dan memitigasi risiko kompleks."
+other = "Konsultan risiko independen untuk sektor energi, infrastruktur, dan industri."
 
 [hero_cta_primary]
 other = "Layanan Kami"
@@ -122,7 +122,7 @@ other = "Pelatihan asuransi mencakup properti & interupsi bisnis, CAR, <i>liabil
 #========== CLIENTS ==========#
 #=============================#
 [clients_label]
-other = "Dipercaya oleh Organisasi Terkemuka"
+other = "Dipercaya di berbagai Industri Penting"
 
 [client_item_00]
 other = "PLN Group"
@@ -171,59 +171,16 @@ other = "Proyek <em>Terkini</em>"
 [projects_cta]
 other = "Semua Proyek"
 
-[project_01_tag]
-other = "Risiko &amp; Asuransi"
-[project_01_title]
-other = "Konsultasi Manajemen Risiko dan Asuransi"
-[project_01_client]
-other = "PT Pelayaran Bahtera Adhiguna (BAg)"
-[project_01_year]
-other = "2024"
-
-[project_02_tag]
-other = "Valuasi Aset"
-[project_02_title]
-other = "Penilaian Risiko &amp; Valuasi Aset"
-[project_02_client]
-other = "PT Petrokimia Gresik"
-[project_02_year]
-other = "2023"
-
-[project_03_tag]
-other = "Risiko &amp; Asuransi"
-[project_03_title]
-other = "Layanan Konsultasi Asuransi dan Risiko untuk Asuransi Aset"
-[project_03_client]
-other = "PT PLN (Persero)"
-[project_03_year]
-other = "2023"
-
-[project_04_tag]
-other = "Risiko &amp; Asuransi"
-[project_04_title]
-other = "Penilaian Risiko &amp; Rekomendasi Penutupan Asuransi"
-[project_04_client]
-other = "PT PLN Batam"
-[project_04_year]
-other = "2022"
-
-[project_05_tag]
-other = "Survei Risiko"
-[project_05_title]
-other = "Survei Risiko PGU &amp; POMU - Unit Pembangkitan"
-[project_05_client]
-other = "PT Indonesia Power"
-[project_05_year]
-other = "2021"
-
-[project_06_tag]
-other = "Konsultasi Asuransi"
-[project_06_title]
-other = "Konsultasi Asuransi Aset Operasional"
-[project_06_client]
-other = "PT Geo Dipa Energi"
-[project_06_year]
-other = "2021"
+#======================================#
+#========== PROJECT ENTRIES ==========#
+#======================================#
+# Displayed project entry titles, clients, years, and tags are not defined here.
+# They are sourced from the front matter of each project page:
+#   - Title     : content/id/projects/<year>/<slug>.md → project_title
+#   - Client   : content/id/projects/<year>/<slug>.md → client
+#   - Year     : content/id/projects/<year>/<slug>.md → year
+# English equivalents are in content/projects/<slug>.md
+# See layouts/index.html for how these are rendered on homepage.
 
 
 #===========================#

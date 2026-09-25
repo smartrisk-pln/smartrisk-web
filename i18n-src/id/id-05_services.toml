@@ -5,39 +5,39 @@
 #========== PAGE HEADER ==========#
 #=================================#
 [services_header_section_label]
-other = "What We Do"
+other = "Yang Kami Kerjakan"
 [services_header_h1]
-other = "Our <em>Services</em>"
+other = "<em>Layanan</em> Kami"
 [services_header_p]
-other = "From operational risk assessments to HSE training and IT solutions, SmartRisk delivers integrated, independent consulting across every stage of your risk management cycle."
+other = "Dari penilaian risiko operasional hingga pelatihan K3 dan solusi IT, SmartRisk menghadirkan konsultasi terintegrasi dan independen di setiap tahap siklus manajemen risiko Anda."
 
 
 #=============================#
 #========== MARQUEE ==========#
 #=============================#
 [services_marquee_01]
-other = "Operational Risk Assessment"
+other = "Penilaian & Survei Risiko Operasional"
 [services_marquee_02]
-other = "Project Risk Assessment"
+other = "Penilaian Risiko Proyek"
 [services_marquee_03]
-other = "Asset Valuation"
+other = "Valuasi Aset"
 [services_marquee_04]
-other = "Risk Management &amp; Insurance Planning"
+other = "Manajemen Risiko &amp; Perencanaan Asuransi"
 [services_marquee_05]
-other = "HSE Management"
+other = "Manajemen K3"
 [services_marquee_06]
-other = "Business Continuity &amp; Resilience"
+other = "Keberlanjutan &amp; Ketahanan Bisnis"
 
 
 #======================================#
 #========== SERVICES SIDEBAR ==========#
 #======================================#
 [services_sidebar_aria]
-other = "Service categories"
+other = "Kategori layanan"
 [services_cat_consultation]
-other = "Consultation"
+other = "Konsultasi"
 [services_cat_learning]
-other = "Learning Center"
+other = "Pusat Pembelajaran"
 [services_cat_it]
 other = "IT Solution"
 
@@ -47,10 +47,10 @@ other = "IT Solution"
 #======================================#
 # Service entry titles and descriptions are not defined here.
 # They are sourced from the front matter of each service page:
-#   - Title     : content/services/<slug>.md → service_title
-#   - Summary   : content/services/<slug>.md → summary
-#   - Image     : content/services/<slug>.md → image
-# Indonesian equivalents are in content/id/services/<slug>.md
+#   - Title     : content/id/services/<slug>.md → service_title
+#   - Summary   : content/id/services/<slug>.md → summary
+#   - Image     : content/id/services/<slug>.md → image
+# English equivalents are in content/services/<slug>.md
 # See layouts/services/list.html for how these are rendered.
 
 
@@ -58,9 +58,9 @@ other = "IT Solution"
 #========== SERVICES SINGLE PAGE ==========#
 #==========================================#
 [service_single_cta]
-other = "Enquire About This Service"
+other = "Tanyakan Layanan Ini"
 
 [service_single_back]
-other = "All Services"
+other = "Semua Layanan"
 
 

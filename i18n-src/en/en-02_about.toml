@@ -7,7 +7,7 @@
 [about_header_section_label]
 other = "About SmartRisk"
 [about_header_h1]
-other = "Risk expertise,<br /><em>Independently</em> delivered"
+other = "Backed by <em>Experience</em>.<br /> <em>Trusted</em> by Industry."
 [about_header_p]
 other = "PT Solusi Manajemen Risiko Terintegrasi (SmartRisk) was established in 2020 as a YPK-PLN joint venture to provide unbiased, expert-led risk consulting, free from insurer or broker conflicts of interest."
 
@@ -66,33 +66,67 @@ other = "SmartRisk recognizes the fundamental value of testing forecasts and ant
 [spec_section_label]
 other = "Where We Work"
 [spec_h2]
-other = "Sector Expertise"
+other = "Sector of <em>Expertise</em>"
 
 [spec_01_title]
-other = "Energy"
+other = "Energy & Utilities"
 [spec_01_sub]
-other = "Power generation, oil &amp; gas, renewable energy"
+other = "Power generation &middot; transmission &middot; renewable energy"
 [spec_02_title]
-other = "Insurance"
+other = "Oil & Gas"
 [spec_02_sub]
-other = "Program design, placement, claims advisory"
+other = "Upstream &middot; downstream &middot; processing"
 [spec_03_title]
-other = "Ports &amp; Marine Cargo"
+other = "Mining & Minerals"
 [spec_03_sub]
-other = "Container terminals, bulk cargo, logistics"
+other = "Coal &middot; nickel &middot; bauxite &middot; precious metals"
 
 [spec_04_title]
-other = "Mining"
+other = "Ports & Marine Cargo"
 [spec_04_sub]
-other = "Coal, nickel, bauxite, precious metals"
+other = "Container terminals &middot; bulk cargo &middot; logistics"
 [spec_05_title]
-other = "Construction Projects"
+other = "Manufacturing"
 [spec_05_sub]
-other = "Capital projects, EPC, infrastructure"
+other = "Chemical &middot; steel &middot; industrial facilities"
 [spec_06_title]
-other = "High-Rise Buildings"
+other = "Construction & EPC"
 [spec_06_sub]
-other = "Commercial, residential, mixed-use"
+other = "Capital projects &middot; EPC &middot; commissioning"
+
+
+#============================#
+#========== UNIQUE ==========#
+#============================#
+[unique_section_label]
+other = "What Sets Us Apart"
+[unique_h2]
+other = "Why <em>SmartRisk</em>?"
+
+[unique_point_01_title]
+other = "Independent by design"
+[unique_point_01_desc]
+other = "No conflicts of interest with insurers, brokers, or vendors."
+
+[unique_point_02_title]
+other = "Built for complex industries"
+[unique_point_02_desc]
+other = "Experienced in energy, mining, infrastructure, maritime, and industrial operations."
+
+[unique_point_03_title]
+other = "Engineering-led"
+[unique_point_03_desc]
+other = "Risk assessment supported by professional certified technical experts."
+
+[unique_point_04_title]
+other = "From assessment to action"
+[unique_point_04_desc]
+other = "Not only identifying risks, but also providing actionable recommendations."
+
+[unique_point_05_title]
+other = "Local expertise. International framework."
+[unique_point_05_desc]
+other = "Combining an understanding of the Indonesian industry with international frameworks and standards."
 
 
 #============================#
@@ -139,7 +173,7 @@ other = "Ongoing review and reporting to track risk posture over time."
 [pillars_section_label]
 other = "What Drives Us"
 [pillars_h2]
-other = "Our Commitments"
+other = "Our <em>Commitments</em>"
 
 [pillar_01_title]
 other = "Independence"

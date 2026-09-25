@@ -5,30 +5,30 @@
 #========== CONTACT INFO PANEL ==========#
 #========================================#
 [contact_info_section_label]
-other = "Hubungi SmartRisk"
+other = "Contact SmartRisk"
 [contact_info_text_h1]
-other = "Mari diskusikan tantangan <em>risiko</em> Anda."
+other = "Have a <em>Risk</em> Challenge?"
 [contact_info_text_p]
-other = "Hubungi tim kami di Jakarta. Kami siap mendiskusikan proyek Anda."
+other = "Tell us about your project, asset, or operational risk. Our team will help you identify the right approach."
 [contact_map_title]
-other = "Lokasi kantor SmartRisk di Google Maps"
+other = "SmartRisk office location on Google Maps"
 
 
 #=====================================#
 #========== CONTACT DETAILS ==========#
 #=====================================#
 [contact_item_title_01]
-other = "Kantor Kerja"
+other = "Work Office"
 [contact_item_details_01]
 other = "Gedung Menara Hijau, Jl. MT Haryono Kav 33, Lantai 3 Suite 301, Jakarta 12770"
 
 [contact_item_title_02]
-other = "Kantor Pusat"
+other = "Head Office"
 [contact_item_details_02]
 other = "Jl. Trunojoyo Blok M/135, Kebayoran Baru, Gedung 1 Lantai 4, Jakarta 12160"
 
 [contact_item_title_03]
-other = "Telepon / Whatsapp"
+other = "Phone / Whatsapp"
 [contact_item_details_03]
 other = "<a href='tel:+628118208123'>+62-811-8208-123</a>"
 
@@ -42,53 +42,58 @@ other = "<a href='mailto:admin@smartrisk-pln.com'>admin@smartrisk-pln.com</a>"
 #========== CONTACT FORM ==========#
 #==================================#
 [contact_form_section_label]
-other = "Hubungi Kami"
+other = "Get in Touch"
 [contact_form_text_h2]
-other = "Kirim <em>Pesan</em>"
+other = "Discuss Your <em>Risk</em>"
 
 [contact_form_name_01]
-other = "Nama Lengkap"
+other = "Full Name"
 [contact_form_placeholder_01]
-other = "Nama Anda"
+other = "Your Name"
 
 [contact_form_name_02]
-other = "Perusahaan / Organisasi"
+other = "Company / Organization"
 [contact_form_placeholder_02]
-other = "Nama Perusahaan / Organisasi"
+other = "Company / Organization Name"
 
 [contact_form_name_03]
-other = "Alamat Email"
+other = "Email Address"
 [contact_form_placeholder_03]
-other = "email@anda.com"
+other = "your@email.com"
 
 [contact_form_name_04]
-other = "Layanan yang Diminati"
-[contact_form_options_title]
-other = "Pilih Layanan..."
-[contact_form_option_01]
-other = "Penilaian Risiko Operasional"
-[contact_form_option_02]
-other = "Penilaian Risiko Proyek"
-[contact_form_option_03]
-other = "Valuasi Aset"
-[contact_form_option_04]
-other = "Manajemen Risiko &amp; Perencanaan Asuransi"
-[contact_form_option_05]
-other = "Manajemen K3"
-[contact_form_option_06]
-other = "Kelangsungan &amp; Ketahanan Bisnis"
-[contact_form_option_07]
-other = "Lainnya / Pertanyaan Umum"
+other = "Phone / WhatsApp"
+[contact_form_placeholder_04]
+other = "+628123456789"
 
 [contact_form_name_05]
-other = "Pesan"
-[contact_form_placeholder_05]
-other = "Jelaskan secara singkat proyek atau pertanyaan Anda"
+other = "Service of Interest"
+[contact_form_options_title]
+other = "Select a service..."
+[contact_form_option_01]
+other = "Operational Risk Assessment"
+[contact_form_option_02]
+other = "Project Risk Assessment"
+[contact_form_option_03]
+other = "Asset Valuation"
+[contact_form_option_04]
+other = "Risk Management &amp; Insurance Planning"
+[contact_form_option_05]
+other = "HSE Management"
+[contact_form_option_06]
+other = "Business Continuity &amp; Resilience"
+[contact_form_option_07]
+other = "Other / General Inquiry"
+
+[contact_form_name_06]
+other = "Message"
+[contact_form_placeholder_06]
+other = "Briefly describe your project or inquiry"
 
 [contact_form_submit]
-other = "Kirim Pesan"
+other = "Send Inquiry"
 
 [contact_privacy_notice]
-other = "Informasi Anda akan digunakan untuk menanggapi pertanyaan Anda, sebagaimana dijelaskan dalam <a href='%s'>kebijakan privasi kami</a>."
+other = "Your information will be used to respond to your inquiry, as described in our <a href='%s'>privacy policy</a>."
 
 

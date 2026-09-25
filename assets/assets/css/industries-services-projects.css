@@ -1,17 +1,20 @@
-/* ------------------------------------------------------
-   ---------- SmartRisk - Services Page Styles ----------
-   ------------------------------------------------------ */
+/* --------------------------------------------------------------------------
+   ---------- SmartRisk - Industries_Services_Projects Page Styles ----------
+   -------------------------------------------------------------------------- */
 :root {
     --sidebar-bg            : rgba(30, 47, 71, 0.85);
 }
 
-/*---------- SERVICES PAGE LAYOUT ----------*/
+/*---------- PAGE LAYOUT ----------*/
+.industries-page,
+.projects-page,
 .services-page {
     padding-top     : 0;
     padding-bottom  : 0;
     border-bottom   : 1px solid var(--rule);
 }
-
+.industries-page-inner,
+.projects-page-inner,
 .services-page-inner {
     display                 : grid;
     grid-template-columns   : 200px 1fr;
@@ -20,8 +23,8 @@
     margin                  : 0 auto;
 }
 
-
 /*---------- SIDEBAR ----------*/
+.industries-sidebar,
 .services-sidebar,
 .projects-sidebar {
     /* position     : relative; */
@@ -32,7 +35,7 @@
     align-self      : stretch;
     /* height       : 100%; */
 }
-
+.industries-sidebar nav,
 .services-sidebar nav,
 .projects-sidebar nav {
     position        : sticky;
@@ -88,6 +91,10 @@
     background-color: var(--rule-dark);
 }
 
+
+/* ------------------------------------------------------
+   ---------- SmartRisk - Services Page Styles ----------
+   ------------------------------------------------------ */
 
 /*---------- SERVICE ENTRIES ----------*/
 .services-entries {
@@ -265,21 +272,6 @@
 /* ------------------------------------------------------
    ---------- SmartRisk - Projects Page Styles ----------
    ------------------------------------------------------ */
-/*---------- PROJECTS PAGE LAYOUT ----------*/
-.projects-page {
-    padding-top     : 0;
-    padding-bottom  : 0;
-    border-bottom   : 1px solid var(--rule);
-}
-
-.projects-page-inner {
-    display                 : grid;
-    grid-template-columns   : 200px 1fr;
-    align-items             : start;
-    max-width               : var(--content-max, 100vw);
-    margin                  : 0 auto;
-}
-
 
 /*---------- PROJECT ENTRIES ----------*/
 .projects-entries {
@@ -478,6 +470,52 @@
 }
 
 
+/* ------------------------------------------------------
+   ---------- SmartRisk - Industries Page Styles --------
+   ------------------------------------------------------ */
+   
+/*---------- SECTOR ENTRIES ----------*/
+.industries-entries {
+    padding : 5rem 4rem 5rem 5rem;
+}
+
+.industries-sector-group {
+    scroll-margin-top   : calc(var(--nav-h, 60px) + 1.5rem);
+    margin-bottom       : 4rem;
+}
+.industries-sector-group:last-child {
+    margin-bottom   : 0;
+}
+
+.industries-sector-header {
+    margin-bottom   : 1.5rem;
+    padding-bottom  : 1rem;
+    border-bottom   : 2px solid var(--rule);
+}
+
+.industries-sector-title {
+    font-family     : 'Cal Sans', sans-serif;
+    font-size       : 1.5rem;
+    font-weight     : 600;
+    color           : var(--ink);
+    margin-bottom   : 0.4rem;
+}
+
+.industries-sector-desc {
+    font-size       : 0.95rem;
+    line-height     : 1.6;
+    color           : var(--muted);
+    margin          : 0;
+}
+
+.industries-sector-empty {
+    font-size       : 0.9rem;
+    color           : var(--muted);
+    font-style      : italic;
+    padding         : 1rem 2rem;
+}
+
+
 /* ----------------------------------------------------
    ---------- Sidebar Active Scroll Behavior ----------
    ---------------------------------------------------- */
@@ -496,12 +534,14 @@
 
 
 /*---------- MOBILE ----------*/
-@media (max-width: 780px) {
+@media (max-width: 860px) {
+    .industries-page-inner,
     .services-page-inner,
     .projects-page-inner {
         grid-template-columns: 1fr;
     }
 
+    .industries-sidebar,
     .services-sidebar,
     .projects-sidebar {
         position        : sticky;
@@ -514,6 +554,11 @@
         align-self      : start;
     }
 
+    .industries-sidebar nav { /* ensure balanced mobile sidebar at the top */
+        display                : grid;
+        grid-template-columns  : repeat(var(--sidebar-cols, 3), 1fr);
+        gap                    : 0.5rem;
+    }
     .services-sidebar nav,
     .projects-sidebar nav {
         flex-direction  : row;
@@ -540,10 +585,14 @@
         border-bottom   : 2px solid var(--rule-dark);
     }
 
+    .industries-sector-group {
+        scroll-margin-top : var(--industries-scroll-offset, calc(var(--nav-h, 60px) + 1.5rem));
+    }
     .services-category,
     .projects-year-group {
         scroll-margin-top: calc(var(--nav-h, 60px) + var(--sidebar-h, 48px) + 1.5rem);
     }
+    .industries-entries,
     .services-entries,
     .projects-entries {
         padding: 3rem 2rem;

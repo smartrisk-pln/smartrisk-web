@@ -7,6 +7,8 @@ other = "Beranda"
 other = "Tentang Kami"
 [nav_team]
 other = "Tim Kami"
+[nav_industries]
+other = "Industri"
 [nav_services]
 other = "Layanan"
 [nav_projects]

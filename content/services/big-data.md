@@ -7,7 +7,7 @@ category_code: "it-solution"
 service_code: "IS03"
 summary: "Leveraging large datasets from internet usage, smart devices, social media, and digital media to solve business challenges that were previously unmanageable."
 image: "assets/images/services/cloud-1018x1024.jpg"
-pageCSS: "services-projects.css"
+pageCSS: "industries-services-projects.css"
 sitemap:
     changefreq: monthly
     priority: 0.7

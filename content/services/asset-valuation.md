@@ -7,7 +7,7 @@ category_code: "consultation"
 service_code: "C03"
 summary: "Independent technical valuation of industrial assets using a comprehensive industry database; including RAN, market value, and forced sale value; to optimize insurance premiums and ensure adequate coverage."
 image: "assets/images/services/G2.jpg"
-pageCSS: "services-projects.css"
+pageCSS: "industries-services-projects.css"
 sitemap:
     changefreq: monthly
     priority: 0.7

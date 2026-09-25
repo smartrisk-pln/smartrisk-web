@@ -7,6 +7,8 @@ other = "Home"
 other = "About Us"
 [nav_team]
 other = "Our Team"
+[nav_industries]
+other = "Industries"
 [nav_services]
 other = "Services"
 [nav_projects]

@@ -7,7 +7,7 @@ category_code: "consultation"
 service_code: "C06"
 summary: "Developing and improving integrated HSE management systems, contractor safety management procedures, fire-protection planning, emergency response plans, and incident investigation support."
 image: "assets/images/services/w13-1024x774.jpg"
-pageCSS: "services-projects.css"
+pageCSS: "industries-services-projects.css"
 sitemap:
     changefreq: monthly
     priority: 0.7

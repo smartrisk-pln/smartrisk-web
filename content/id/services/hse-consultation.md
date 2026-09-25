@@ -7,7 +7,7 @@ category_code: "consultation"
 service_code: "C06"
 summary: "Pengembangan dan peningkatan sistem manajemen K3 terpadu, prosedur CSMS, perencanaan proteksi kebakaran, rencana tanggap darurat, dan pendampingan investigasi insiden."
 image: "assets/images/services/w13-1024x774.jpg"
-pageCSS: "services-projects.css"
+pageCSS: "industries-services-projects.css"
 sitemap:
     changefreq: monthly
     priority: 0.7

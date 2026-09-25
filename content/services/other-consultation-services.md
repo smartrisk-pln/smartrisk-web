@@ -7,7 +7,7 @@ category_code: "consultation"
 service_code: "C11"
 summary: "Additional services including fire and explosion risk assessment, forensic engineering investigation, HAZOP/SIL/LOPA analysis, human capital maturity assessment, and integrated performance management."
 image: "assets/images/services/w14-min-768x580.jpg"
-pageCSS: "services-projects.css"
+pageCSS: "industries-services-projects.css"
 sitemap:
     changefreq: monthly
     priority: 0.7

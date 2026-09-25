@@ -7,7 +7,7 @@ category_code: "learning-center"
 service_code: "LC04"
 summary: "Customized training programs tailored to client needs, including HSE leadership, behavioral-based safety, contractor safety management system (CSMS), and basic firefighting."
 image: "assets/images/services/Training-HSE.jpg"
-pageCSS: "services-projects.css"
+pageCSS: "industries-services-projects.css"
 sitemap:
     changefreq: monthly
     priority: 0.7

@@ -50,7 +50,7 @@ style(services): Adjust card hover transition
 perf(hero): Defer off-screen slides
 ```
 
-Common scopes: `services`, `projects`, `portfolio`, `about`, `team`, `contact`, `nav`, `i18n`, `css`, `data`, `scripts`, `redirects`, `privacy`.
+Common scopes: `industries`, `services`, `projects`, `portfolio`, `about`, `team`, `contact`, `nav`, `i18n`, `css`, `data`, `scripts`, `redirects`, `privacy`.
 
 ### Examples
 
@@ -123,7 +123,7 @@ Never embed a raw `<iframe>` for YouTube (see README's [YouTube Embeds](../READM
 
 1. Create the `.md` file (EN version) under `content/services/` or `content/projects/<year>/`, and the matching translation (ID version) under `content/id/services/` or `content/id/projects/<year>/`.
 2. **The filename becomes the URL slug** — make sure it matches the `href` already linked to it in `layouts/services/list.html` or `layouts/projects/list.html`. A mismatch here causes a 404 page not found error. (**NOTE:** The list of services and projects are now generated automatically based on the `.md` files in `content/services/` or `content/projects/<year>/`)
-3. If the new project page involves adding a new `<year>` folder, remember to add to the `_headers` file:
+3. If the new project page involves adding a new `<year>` folder, remember to add to the `static/_headers` file:
     ```
     https://smartrisk-pln.com/id/projects/<year>/
     X-Robots-Tag: noindex, nofollow

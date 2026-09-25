@@ -7,7 +7,7 @@ category_code: "consultation"
 service_code: "C03"
 summary: "Valuasi teknis independen atas aset industri menggunakan database industri yang komprehensif; mencakup RAN, <i>market value</i>, dan <i>forced sale value</i>; untuk mengoptimalkan premi asuransi dan memastikan <i>coverage</i> yang memadai."
 image: "assets/images/services/G2.jpg"
-pageCSS: "services-projects.css"
+pageCSS: "industries-services-projects.css"
 sitemap:
     changefreq: monthly
     priority: 0.7

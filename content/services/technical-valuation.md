@@ -7,7 +7,7 @@ category_code: "consultation"
 service_code: "C04"
 summary: "A systematic value-engineering approach to improve project construction efficiency by analyzing component functions and replacing high-cost, low-value elements without compromising safety."
 image: "assets/images/services/w4-768x384.jpg"
-pageCSS: "services-projects.css"
+pageCSS: "industries-services-projects.css"
 sitemap:
     changefreq: monthly
     priority: 0.7
