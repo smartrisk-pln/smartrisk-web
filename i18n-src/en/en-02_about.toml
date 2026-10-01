@@ -60,39 +60,20 @@ other = "To deliver rigorous, independent, and actionable risk assessments that 
 other = "SmartRisk recognizes the fundamental value of testing forecasts and anticipating every possible scenario in your business operations."
 
 
-#=====================================#
-#========== SPECIALIZATIONS ==========#
-#=====================================#
+#==================================================#
+#========== SPECIALIZATIONS / INDUSTRIES ==========#
+#==================================================#
 [spec_section_label]
 other = "Where We Work"
 [spec_h2]
 other = "Sector of <em>Expertise</em>"
 
-[spec_01_title]
-other = "Energy & Utilities"
-[spec_01_sub]
-other = "Power generation &middot; transmission &middot; renewable energy"
-[spec_02_title]
-other = "Oil & Gas"
-[spec_02_sub]
-other = "Upstream &middot; downstream &middot; processing"
-[spec_03_title]
-other = "Mining & Minerals"
-[spec_03_sub]
-other = "Coal &middot; nickel &middot; bauxite &middot; precious metals"
-
-[spec_04_title]
-other = "Ports & Marine Cargo"
-[spec_04_sub]
-other = "Container terminals &middot; bulk cargo &middot; logistics"
-[spec_05_title]
-other = "Manufacturing"
-[spec_05_sub]
-other = "Chemical &middot; steel &middot; industrial facilities"
-[spec_06_title]
-other = "Construction & EPC"
-[spec_06_sub]
-other = "Capital projects &middot; EPC &middot; commissioning"
+# Industry sector titles and descriptions are not defined here.
+# They are sourced from the front matter of the Industries page:
+#   - Title         : content/industries/_index.md → title
+#   - Description   : content/industries/_index.md → desc
+# Indonesian equivalents are in content/id/industries/_index.md
+# See layouts/about/list.html for how these are rendered.
 
 
 #============================#

@@ -99,7 +99,7 @@
 }
 .spec-grid {
     display                 : grid;
-    grid-template-columns   : repeat(3, 1fr);
+    grid-template-columns   : repeat(var(--spec-cols, 3), 1fr); /* set per row in layouts/about/list.html */
     gap                     : 0;
     border                  : 1px solid var(--rule);
     margin-top              : 4rem;
