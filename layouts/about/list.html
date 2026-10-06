@@ -88,8 +88,14 @@
         <div class="spec-grid{{ if gt $r 1 }} spec-grid-row2{{ end }} reveal" style="--spec-cols: {{ $count }}">
             {{ range first $count (after $offset $sectors) }}
             <a href="{{ printf "industries/#%s" .code | relLangURL }}" class="spec-card">
-                <div class="spec-title">{{ .title | safeHTML }}</div>
-                <div class="spec-sub">{{ .desc | safeHTML }}</div>
+                <picture class="spec-card-bg" aria-hidden="true">
+                    <source srcset="{{ printf "assets/images/industries/%s.webp" .code | relURL }}" type="image/webp">
+                    <img src="{{ printf "assets/images/industries/%s.jpg" .code | relURL }}" alt="{{ printf "%s" .code }}" width="1920" height="1080" loading="lazy" decoding="async">
+                </picture>
+                <div class="spec-card-text">
+                    <div class="spec-title">{{ .title | safeHTML }}</div>
+                    <div class="spec-sub">{{ .desc | safeHTML }}</div>
+                </div>
             </a>
             {{ end }}
         </div>

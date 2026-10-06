@@ -489,9 +489,9 @@
     scroll-margin-top   : calc(var(--nav-h, 60px) + 1.5rem);
     margin-bottom       : 4rem;
 }
-.industries-sector-group:last-child {
+/* .industries-sector-group:last-child {
     margin-bottom   : 0;
-}
+} */
 
 .industries-entries .industries-sector-header {
     position        : relative;
