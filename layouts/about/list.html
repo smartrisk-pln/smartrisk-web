@@ -90,7 +90,7 @@
             <a href="{{ printf "industries/#%s" .code | relLangURL }}" class="spec-card">
                 <picture class="spec-card-bg" aria-hidden="true">
                     <source srcset="{{ printf "assets/images/industries/%s.webp" .code | relURL }}" type="image/webp">
-                    <img src="{{ printf "assets/images/industries/%s.jpg" .code | relURL }}" alt="{{ printf "%s" .code }}" width="1920" height="1080" loading="lazy" decoding="async">
+                    <img src="{{ printf "assets/images/industries/%s.jpg" .code | relURL }}" alt="{{ .title | plainify }}" width="1920" height="1080" loading="lazy" decoding="async">
                 </picture>
                 <div class="spec-card-text">
                     <div class="spec-title">{{ .title | safeHTML }}</div>
