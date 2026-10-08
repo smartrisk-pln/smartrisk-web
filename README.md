@@ -16,7 +16,7 @@ smartrisk/
 │       └── hugo.yaml   ← GitHub Actions workflow for automated build and deploy
 ├── assets/
 │   └── assets/     ← Assets needing processing in assets/assets/
-│       ├── css/        ← Stylesheets (style.css, about.css, contact.css, team.css, services-projects.css, portfolio.css, 404.css)
+│       ├── css/        ← Stylesheets (style.css, about.css, contact.css, team.css, industries-services-projects.css, portfolio.css, 404.css)
 │       └── js/         ← main.js (nav highlighting, scroll reveal, contact form), portfolio.js, maplibre-gl.js (vendored, see note below)
 ├── content/            ← Page metadata (title, description, CSS) per page and language
 │   ├── _index.md       ← English homepage
@@ -97,6 +97,20 @@ To add/replace a hero slide:
 - Adjust the `link rel="preload"` pair in `head.html` if slide 0 changes (currently hardcoded to `hero_01-power_plant`).
 
 
+## Industries  
+
+Industry sectors are defined once, in the `industries` list (`code`, `title`, `desc`) in `content/industries/_index.md` and its `content/id/industries/_index.md` equivalent. Two pages are generated from the list:  
+- **`/industries/`** (`layouts/industries/list.html`): the sidebar, the sector groups (anchor `industries/#<code>`), and each sector's header background.  
+- **`/about/`** (`layouts/about/list.html`): the "Sector of Expertise" cards, linking to `industries/#<code>`.  
+
+How the pieces are matched up by `code`:
+- **Projects**: a project is listed under a sector when its `industry_sector` front matter list contains that sector's `code`.  
+- **Header images**: `static/assets/images/industries/<code>.webp` (+ `<code>.jpg` fallback), served through a `<picture>` element and lazy-loaded. Filenames are derived from `code` (lowercase), so no per-sector config is needed. Same static cover behavior as the hero (no animation), with a dark gradient overlay for text contrast. A missing image falls back to a plain dark background.  
+- **About page cards**: at most 4 per row, spread evenly across rows (6 &rarr; 3+3, 7 &rarr; 4+3, 8 &rarr; 4+4). The column count is set per row through the `--spec-cols` CSS variable (default 3 in `about.css`).  
+
+Titles and descriptions come from front matter (not `i18n-src/`), so the sector list has no entries in the `.toml` translation files. See CONTRIBUTING's [Adding or Editing an Industry Sector](.github/CONTRIBUTING.md#adding-or-editing-an-industry-sector) for the steps.  
+
+
 ## Portfolio Map
 
 The Portfolio page (`/projects/portfolio`) renders an interactive SEA map (MapLibre GL JS) showing project locations by year and category.
@@ -123,13 +137,13 @@ This renders a thumbnail + play button and only loads the real player (via `yout
 The facade's styling rules are in its own file (`ytfacade.css`) which is only loaded on pages that use it, indicated by the `hasYTFacade: true` front-matter flag checked in `head.html`.  
 **If you add the partial to a new page, set `hasYTFacade: true` in that page's front matter**; otherwise the thumbnail + play button will render unstyled since the CSS won't be linked.
 
-The video title string can be added to the i18n toml files, `en-06_media.toml` and `id-06_media.toml`, for example:  
+The video title string can be added to the i18n toml files, `en-07_media.toml` and `id-07_media.toml`, for example:  
 ```toml
-# --- en-06_media.toml ---
+# --- en-07_media.toml ---
 [video_title_1]
 other = "Policy Review of PLN Group's Operational Asset Insurance"
 
-# --- id-06_media.toml ---
+# --- id-07_media.toml ---
 [video_title_1]
 other = "Bedah Polis Asuransi Aset Operasional PLN Group"
 ```
