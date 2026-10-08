@@ -61,53 +61,48 @@
         </div>
     </section>
 
-    <!---------- SPECIALIZATIONS ---------->
+    <!---------- SPECIALIZATIONS / INDUSTRIES ---------->
     <section class="specializations" id="industries" aria-labelledby="specializations-heading">
         <div class="reveal">
             <div class="section-label">{{ i18n "spec_section_label" | safeHTML }}</div>
             <h2 id="specializations-heading">{{ i18n "spec_h2" | safeHTML }}</h2>
         </div>
-        <div class="spec-grid reveal">
-            <a href="{{ "industries/#energy-utilities" | relLangURL }}" class="spec-card">
-                <!-- ENERGY & UTILITIES -->
-                <!-- <span class="spec-icon" aria-hidden="true">&#9889;&#65039;</span> -->
-                <div class="spec-title">{{ i18n "spec_01_title" | safeHTML }}</div>
-                <div class="spec-sub">{{ i18n "spec_01_sub" | safeHTML }}</div>
+        <!-- Sector cards are generated from the `industries` list in content/industries/_index.md 
+            Max 4 cards per row, spread evenly across rows:
+            - 6 -> 3+3
+            - 7 -> 4+3
+            - 8 -> 4+4
+        -->
+        {{ with site.GetPage "/industries" }}
+        {{ $sectors := .Params.industries }}
+        {{ with $sectors }}
+        {{ $n := len . }}
+        {{ $maxPerRow := 4 }}
+        {{ $rows := div (add $n (sub $maxPerRow 1)) $maxPerRow }}
+        {{ $base := div $n $rows }}
+        {{ $extra := mod $n $rows }}
+        {{ $offset := 0 }}
+        {{ range $r := seq $rows }}
+        {{ $count := $base }}
+        {{ if le $r $extra }}{{ $count = add $base 1 }}{{ end }}
+        <div class="spec-grid{{ if gt $r 1 }} spec-grid-row2{{ end }} reveal" style="--spec-cols: {{ $count }}">
+            {{ range first $count (after $offset $sectors) }}
+            <a href="{{ printf "industries/#%s" .code | relLangURL }}" class="spec-card">
+                <picture class="spec-card-bg" aria-hidden="true">
+                    <source srcset="{{ printf "assets/images/industries/%s.webp" .code | relURL }}" type="image/webp">
+                    <img src="{{ printf "assets/images/industries/%s.jpg" .code | relURL }}" alt="{{ .title | plainify }}" width="1920" height="1080" loading="lazy" decoding="async">
+                </picture>
+                <div class="spec-card-text">
+                    <div class="spec-title">{{ .title | safeHTML }}</div>
+                    <div class="spec-sub">{{ .desc | safeHTML }}</div>
+                </div>
             </a>
-            <a href="{{ "industries/#oil-gas" | relLangURL }}" class="spec-card">
-                <!-- OIL & GAS -->
-                <!-- <span class="spec-icon" aria-hidden="true">&#128737;&#65039;</span> -->
-                <div class="spec-title">{{ i18n "spec_02_title" | safeHTML }}</div>
-                <div class="spec-sub">{{ i18n "spec_02_sub" | safeHTML }}</div>
-            </a>
-            <a href="{{ "industries/#mining-minerals" | relLangURL }}" class="spec-card">
-                <!-- MINING & MINERALS -->
-                <!-- <span class="spec-icon" aria-hidden="true">&#128674;&#65039;</span> -->
-                <div class="spec-title">{{ i18n "spec_03_title" | safeHTML }}</div>
-                <div class="spec-sub">{{ i18n "spec_03_sub" | safeHTML }}</div>
-            </a>            
+            {{ end }}
         </div>
-        
-        <div class="spec-grid spec-grid-row2 reveal">
-            <a href="{{ "industries/#ports-marine" | relLangURL }}" class="spec-card">
-                <!-- PORTS & MARINE CARGO -->
-                <!-- <span class="spec-icon" aria-hidden="true">&#9935;&#65039;</span> -->
-                <div class="spec-title">{{ i18n "spec_04_title" | safeHTML }}</div>
-                <div class="spec-sub">{{ i18n "spec_04_sub" | safeHTML }}</div>
-            </a>
-            <a href="{{ "industries/#manufacturing" | relLangURL }}" class="spec-card">
-                <!-- MANUFACTURING -->
-                <!-- <span class="spec-icon" aria-hidden="true">&#127959;&#65039;</span> -->
-                <div class="spec-title">{{ i18n "spec_05_title" | safeHTML }}</div>
-                <div class="spec-sub">{{ i18n "spec_05_sub" | safeHTML }}</div>
-            </a>
-            <a href="{{ "industries/#construction-epc" | relLangURL }}" class="spec-card">
-                <!-- CONSTRUCTION & EPC -->
-                <!-- <span class="spec-icon" aria-hidden="true">&#127970;&#65039;</span> -->
-                <div class="spec-title">{{ i18n "spec_06_title" | safeHTML }}</div>
-                <div class="spec-sub">{{ i18n "spec_06_sub" | safeHTML }}</div>
-            </a>
-        </div>
+        {{ $offset = add $offset $count }}
+        {{ end }}
+        {{ end }}
+        {{ end }}
     </section>
 
 

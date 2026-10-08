@@ -78,6 +78,7 @@ A few issues that once cost debugging time, check before re-diagnosing from scra
 - **Any ancestor with non-`visible` overflow breaks `position: sticky` for its descendants**, even `overflow: hidden` added as a safety-net rule. If a sticky element stops sticking after an unrelated CSS change, check every ancestor between it and the page root for a stray `overflow` value first.
 - **`static/_redirects` only matches on request path, not hostname.** A rule like `https://smartrisk-pln.pages.dev/* https://smartrisk-pln.com/:splat 301` looks valid but is silently ignored. Cloudflare Pages has no way to match a full source URL with a domain in `_redirects`. Domain-level redirects (e.g. `pages.dev` &rarr; the custom domain) must be configured as a Cloudflare **Bulk Redirect** in the account dashboard (Delivery & performance &rarr; Bulk redirects), not in this repo.
 - **Missing `hasYTFacade: true` on the front matter means an unstyled facade.** The thumbnail + play button will render but without any CSS if the page includes the `youtube-facade.html` partial but doesn't set the flag. `ytfacade.css` only loads when the flag is present.  
+- **Industry sector images must be lowercase and match the sector `code` exactly.** `Oil-Gas.JPG` works on Windows or `hugo server` but 404s on Cloudflare Pages (case-sensitive). A missing image doesn't break the build, the sector header silently falls back to a plain dark background.
 
 
 
@@ -131,9 +132,52 @@ Never embed a raw `<iframe>` for YouTube (see README's [YouTube Embeds](../READM
     X-Robots-Tag: noindex, nofollow
     ``` 
    to make sure the empty projects year subpage is not indexed or followed. 
-4. Fill in the required front matter fields (see an existing page for the current field list; e.g. `title`, `summary`, `category`/`tag`, `image`).
+4. Fill in the required front matter fields (see an existing page for the current field list; e.g. `title`, `summary`, `category`/`tag`, `image`). For projects, `industry_sector` must contain at least one sector `code`s that exist in the `industries` list (see [Adding or Editing an Industry Sector](#adding-or-editing-an-industry-sector)). The Industries page renders projects by industry sector based on a project's `industry_sector` that matches one of the `code`s in `content/industries/_index.md` (see README's [Industries](../README.md#industries)).
 5. Run `hugo server` locally and click through to the new page to confirm it renders before committing.
 6. Commit with `content(services): Add <page name>` or `content(projects): Add <page name>`.
+
+
+
+## Adding or Editing an Industry Sector
+
+Sectors are defined once, in the `industries` list in `content/industries/_index.md` (EN) and `content/id/industries/_index.md` (ID). Everything below is generated from that list, in list order, so there is no template or i18n changes to make:  
+- **Industries page** (`layouts/industries/list.html`): the sidebar link, the sector group (anchor `industries/#<code>`), and the sector header background image.  
+- **About page** (`layouts/about/list.html`): the "Sector of Expertise" cards, each linking to `industries/#<code>`.
+
+1. Add an entry to `industries` in **both** `_index.md` files. The `code` must be identical in both; only `title` and `desc` are translated:  
+    ```yaml
+    - code: "oil-gas"
+      title: "Oil & Gas"
+      desc: "Upstream &middot; downstream &middot; processing"
+    ```
+    `title` and `desc` are rendered as HTML (`safeHTML`), so entities like `&middot;` and inline tags such as `<i lang='EN'>...</i>` work. To reorder sectors, reorder the list. To rename a sector, edit `title` and `desc` only, and don't change `code` unless you also update every project's `industry_sector` and the image filenames.
+2. Add the header images to `static/assets/images/industries/`:
+    - `<code>.webp` and `<code>.jpg` (**all lowercase**, exactly matching `code`)
+    - 1920x1080 (16:9), ideally under ~400 KB each. They are cropped with `object-fit: cover` and have a dark gradient over them for text contrast, so keep the subject away from the edges and avoid very bright images.
+3. In each project that belongs to the sector, add the same `code` to `industry_sector` in its front matter:
+    ```yaml
+    industry_sector:
+        - "oil-gas"
+    ```
+4. Run `hugo server` and check, in both `/` and `/id/`:
+    - the Industries page: sidebar link, header image and text contrast, and that the right projects are listed
+    - the About page: the new card and the card layout (see below)
+5. Commit as `content(industries): Add <sector name> sector`, `edit(industries): Edit <sector name> sector`, or `perf(industries)` if you're only replacing images with better-compressed ones.
+
+### About page card layout
+
+The About page cards are laid out automatically: at most 4 cards per row, spread evenly across as few rows as possible, with each row stretching to the full width:  
+| Sectors | Cards per row |
+|---------|---------------|
+| 3-4     | 3-4 (one row) |
+| 5       | 3 + 2         |
+| 6       | 3 + 3         |
+| 7       | 3 + 4         |
+| 8       | 4 + 4         |
+| 9       | 3 + 3 + 3     |
+
+Below 900px wide, every card takes its own row. If cards look cramped between 900px and ~1100px with 4 per row, lower `$maxPerRow` in `layouts/about/list.html` to `3`. Removing a sector from the list doesn't delete its images or its projects' `industry_sector` entries, so also remove those separately.
+
 
 
 ## Updating Portfolio Map Data
