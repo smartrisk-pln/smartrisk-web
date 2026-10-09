@@ -2,6 +2,11 @@
    ---------- SmartRisk - Shared Styles ----------
    ----------------------------------------------- */
 
+html {
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
 /*---------- ACCESSIBILITY UTILITIES ----------*/
 .visually-hidden {
     position    : absolute;
