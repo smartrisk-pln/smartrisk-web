@@ -42,6 +42,10 @@
 <meta property="og:title"       content="{{ .Title }}" />
 <meta property="og:description" content="{{ .Description }}" />
 
+<!-- Preload fonts used above the fold so text doesn't reflow when they swap in -->
+<link rel="preload" as="font" type="font/woff2" crossorigin href="{{ "assets/fonts/CalSans-600.woff2" | relURL }}" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="{{ "assets/fonts/DMSans-400.woff2" | relURL }}" />
+
 <!-- Loading fonts from Google Fonts -->
 <!--
 <link rel="preconnect" href="https://fonts.googleapis.com" />
