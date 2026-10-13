@@ -29,7 +29,7 @@
 
                 {{ $allProjects := where site.RegularPages "Section" "projects" }}
 
-                {{ range $sector := .Params.industries }}
+                {{ range $idx, $sector := .Params.industries }}
                 {{ $code := $sector.code }}
                 
                 {{ $sectorProjects := slice }}
@@ -50,10 +50,11 @@
 
                     <div class="industries-sector-header">
                         <picture class="industries-sector-bg" aria-hidden="true">
-                            <source media="(max-width: 859px)" srcset="{{ printf "assets/images/industries/%s-mobile.webp" $code | relURL }}" type="image/webp">
-                            <source media="(max-width: 859px)" srcset="{{ printf "assets/images/industries/%s-mobile.jpg" $code | relURL }}">
+                            <source media="(max-width: 900px)" srcset="{{ printf "assets/images/industries/%s-mobile.webp" $code | relURL }}" type="image/webp">
+                            <source media="(max-width: 900px)" srcset="{{ printf "assets/images/industries/%s-mobile.jpg" $code | relURL }}">
                             <source srcset="{{ printf "assets/images/industries/%s.webp" $code | relURL }}" type="image/webp">
-                            <img src="{{ printf "assets/images/industries/%s.jpg" $code | relURL }}" alt="{{ $sector.title | plainify }}" width="1280" height="720" fetchpriority="high" decoding="async">
+                            <img src="{{ printf "assets/images/industries/%s.jpg" $code | relURL }}" alt="{{ $sector.title | plainify }}" width="1280" height="720" fetchpriority="high" decoding="async"
+                            {{ if eq $idx 0 }}loading="eager" fetchpriority="high"{{ else }}loading="lazy"{{ end }}>
                         </picture>
                         <div class="industries-sector-header-text">
                             <h2 class="industries-sector-title">{{ $sector.title | safeHTML }}</h2>
