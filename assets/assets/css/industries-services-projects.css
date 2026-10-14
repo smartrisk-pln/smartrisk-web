@@ -315,6 +315,13 @@
     margin          : 0 4rem 0 5rem;
 }
 
+.industries-portfolio-cta {
+    display         : flex;
+    justify-content : flex-end;
+    margin          : 1rem 2rem 3rem 0rem;
+
+}
+
 /*---------- PROJECT ENTRY ----------*/
 .project-entry-link {
     display                 : grid;
@@ -570,7 +577,7 @@
 
 
 /*---------- MOBILE ----------*/
-@media (max-width: 860px) {
+@media (max-width: 900px) {
     .industries-page-inner,
     .services-page-inner,
     .projects-page-inner {

@@ -105,7 +105,13 @@
                 </div>
 
                 {{ end }}{{/* end range sectors */}}
-
+                
+                <div class="industries-portfolio-cta">
+                    <a href="{{ "projects/portfolio/" | relLangURL }}" class="btn btn-outline btn-right-arrow-ink">
+                        {{ i18n "portfolio_title" | safeHTML }}
+                    </a>
+                </div>
+                
             </div><!-- /.industries-entries -->
         </div><!-- /.industries-page-inner -->
     </section>
