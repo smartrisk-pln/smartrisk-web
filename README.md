@@ -36,7 +36,8 @@ smartrisk/
 ├── scripts/
 │   ├── merge-i18n.sh   ← Merges i18n TOML fragments (i18n-src/<lang>/*.toml) into single language files (i18n/<lang>.toml)
 │   ├── merge-i18n.ps1  ← For local Windows development
-│   └── csv_to_yaml.py  ← Converts portfolio.csv into data/projects.yaml, grouped by year (desc) and category (ascending item count)
+│   ├── csv_to_yaml.py  ← Converts portfolio.csv into data/projects.yaml, grouped by year (desc) and category (ascending item count)
+│   └── resize_industry_images.py   ← Generates the 4 image variants (desktop/mobile, WebP/JPG) per industry sector from source images (a folder or single files)
 ├── layouts/
 │   ├── _default/
 │   │   └── baseof.html ← HTML shell (head, nav, main, footer)
@@ -48,7 +49,7 @@ smartrisk/
 │   │   └── portfolio/  ← Interactive SEA project map (MapLibre GL JS)
 │   ├── media/          ← Media page (video embed uses youtube-facade)
 │   ├── contact/
-│   ├── partials/       ← Shared components: nav, footer, head, contact form, youtube-facade, industry sector cards
+│   ├── partials/       ← Shared components: nav, footer, head, contact form, youtube-facade, industry-cards
 │   ├── index.html      ← Homepage layout (uses i18n strings)
 │   ├── 404.html        ← Custom 404 error page
 │   ├── robots.txt      ← robots.txt with sitemap reference

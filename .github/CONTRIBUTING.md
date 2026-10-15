@@ -153,9 +153,18 @@ Sectors are defined once, in the `industries` list in `content/industries/_index
     `title` and `desc` are rendered as HTML (`safeHTML`), so entities like `&middot;` and inline tags such as `<i lang='EN'>...</i>` work. To reorder sectors, reorder the list. To rename a sector, edit `title` and `desc` only, and don't change `code` unless you also update every project's `industry_sector` and the image filenames. The 2 languages can have different lists, since each page reads the list of its own language.
 2. Add the header/card image files to `static/assets/images/industries/`, all **lowercase** and named exactly after the `code`:  
     - `<code>.webp` and `<code>.jpg`: 1280x720 (16:9), desktop version of the header and larger option for cards
-    - `<code>-mobile.webp` and `<code>-mobile.jpg`: 640x360, used by the Industries page header up to 899px wide and as the smaller option for cards  
-    
-    Images are cropped with `object-fit: cover` and have a dark gradient over them for text contrast, so keep the subject away from the edges and avoid very bright images.
+    - `<code>-mobile.webp` and `<code>-mobile.jpg`: 640x360, used by the Industries page header up to 899px wide and as the smaller option for cards.
+
+    The browser picks the file by card width and pixel density, so some phones and HiDPI screens will still load the 1280px file.  
+
+    Generate them from your source images with the helper script (needs `pip install pillow`; run from the repo root; sources that aren't 16:9 are center-cropped). The output always goes to `static/assets/images/industries/`, named after the lowercased source filename:  
+    ```bash
+    python scripts/resize_industry_images.py                    # every image in scripts/industry-sources/
+    python scripts/resize_industry_images.py path/to/folder     # every image in another folder
+    python scripts/resize_industry_images.py path/to/<code>.jpg # one or more specific files
+    ```
+    Folder mode picks up `.jpg`, `.jpeg`, `.png`, and `.webp` (not recursively) and skips `-mobile` files and anything already inside the output folder. Existing outputs with the same name are overwritten. The source images are large, so keep them out of the repo (e.g. add `scripts/industry-sources/` to `.gitignore`).  
+    Each file should come out at ~20-50 KB (mobile) and ~60-150 KB (desktop). Images are cropped with `object-fit: cover` and have a dark gradient over them for text contrast, so keep the subject away from the edges and avoid very bright images.
 3. In each project that belongs to the sector, add the same `code` to `industry_sector` in its front matter:
     ```yaml
     industry_sector:
@@ -163,7 +172,7 @@ Sectors are defined once, in the `industries` list in `content/industries/_index
     ```
 4. Run `hugo server` and check, in both `/` and `/id/`:
     - the Industries page: sidebar link, header image and text contrast, and that the right projects are listed
-    - the About page: the new card and the card layout (see below)
+    - the About page and homepage: the new card and the card layout (see below)
 5. Commit as `content(industries): Add <sector name> sector`, `edit(industries): Edit <sector name> sector`, or `perf(industries)` if you're only replacing images with better-compressed ones.
 
 ### Card layout (About page and homepage)
@@ -178,8 +187,9 @@ The About page cards are laid out automatically: at most 4 cards per row, spread
 | 8       | 4 + 4         |
 | 9       | 3 + 3 + 3     |
 
-Below 900px wide, every card takes its own row. If cards look cramped between 900px and ~1100px with 4 per row, lower `$maxPerRow` in `layouts/partials/industry-cards.html` to `3`. Removing a sector from the list doesn't delete its images or its projects' `industry_sector` entries, so also remove those separately.
+Below 900px wide, every card takes its own row. If cards look cramped between 900px and ~1100px with 4 per row, lower `$maxPerRow` in `layouts/partials/industry-cards.html` to `3`. Removing a sector from the list doesn't delete its images or its projects' `industry_sector` entries, so also remove those separately.  
 
+If you change the card layout (breakpoint, padding, columns), update the `sizes` attribute in `layouts/partials/industry-cards.html` to match, since the browser chooses the image before layout. Re-run Lighthouse afterwards: its emulated phone (412px, DPR 1.75) sits right at the 640px/1280px boundary and can flip to the larger file.
 
 
 ## Updating Portfolio Map Data
