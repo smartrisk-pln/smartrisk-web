@@ -36,7 +36,8 @@ smartrisk/
 ├── scripts/
 │   ├── merge-i18n.sh   ← Merges i18n TOML fragments (i18n-src/<lang>/*.toml) into single language files (i18n/<lang>.toml)
 │   ├── merge-i18n.ps1  ← For local Windows development
-│   └── csv_to_yaml.py  ← Converts portfolio.csv into data/projects.yaml, grouped by year (desc) and category (ascending item count)
+│   ├── csv_to_yaml.py  ← Converts portfolio.csv into data/projects.yaml, grouped by year (desc) and category (ascending item count)
+│   └── resize_industry_images.py   ← Generates the 4 image variants (desktop/mobile, WebP/JPG) per industry sector from source images (a folder or single files)
 ├── layouts/
 │   ├── _default/
 │   │   └── baseof.html ← HTML shell (head, nav, main, footer)
@@ -48,7 +49,7 @@ smartrisk/
 │   │   └── portfolio/  ← Interactive SEA project map (MapLibre GL JS)
 │   ├── media/          ← Media page (video embed uses youtube-facade)
 │   ├── contact/
-│   ├── partials/       ← Shared components: nav, footer, head, contact form, youtube-facade
+│   ├── partials/       ← Shared components: nav, footer, head, contact form, youtube-facade, industry-cards
 │   ├── index.html      ← Homepage layout (uses i18n strings)
 │   ├── 404.html        ← Custom 404 error page
 │   ├── robots.txt      ← robots.txt with sitemap reference
@@ -99,14 +100,25 @@ To add/replace a hero slide:
 
 ## Industries  
 
-Industry sectors are defined once, in the `industries` list (`code`, `title`, `desc`) in `content/industries/_index.md` and its `content/id/industries/_index.md` equivalent. Two pages are generated from the list:  
+Industry sectors are defined once, in the `industries` list (`code`, `title`, `desc`) in `content/industries/_index.md` and its `content/id/industries/_index.md` equivalent. Each EN and ID page reads from its own list. Two pages are generated from each list, in list order:  
 - **`/industries/`** (`layouts/industries/list.html`): the sidebar, the sector groups (anchor `industries/#<code>`), and each sector's header background.  
-- **`/about/`** (`layouts/about/list.html`): the "Sector of Expertise" cards, linking to `industries/#<code>`.  
+- **`/about/` and homepage** (`layouts/about/list.html`): the "Sector of Expertise" cards, rendered by the shared partial `layouts/partials/industry-cards.html` and linking to `industries/#<code>`. Each page supplies its own section heading and calls `{{ partial "industry-cards.html" . }}`. The card styles are in `style.css` (not `about.css`) because homepage also uses them.  
 
 How the pieces are matched up by `code`:
 - **Projects**: a project is listed under a sector when its `industry_sector` front matter list contains that sector's `code`.  
-- **Header images**: `static/assets/images/industries/<code>.webp` (+ `<code>.jpg` fallback), served through a `<picture>` element and lazy-loaded. Filenames are derived from `code` (lowercase), so no per-sector config is needed. Same static cover behavior as the hero (no animation), with a dark gradient overlay for text contrast. A missing image falls back to a plain dark background.  
-- **About page cards**: at most 4 per row, spread evenly across rows (6 &rarr; 3+3, 7 &rarr; 4+3, 8 &rarr; 4+4). The column count is set per row through the `--spec-cols` CSS variable (default 3 in `about.css`).  
+- **Images**: 4 files per sector in `static/assets/images/industries/`:  
+    - `<code>.webp` + `<code>.jpg` fallback (1280x720), and
+    - `<code>-mobile.webp` + `<code>-mobile.jpg` fallback (640x360), 
+
+    Filenames are derived from `code` (lowercase), so no per-sector config is needed. Two patterns choose between them:
+    - **Industries page headers** use `<source media>` rules inside `<picture>`: 
+        - the `-mobile` files up to 900px wide (the page's mobile breakpoint), 
+        - the desktop files above it, and
+        - the desktop JPG as the `<img>` fallback.
+    - **About/homepage cards** use `srcset` (`640w` / `1280w`) + `sizes="(max-width: 900px) calc(100vw - 3rem), 25vw"`, so the browser picks by the card's rendered width and screen density instead of a fixed breakpoint. `sizes` mirrors the card layout in `style.css`: full width below 900px (1 column) and about a quarter of the viewport above it, and must be updated if that layout changes. Standard-density desktops and 360px/DPR2 phones get the 640px file; most phones, tablets, and HiDPI windows get the 1280px file. The card images are decorative (`aria-hidden`), lazy-loaded, and carry the sector title as `alt`.
+- **Loading**: on the Industries page, only the first sector header loads eagerly with `fetchpriority="high"`, the rest are lazy-loaded. This is chosen by the loop index in `layouts/industries/list.html`. Card images on the About/Home pages are always lazy-loaded.  
+- **Look**: static cover image (no animation) with a dark gradient overlay for text contrast. A missing image falls back to a plain dark background.  
+- **Card layout**: at most 4 cards per row, spread evenly across rows (6 &rarr; 3+3, 7 &rarr; 4+3, 8 &rarr; 4+4). The column count is set per row through the `--spec-cols` CSS variable (default 3).  
 
 Titles and descriptions come from front matter (not `i18n-src/`), so the sector list has no entries in the `.toml` translation files. See CONTRIBUTING's [Adding or Editing an Industry Sector](.github/CONTRIBUTING.md#adding-or-editing-an-industry-sector) for the steps.  
 

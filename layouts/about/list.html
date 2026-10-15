@@ -67,42 +67,7 @@
             <div class="section-label">{{ i18n "spec_section_label" | safeHTML }}</div>
             <h2 id="specializations-heading">{{ i18n "spec_h2" | safeHTML }}</h2>
         </div>
-        <!-- Sector cards are generated from the `industries` list in content/industries/_index.md 
-            Max 4 cards per row, spread evenly across rows:
-            - 6 -> 3+3
-            - 7 -> 4+3
-            - 8 -> 4+4
-        -->
-        {{ with site.GetPage "/industries" }}
-        {{ $sectors := .Params.industries }}
-        {{ with $sectors }}
-        {{ $n := len . }}
-        {{ $maxPerRow := 4 }}
-        {{ $rows := div (add $n (sub $maxPerRow 1)) $maxPerRow }}
-        {{ $base := div $n $rows }}
-        {{ $extra := mod $n $rows }}
-        {{ $offset := 0 }}
-        {{ range $r := seq $rows }}
-        {{ $count := $base }}
-        {{ if le $r $extra }}{{ $count = add $base 1 }}{{ end }}
-        <div class="spec-grid{{ if gt $r 1 }} spec-grid-row2{{ end }} reveal" style="--spec-cols: {{ $count }}">
-            {{ range first $count (after $offset $sectors) }}
-            <a href="{{ printf "industries/#%s" .code | relLangURL }}" class="spec-card">
-                <picture class="spec-card-bg" aria-hidden="true">
-                    <source srcset="{{ printf "assets/images/industries/%s.webp" .code | relURL }}" type="image/webp">
-                    <img src="{{ printf "assets/images/industries/%s.jpg" .code | relURL }}" alt="{{ .title | plainify }}" width="1920" height="1080" loading="lazy" decoding="async">
-                </picture>
-                <div class="spec-card-text">
-                    <div class="spec-title">{{ .title | safeHTML }}</div>
-                    <div class="spec-sub">{{ .desc | safeHTML }}</div>
-                </div>
-            </a>
-            {{ end }}
-        </div>
-        {{ $offset = add $offset $count }}
-        {{ end }}
-        {{ end }}
-        {{ end }}
+        {{ partial "industry-cards.html" . }}
     </section>
 
 

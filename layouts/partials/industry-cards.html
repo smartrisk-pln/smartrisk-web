@@ -1,0 +1,52 @@
+<!-- Sector cards are generated from the `industries` list in content/industries/_index.md 
+    Max 4 cards per row, spread evenly across rows:
+    - 6 -> 3+3
+    - 7 -> 4+3
+    - 8 -> 4+4
+-->
+{{ with site.GetPage "/industries" }}
+{{ $sectors := .Params.industries }}
+{{ with $sectors }}
+{{ $n := len . }}
+{{ $maxPerRow := 4 }}
+{{ $rows := div (add $n (sub $maxPerRow 1)) $maxPerRow }}
+{{ $base := div $n $rows }}
+{{ $extra := mod $n $rows }}
+{{ $offset := 0 }}
+{{ range $r := seq $rows }}
+{{ $count := $base }}
+{{ if le $r $extra }}{{ $count = add $base 1 }}{{ end }}
+<div class="spec-grid{{ if gt $r 1 }} spec-grid-row2{{ end }} reveal" style="--spec-cols: {{ $count }}">
+    {{ range first $count (after $offset $sectors) }}
+    <a href="{{ printf "industries/#%s" .code | relLangURL }}" class="spec-card">
+        <!-- Load image based on window width (media)
+        <picture class="spec-card-bg" aria-hidden="true">
+            <source media="(max-width: 900px)" srcset="{{ printf "assets/images/industries/%s-mobile.webp" .code | relURL }}" type="image/webp">
+            <source media="(max-width: 900px)" srcset="{{ printf "assets/images/industries/%s-mobile.jpg" .code | relURL }}">
+            <source srcset="{{ printf "assets/images/industries/%s.webp" .code | relURL }}" type="image/webp">
+            <img src="{{ printf "assets/images/industries/%s.jpg" .code | relURL }}" alt="{{ .title | plainify }}" width="1280" height="720" loading="lazy" decoding="async">
+        </picture>
+        -->
+        
+        <!-- Load image based on card size & pixel density (srcset and sizes) -->
+        <picture class="spec-card-bg" aria-hidden="true">
+			<source type="image/webp"
+					srcset="{{ printf "assets/images/industries/%s-mobile.webp" .code | relURL }} 640w, {{ printf "assets/images/industries/%s.webp" .code | relURL }} 1280w"
+					sizes="(max-width: 900px) calc(100vw - 3rem), 25vw">
+			<img src="{{ printf "assets/images/industries/%s.jpg" .code | relURL }}"
+				 srcset="{{ printf "assets/images/industries/%s-mobile.jpg" .code | relURL }} 640w, {{ printf "assets/images/industries/%s.jpg" .code | relURL }} 1280w"
+				 sizes="(max-width: 900px) calc(100vw - 3rem), 25vw"
+				 alt="{{ .title | plainify }}" width="1280" height="720" loading="lazy" decoding="async">
+		</picture>
+
+        <div class="spec-card-text">
+            <div class="spec-title">{{ .title | safeHTML }}</div>
+            <div class="spec-sub">{{ .desc | safeHTML }}</div>
+        </div>
+    </a>
+    {{ end }}
+</div>
+{{ $offset = add $offset $count }}
+{{ end }}
+{{ end }}
+{{ end }}

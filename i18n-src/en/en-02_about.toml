@@ -67,6 +67,8 @@ other = "SmartRisk recognizes the fundamental value of testing forecasts and ant
 other = "Where We Work"
 [spec_h2]
 other = "Sector of <em>Expertise</em>"
+[spec_cta]
+other = "See Projects"
 
 # Industry sector titles and descriptions are not defined here.
 # They are sourced from the front matter of the Industries page:

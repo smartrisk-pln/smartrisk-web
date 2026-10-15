@@ -112,7 +112,7 @@
     </div>
 
     <!---------- ABOUT ---------->
-    <section class="about" id="about" aria-labelledby="about-heading">
+    <section class="about reveal" id="about" aria-labelledby="about-heading">
         <div class="about-text">
             <div class="section-label">{{ i18n "about_section_label" | safeHTML }}</div>
             <h2 id="about-heading">{{ i18n "about_h2" | safeHTML }}</h2>
@@ -150,8 +150,20 @@
         </div>
     </section>
 
+    <!---------- SPECIALIZATIONS / INDUSTRIES ---------->
+    <section class="specializations" id="industries" aria-labelledby="specializations-heading">
+        <div class="spec-header">
+            <div class="reveal">
+                <div class="section-label">{{ i18n "spec_section_label" | safeHTML }}</div>
+                <h2 id="specializations-heading">{{ i18n "spec_h2" | safeHTML }}</h2>
+            </div>
+            <a href="industries/" class="btn btn-outline btn-right-arrow-ink">{{ i18n "spec_cta" | safeHTML }}</a>
+        </div>
+        {{ partial "industry-cards.html" }}
+    </section>
+
     <!---------- SERVICES ---------->
-    <section class="services" id="services" aria-labelledby="services-heading">
+    <section class="services reveal" id="services" aria-labelledby="services-heading">
         <div class="services-header">
             <div>
                 <div class="section-label">{{ i18n "services_section_label" | safeHTML }}</div>
@@ -274,6 +286,7 @@
 
 
     <!---------- PROJECTS ---------->
+    <!--
     <section class="projects" id="projects" aria-labelledby="projects-heading">
         <div class="projects-header">
             <div>
@@ -283,7 +296,6 @@
             <a href="projects/" class="btn btn-outline btn-right-arrow-ink">{{ i18n "projects_cta" | safeHTML }}</a>
         </div>
 
-        <!-- render project entries from front matter -->
         <div class="projects-grid">
             {{ range slice 
                 "projects/2026/citacontrac-risk-profile"
@@ -312,10 +324,10 @@
             {{ end }}
         </div>
     </section>
-
+    -->
 
     <!---------- MEDIA ---------->
-    <section class="media" id="media" aria-labelledby="media-heading">
+    <section class="media reveal" id="media" aria-labelledby="media-heading">
         <div class="media-header">
             <div>
                 <div class="section-label">{{ i18n "media_section_label" | safeHTML }}</div>

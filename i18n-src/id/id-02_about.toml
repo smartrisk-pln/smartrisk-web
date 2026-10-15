@@ -67,6 +67,8 @@ other = "SmartRisk menyadari nilai mendasar dari percobaan terhadap perkiraan da
 other = "Area Kerja Kami"
 [spec_h2]
 other = "Bidang <em>Keahlian</em>"
+[spec_cta]
+other = "Lihat Proyek"
 
 # Industry sector titles and descriptions are not defined here.
 # They are sourced from the front matter of the Industries page:
