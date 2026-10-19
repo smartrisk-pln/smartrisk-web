@@ -21,13 +21,15 @@
     opacity     : 0;
     animation   : fadeUp 0.5s 0.1s forwards;
 }
-.contact-info-panel h1 {
+.contact-info-panel h1,
+.contact-info-panel h2 {
     color       : var(--paper);
     font-size   : clamp(2.5rem, 4vw, 4rem);
     opacity     : 0;
     animation   : fadeUp 0.5s 0.2s forwards;
 }
-.contact-info-panel h1 em {
+.contact-info-panel h1 em,
+.contact-info-panel h2 em {
     color       : var(--accent);
     opacity     : 0;
     animation   : fadeUp 0.5s 0.2s forwards;
