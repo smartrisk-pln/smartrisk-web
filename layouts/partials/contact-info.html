@@ -1,6 +1,11 @@
 <div class="contact-info-panel">
     <div class="section-label">{{ i18n "contact_info_section_label" | safeHTML }}</div>
+    {{- /* Only one <h1> per page: homepage already has the hero <h1>, so use <h2> there */ -}}
+    {{ if .IsHome }}
+    <h2>{{ i18n "contact_info_text_h1" | safeHTML }}</h2>
+    {{ else }}
     <h1>{{ i18n "contact_info_text_h1" | safeHTML }}</h1>
+    {{ end }}
     <p>
         {{ i18n "contact_info_text_p" | safeHTML }}
     </p>
