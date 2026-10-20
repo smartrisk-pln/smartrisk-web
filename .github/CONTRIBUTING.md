@@ -35,7 +35,7 @@ Commits follow a `type(scope): description` format, from [Conventional Commits](
 | `refactor`    | Restructuring existing implementation without changing behavior |
 | `build`    | Changes to build scripts, CI/CD pipeline, or deploy configuration |
 | `perf`    | Performance-focused changes: image loading strategy, render-blocking resources, script/CSS loading order, asset compression, etc. |
-
+| `seo`     | Changes made to improve search engine visibility (e.g. alt text, meta tags, canonical/hreflang tags, sitemap, robots, redirects, X-Robots-Tag headers) |
 
 ### Scope
 

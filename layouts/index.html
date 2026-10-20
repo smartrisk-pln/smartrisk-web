@@ -6,13 +6,24 @@
             "hero_02-turbine_inspection"
             "hero_03-marine_cargo"
         }}
+        {{ $heroSlideTitles := slice 
+            "Power Plant"
+            "Turbine Inspection"
+            "Marine Cargo"
+        }}
         {{ $heroSlideURLs := slice }}
-        {{ range $slide := $heroSlides }}
+        {{ range $i, $slide := $heroSlides }}
             {{ $webp    := printf "assets/images/home/%s.webp" $slide | relURL }}
             {{ $jpg     := printf "assets/images/home/%s.jpg"  $slide | relURL }}
             {{ $mobileWebp  := printf "assets/images/home/%s-mobile.webp" $slide | relURL }}
             {{ $mobileJpg   := printf "assets/images/home/%s-mobile.jpg" $slide | relURL }}
-            {{ $heroSlideURLs = $heroSlideURLs | append (dict "webp" $webp "jpg" $jpg "mobileWebp" $mobileWebp "mobileJpg" $mobileJpg) }}
+            {{ $heroSlideURLs = $heroSlideURLs | append (dict 
+                "webp" $webp 
+                "jpg" $jpg 
+                "mobileWebp" $mobileWebp 
+                "mobileJpg" $mobileJpg
+                "title" (index $heroSlideTitles $i)
+            ) }}
         {{ end }}
         <div class="hero-slider" aria-hidden="true">
             <div class="hero-slider-track">
@@ -26,13 +37,14 @@
                         <source media="(max-width: 779px)" srcset="{{ $s.mobileWebp }}" type="image/webp">
                         <source media="(max-width: 779px)" srcset="{{ $s.mobileJpg }}" type="image/jpeg">
                         <source srcset="{{ $s.webp }}" type="image/webp">
-                        <img src="{{ $s.jpg }}" alt="" fetchpriority="high" loading="eager" decoding="async">
+                        <img src="{{ $s.jpg }}" alt="{{ $s.title }}" fetchpriority="high" loading="eager" decoding="async">
                     </picture>
                 </div>
                 {{ else }}
                 <!-- Later slides aren't visible on load, so their background is applied 
                      by JS after the page has loaded rather than fetched up front. -->
                 <div class="hero-slide hero-slide--lazy"
+                     aria-label="{{ $s.title }}"
                      data-bg-mobile-webp="{{ $s.mobileWebp }}"
                      data-bg-mobile-jpg="{{ $s.mobileJpg }}"
                      data-bg-webp="{{ $s.webp }}"
@@ -42,6 +54,7 @@
                 {{ with index $heroSlideURLs 0 }}
                 <!-- a duplicate hero-slide to create seamless loop -->
                 <div class="hero-slide hero-slide--lazy"
+                     aria-label="{{ .title }}"
                      data-bg-mobile-webp="{{ .mobileWebp }}"
                      data-bg-mobile-jpg="{{ .mobileJpg }}"
                      data-bg-webp="{{ .webp }}"
@@ -337,7 +350,10 @@
         </div>
 
         <div class="media-grid"> <!-- no styling rule for media-grid -->
-            {{ partial "youtube-facade.html" (dict "id" "MfFfqZ6FFKc" "title" (i18n "media_h2" | safeHTML )) }}
+            {{ partial "youtube-facade.html" (dict 
+                "id" "MfFfqZ6FFKc" 
+                "title" (i18n "video_title_home" | safeHTML )
+            ) }}
         </div>
     </section>
 
