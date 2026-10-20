@@ -2,12 +2,13 @@
      real player (via youtube-nocookie.com) once the user clicks, so the page doesn't pay 
      for YouTube's JS/network weight or set any YouTube cookies until there's actual 
      intent to watch.
-     Params: id (video id, required), title (accessible label, required)
+     Params: id (video id, required), title (accessible label, required), alt (optional, assigned title if not specified)
 -->
+{{ $alt := .alt | default .title }}
 <div class="yt-facade" data-yt-id="{{ .id }}" data-yt-title="{{ .title }}">
     <div class="yt-facade-media">
-        <img class="yt-facade-thumb" src="https://i.ytimg.com/vi/{{ .id }}/sddefault.jpg" alt="" loading="lazy" width="720" height="540" />
-        <button type="button" class="yt-facade-play" aria-label="{{ i18n "youtube_play_label" | safeHTML }} {{.title }}">
+        <img class="yt-facade-thumb" src="https://i.ytimg.com/vi/{{ .id }}/sddefault.jpg" alt="{{ $alt }}" loading="lazy" width="720" height="540" />
+        <button type="button" class="yt-facade-play" aria-label="{{ i18n "youtube_play_label" | safeHTML }} {{ .title }}">
             <span class="yt-facade-play-icon" aria-hidden="true"></span>
         </button>
     </div>
